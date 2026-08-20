@@ -1,0 +1,1495 @@
+<!DOCTYPE html>
+<!--
+  L'Ombre du Brouillard — Ravenscourt 1901 — création originale © 2026
+  Auteurs : VEAU Yann · GRASON Sabrina
+  Toute reproduction, redistribution ou revente non autorisée est interdite.
+-->
+<html lang="fr">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=5.0">
+<meta name="author" content="VEAU Yann, GRASON Sabrina">
+<title>L'Ombre du Brouillard — Ravenscourt 1901</title>
+
+<!-- Google Tag Manager — chargement conditionné au consentement cookies (voir ravenscourtLoadGTM dans le script principal) -->
+<script>
+window.dataLayer = window.dataLayer || [];
+function ravenscourtLoadGTM(){
+  if(window.__ravenscourtGtmLoaded) return;
+  window.__ravenscourtGtmLoaded = true;
+  (function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
+  new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
+  j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
+  'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
+  })(window,document,'script','dataLayer','GTM-T24NWP6L');
+}
+</script>
+<!-- End Google Tag Manager -->
+
+<!-- Google Analytics (GA4) — chargement conditionné au consentement cookies, voir ravenscourtLoadGA().
+     À FAIRE : listez ci-dessous tous vos identifiants GA4 (format G-XXXXXXXXXX), un par propriété.
+     Visible dans Google Analytics sous Admin > Flux de données > votre flux web.
+     Un seul identifiant valide suffit pour activer le suivi ; ceux qui restent au format
+     "G-XXXXXXXXXX" / "G-YYYYYYYYYY" sont ignorés (pas d'erreur, pas d'appel réseau). -->
+<script>
+const GA_MEASUREMENT_IDS = ['G-XXXXXXXXXX', 'G-YYYYYYYYYY'];
+function gtag(){ window.dataLayer.push(arguments); }
+function ravenscourtLoadGA(){
+  if(window.__ravenscourtGaLoaded) return;
+  const activeIds = GA_MEASUREMENT_IDS.filter(function(id){
+    return id && id.indexOf('XXXX')===-1 && id.indexOf('YYYY')===-1;
+  });
+  if(!activeIds.length) return;
+  window.__ravenscourtGaLoaded = true;
+  const s = document.createElement('script');
+  s.async = true;
+  s.src = 'https://www.googletagmanager.com/gtag/js?id=' + activeIds[0];
+  document.head.appendChild(s);
+  gtag('js', new Date());
+  activeIds.forEach(function(id){ gtag('config', id); });
+}
+</script>
+<!-- End Google Analytics -->
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,700;0,900;1,400&family=Crimson+Text:ital,wght@0,400;0,600;1,400&family=Courier+Prime:wght@400;700&family=Cinzel+Decorative:wght@400;700;900&display=swap" rel="stylesheet">
+<style>
+*,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
+:root{
+  --p:#EDE5D0;--p2:#E2D8BF;--p3:#D8CCAE;
+  --ink:#221a12;--inkl:#4A3728;
+  --blood:#7A1515;--bloodd:#4A0A0A;--bloodl:#a83030;
+  --frost:#A8C4D4;--frostd:#6B96B0;
+  --sl:#5A5A6A;--sll:#8A8A9A;
+  --gold:#8B6914;--goldl:#C4A84A;
+  --paper:#F5F0E4;
+}
+html{scroll-behavior:smooth}
+body{font-family:'Crimson Text',serif;background:#080a0e;color:var(--ink);min-height:100vh;overflow-x:hidden;
+  background-image: url('background-desk.jpg');
+  background-size: cover;
+  background-position: center;
+  background-attachment: fixed;
+  background-repeat: no-repeat;
+}
+h1,h2,h3,.disp{font-family:'Playfair Display',serif}
+.mono{font-family:'Courier Prime',monospace}
+
+/* LANG BUTTONS */
+.lang-btn{width:38px;height:38px;padding:0;border:2px solid rgba(139,105,20,.25);background:#ffffff;border-radius:50%;overflow:hidden;cursor:pointer;transition:all .25s ease;display:flex;align-items:center;justify-content:center;-webkit-tap-highlight-color:transparent;touch-action:manipulation}
+.lang-btn svg{width:100%;height:100%;display:block}
+.lang-btn:hover{border-color:rgba(139,105,20,.5);transform:scale(1.08)}
+.lang-btn.lang-active{border-color:#8B6914;box-shadow:0 0 0 2px rgba(139,105,20,.35)}
+.warn-lang-selector{display:flex;justify-content:center;gap:10px;margin-bottom:20px}
+.float-lang-selector{position:fixed;top:14px;right:14px;z-index:9500;display:flex;gap:8px}
+.float-lang-selector .lang-btn{width:34px;height:34px;box-shadow:0 2px 10px rgba(0,0,0,.35)}
+@media(max-width:640px){.float-lang-selector{top:10px;right:10px}.float-lang-selector .lang-btn{width:30px;height:30px}}
+
+#musicToggle{position:fixed;bottom:84px;right:14px;z-index:9500;width:40px;height:40px;border-radius:50%;background:rgba(10,8,6,.85);border:1px solid rgba(139,105,20,.3);color:var(--goldl);display:flex;align-items:center;justify-content:center;cursor:pointer;font-size:16px;backdrop-filter:blur(3px);box-shadow:0 2px 10px rgba(0,0,0,.3);touch-action:manipulation;transition:border-color .2s}
+#musicToggle:hover{border-color:var(--goldl)}
+@media(max-width:640px){#musicToggle{bottom:78px;right:10px;width:36px;height:36px;font-size:14px}}
+
+#chronoBadge{position:fixed;top:14px;left:14px;z-index:9500;background:rgba(10,8,6,.85);border:1px solid rgba(139,105,20,.3);color:var(--goldl);font-family:'Courier Prime',monospace;font-size:10.5px;letter-spacing:.13em;padding:7px 12px;border-radius:20px;pointer-events:none;backdrop-filter:blur(3px);box-shadow:0 2px 10px rgba(0,0,0,.3);white-space:nowrap;display:none}
+#chronoBadge.show{display:block}
+@media(max-width:640px){#chronoBadge{top:10px;left:10px;font-size:9px;padding:6px 10px}}
+
+/* WARN = PROPRIETE INTELLECTUELLE */
+#warn{position:fixed;inset:0;background:linear-gradient(135deg,#f8f6f0 0%,#ede5d8 100%);z-index:999999;display:flex;align-items:center;justify-content:center;user-select:none;backdrop-filter:blur(4px)}
+.warn-box{max-width:520px;width:90%;padding:52px 40px 44px;text-align:center;background:#fdfbf7;border-radius:16px;box-shadow:0 20px 60px rgba(0,0,0,.15);border:1px solid rgba(139,105,20,.15)}
+.warn-skull{font-size:34px;margin-bottom:16px;display:block;color:var(--blood);opacity:.85}
+.warn-t{font-size:26px;font-weight:900;color:var(--ink);margin-bottom:6px;letter-spacing:-.3px}
+.warn-s{font-size:13px;letter-spacing:.06em;color:var(--gold);margin-bottom:26px;font-weight:700}
+.warn-txt{font-size:15.5px;color:var(--inkl);line-height:1.85;margin-bottom:24px}
+.warn-txt strong{color:var(--blood)}
+.warn-cookie-txt{font-size:13px;color:var(--sl);line-height:1.7;margin-bottom:26px;text-align:left;background:rgba(139,105,20,.08);border-radius:8px;padding:12px 14px}
+.warn-btns{display:flex;gap:12px;justify-content:center;flex-wrap:wrap;margin-bottom:4px}
+.warn-btn{padding:14px 26px;border-radius:40px;font-family:'Playfair Display',serif;font-size:13.5px;letter-spacing:.04em;font-weight:700;cursor:pointer;transition:transform .2s;touch-action:manipulation}
+.warn-btn:hover{transform:scale(1.04)}
+.warn-btn.accept{border:none;color:#fdfbf7;background:linear-gradient(135deg,var(--gold),var(--goldl));box-shadow:0 8px 24px rgba(139,105,20,.3)}
+.warn-btn.refuse{border:2px solid rgba(90,90,106,.35);color:var(--inkl);background:transparent}
+.warn-leg{margin-top:22px;font-size:11px;letter-spacing:.03em;color:var(--sl)}
+
+/* COVER */
+#cover{display:none;position:fixed;inset:0;z-index:9000;overflow:hidden;
+  background-image:
+    radial-gradient(ellipse at 50% -10%, rgba(122,21,21,.22), transparent 55%),
+    url('cover-ravenscourt.jpg');
+  background-size: auto, cover;
+  background-position: center, center 32%;
+  background-repeat: no-repeat;
+}
+.fog{position:absolute;inset:-10%;background:radial-gradient(ellipse at 30% 70%, rgba(168,196,212,.09), transparent 60%),radial-gradient(ellipse at 70% 30%, rgba(168,196,212,.06), transparent 55%);animation:fogdrift 14s ease-in-out infinite alternate;pointer-events:none}
+@keyframes fogdrift{0%{transform:translateX(-2%) translateY(0)}100%{transform:translateX(2%) translateY(-1%)}}
+.cinner{position:relative;z-index:2;max-width:640px;margin:0 auto;min-height:100vh;display:flex;flex-direction:column;align-items:center;justify-content:center;text-align:center;padding:100px 28px 60px}
+.cbadge{position:absolute;top:38px;left:32px;right:32px;z-index:3;font-size:12px;letter-spacing:.2em;text-transform:uppercase;color:var(--goldl);display:flex;align-items:center;justify-content:center;gap:8px;text-shadow:0 1px 4px rgba(0,0,0,.95),0 0 16px rgba(0,0,0,.8)}
+.cbdot{width:6px;height:6px;border-radius:50%;background:var(--blood);display:inline-block;box-shadow:0 0 8px var(--blood)}
+.cpre{font-size:16px;color:var(--p2);font-style:italic;margin-bottom:2px;text-shadow:0 1px 5px rgba(0,0,0,.95),0 0 18px rgba(0,0,0,.8)}
+.cmain{font-family:'Cinzel Decorative',serif;font-size:clamp(32px,7.5vw,54px);font-weight:900;color:var(--paper);line-height:1.2;margin-bottom:18px;letter-spacing:.02em;text-shadow:0 0 12px rgba(122,21,21,.85),0 0 28px rgba(122,21,21,.5),0 2px 0 #000}
+.cmain .cde{color:var(--bloodl);text-shadow:0 0 14px rgba(168,48,48,.9),0 0 30px rgba(122,21,21,.6)}
+.crule{width:70px;height:2px;background:var(--gold);margin:0 auto 18px}
+.csub{font-size:15px;letter-spacing:.14em;text-transform:uppercase;color:var(--frost);margin-bottom:22px;font-weight:600;text-shadow:0 1px 5px rgba(0,0,0,.95),0 0 18px rgba(0,0,0,.8)}
+.ctag{color:var(--sll);font-size:15.5px;line-height:1.8;margin-bottom:38px;font-style:italic;text-shadow:0 1px 5px rgba(0,0,0,.95),0 0 18px rgba(0,0,0,.85)}
+.cbtn{padding:16px 40px;border-radius:40px;font-family:'Playfair Display',serif;font-size:14px;letter-spacing:.1em;text-transform:uppercase;color:#1a1208;border:none;cursor:pointer;background:linear-gradient(135deg,var(--gold),var(--goldl));font-weight:700;box-shadow:0 8px 26px rgba(139,105,20,.35);touch-action:manipulation}
+.cname-input{width:100%;max-width:300px;padding:12px 18px;margin-bottom:20px;border-radius:30px;border:2px solid rgba(196,168,74,.35);background:rgba(10,8,6,.55);color:var(--paper);font-family:'Crimson Text',serif;font-size:15px;text-align:center;backdrop-filter:blur(2px);touch-action:manipulation}
+.cname-input::placeholder{color:rgba(226,216,191,.55)}
+.cname-input:focus{outline:none;border-color:var(--goldl)}
+
+/* SHELL */
+#shell{display:none;max-width:760px;margin:0 auto;min-height:100vh;position:relative;z-index:5}
+.head{padding:28px 20px 18px;text-align:center;border-bottom:1px solid rgba(196,168,74,.2)}
+.head .eyebrow{font-size:12px;letter-spacing:.22em;text-transform:uppercase;color:var(--goldl);margin-bottom:6px;text-shadow:0 1px 4px rgba(0,0,0,.95),0 0 16px rgba(0,0,0,.8)}
+.head h1{font-family:'Cinzel Decorative',serif;font-size:clamp(20px,5vw,30px);color:var(--paper);font-weight:700;letter-spacing:.03em;text-shadow:0 0 10px rgba(122,21,21,.8),0 0 22px rgba(122,21,21,.45),0 2px 0 #000}
+.head .sub{color:var(--sll);font-size:13.5px;font-style:italic;margin-top:4px;text-shadow:0 1px 5px rgba(0,0,0,.95),0 0 18px rgba(0,0,0,.85)}
+
+/* BOTTOM NAV */
+.bnav{position:fixed;bottom:0;left:0;right:0;z-index:200;background:rgba(9,6,4,.97);border-top:1px solid rgba(168,196,212,.09);padding:0 12px;height:68px;display:flex;align-items:center;justify-content:space-between;gap:6px}
+.naarr{flex-shrink:0;background:none;border:none;cursor:pointer;display:flex;align-items:center;gap:6px;font-family:'Courier Prime',monospace;font-size:10px;letter-spacing:.14em;text-transform:uppercase;color:var(--sll);padding:8px 3px;transition:color .2s;white-space:nowrap;touch-action:manipulation}
+.naarr:hover:not(:disabled),.naarr:active{color:var(--frost)}
+.naarr:disabled{opacity:.2;cursor:default}
+#ntrack{flex:1;max-width:420px;display:flex;align-items:center;position:relative}
+#ntrack::before{content:'';position:absolute;top:13px;left:13px;right:13px;height:1px;background:rgba(168,196,212,.09)}
+.nnode{flex:1;display:flex;flex-direction:column;align-items:center;gap:3px;cursor:pointer;touch-action:manipulation}
+.ndot{width:24px;height:24px;border-radius:50%;display:flex;align-items:center;justify-content:center;border:1.5px solid rgba(168,196,212,.15);background:rgba(34,26,18,.5);font-family:'Courier Prime',monospace;font-size:9px;color:var(--sll);transition:all .2s;position:relative;z-index:1}
+.nnode:hover .ndot{border-color:rgba(168,196,212,.4);color:var(--frost)}
+.nnode.active .ndot{background:var(--blood);border-color:var(--blood);color:var(--p);box-shadow:0 0 9px rgba(122,21,21,.4)}
+.nnode.visited .ndot{background:rgba(196,168,74,.85);border-color:var(--gold);color:#1a1208}
+.nnode.locked .ndot{opacity:.4}
+.nseg{height:1px;flex:.5;background:rgba(168,196,212,.09);position:relative;z-index:0;transition:background .3s;align-self:flex-start;margin-top:12px}
+.nseg.on{background:var(--gold)}
+#nextBtn.locked{opacity:.3;cursor:not-allowed}
+.mjbtn{flex-shrink:0;background:none;border:1px solid rgba(196,168,74,.22);color:var(--goldl);font-family:'Courier Prime',monospace;font-size:10px;letter-spacing:.1em;text-transform:uppercase;padding:9px 10px;cursor:pointer;transition:.2s;touch-action:manipulation}
+.mjbtn:hover{border-color:rgba(196,168,74,.5)}
+@media(max-width:700px){.naarr span{display:none}.bnav{padding:0 6px}#ntrack{max-width:none}}
+
+.panel{display:none;padding:14px 16px 100px;animation:fade .5s ease}
+.panel.show{display:block}
+@keyframes fade{from{opacity:0;transform:translateY(8px)}to{opacity:1;transform:translateY(0)}}
+
+.card{background:var(--paper);color:var(--ink);border-radius:10px;padding:22px 22px 22px 28px;margin-bottom:18px;box-shadow:0 10px 30px rgba(0,0,0,.35);position:relative}
+.card::before{content:'';position:absolute;left:0;top:14px;bottom:14px;width:4px;background:var(--gold);border-radius:2px}
+.stamp{font-family:'Courier Prime',monospace;font-size:10px;letter-spacing:.14em;text-transform:uppercase;color:var(--sl);margin-bottom:10px}
+.dl{font-size:12px;letter-spacing:.14em;text-transform:uppercase;color:var(--gold);font-weight:700;margin-bottom:4px}
+.dt{font-size:21px;font-weight:900;color:var(--bloodd);line-height:1.15;margin-bottom:4px}
+.dt em{font-style:italic;color:var(--blood)}
+.dc{font-size:12px;color:var(--frostd);font-weight:700;margin-bottom:14px}
+
+.ambiance{font-style:italic;color:var(--inkl);line-height:1.7;font-size:15px;padding:10px 14px;background:var(--p2);border-radius:6px;border-left:3px solid var(--gold);margin-bottom:16px}
+
+.cipher-box{background:var(--ink);color:var(--p);font-family:'Courier Prime',monospace;font-size:14px;letter-spacing:.05em;line-height:2;padding:16px 18px;border-radius:8px;margin-bottom:14px;white-space:pre-wrap;text-align:center;border:1px solid rgba(196,168,74,.3)}
+.cipher-table{width:100%;border-collapse:collapse;font-family:'Courier Prime',monospace;font-size:12.5px;margin-bottom:14px}
+.cipher-table td{border:1px solid rgba(90,90,106,.3);padding:5px 8px;text-align:center}
+.cipher-table th{border:1px solid rgba(90,90,106,.3);padding:5px 8px;background:var(--p3);font-size:11px}
+.gridcell{width:2.1em;text-align:center;font-family:'Courier Prime',monospace;font-size:13px;text-transform:uppercase;border:1px solid rgba(90,90,106,.4);border-radius:3px;padding:4px 2px;background:#fff;color:var(--ink);touch-action:manipulation}
+.gridcell:focus{outline:none;border-color:var(--gold);box-shadow:0 0 0 2px rgba(139,105,20,.25)}
+.coaster-mark{display:flex;align-items:center;justify-content:center;width:46px;height:46px;border-radius:50%;border:3px solid rgba(120,80,30,.3);background:radial-gradient(circle, rgba(120,80,30,.07), transparent 72%);font-family:'Courier Prime',monospace;font-size:22px;font-weight:700;color:rgba(90,58,20,.55);transform:rotate(-9deg);margin:2px auto 16px}
+.note{font-size:13px;color:var(--sl);background:rgba(139,105,20,.08);border-radius:6px;padding:10px 12px;margin-bottom:16px}
+.note b{color:var(--gold)}
+
+.check-row{display:flex;flex-direction:column;align-items:center;gap:10px;margin-top:8px}
+.lbl-az{font-size:12.5px;color:var(--sl);text-align:center}
+input.mono{font-family:'Courier Prime',monospace;font-size:16px;letter-spacing:.28em;text-transform:uppercase;text-align:center;padding:12px 16px;border:2px solid var(--ink);background:#fff;width:100%;max-width:320px;border-radius:10px;touch-action:manipulation}
+.btn{padding:11px 20px;border-radius:6px;border:none;font-family:'Playfair Display',serif;font-weight:700;font-size:14px;cursor:pointer;letter-spacing:.03em;touch-action:manipulation}
+.btn-nav{background:var(--ink);color:var(--paper)}
+.feedback{font-size:13px;font-weight:700;min-height:18px;margin-top:4px}
+.feedback.ok{color:#2f6b2f}
+.feedback.ko{color:var(--blood)}
+.hintbtn{display:block;margin:16px auto 0;font-family:'Courier Prime',monospace;font-size:10px;letter-spacing:.14em;text-transform:uppercase;color:var(--gold);background:none;border:1px solid rgba(139,105,20,.4);padding:8px 16px;cursor:pointer;border-radius:20px;touch-action:manipulation}
+
+/* HINT MODAL */
+#hOv{position:fixed;inset:0;z-index:9998;background:rgba(8,6,4,.8);display:none;align-items:center;justify-content:center;padding:20px}
+#hOv .box{background:var(--paper);max-width:440px;width:100%;border-radius:12px;padding:26px}
+#hOv h3{font-size:17px;color:var(--bloodd);margin-bottom:14px}
+.hint-line{font-size:14px;color:var(--inkl);line-height:1.7;margin-bottom:10px;padding-left:12px;border-left:2px solid var(--gold)}
+
+/* MJ PANEL */
+#mjp{position:fixed;inset:0;z-index:9998;background:rgba(8,6,4,.85);display:none;align-items:flex-start;justify-content:center;padding:30px 16px;overflow-y:auto}
+#mjp .box{background:var(--paper);max-width:640px;width:100%;border-radius:12px;padding:28px}
+#mjp h3{font-size:19px;color:var(--bloodd);margin-bottom:16px;text-align:center}
+#mPm input{width:100%;padding:12px;border:2px solid var(--ink);border-radius:8px;font-family:'Courier Prime',monospace;font-size:15px;text-align:center;margin-bottom:12px;touch-action:manipulation}
+#mjErr{color:var(--blood);font-size:13px;text-align:center;display:none;margin-top:6px}
+.sol{font-size:13.5px;color:var(--inkl);padding:9px 0;border-bottom:1px dashed rgba(90,90,106,.25)}
+.sol b{color:var(--bloodd)}
+.sol .mjh{font-size:12px;color:var(--sl);margin-top:4px;padding-left:10px}
+
+/* FINAL / FELIC */
+#finalPage{text-align:center}
+#felicPage{display:none;position:fixed;inset:0;z-index:50;overflow-y:auto;text-align:center;padding:80px 24px;box-sizing:border-box;
+  background-color:#05060a;
+  background-image:url('legiste-reveal.jpg');
+  background-size:cover;background-position:center center;background-repeat:no-repeat}
+.felic-badge{display:inline-block;font-family:'Playfair Display',serif;font-size:13px;font-weight:700;letter-spacing:.14em;text-transform:uppercase;color:var(--goldl);background:rgba(10,8,6,.6);border:1px solid rgba(196,168,74,.5);border-radius:30px;padding:9px 24px;margin-bottom:22px;text-shadow:0 1px 4px rgba(0,0,0,.9)}
+#felicPage h2{color:var(--paper);font-size:26px;margin-bottom:14px;text-shadow:0 1px 4px rgba(0,0,0,.95),0 0 20px rgba(122,21,21,.85)}
+#felicPage p{color:var(--sll);font-size:15px;line-height:1.8;max-width:480px;margin:0 auto;text-shadow:0 1px 5px rgba(0,0,0,.95),0 0 18px rgba(0,0,0,.85)}
+.felic-time{font-family:'Courier Prime',monospace;font-size:12px;letter-spacing:.12em;color:var(--goldl);text-transform:uppercase;margin-top:16px;text-shadow:0 1px 4px rgba(0,0,0,.95)}
+
+/* IMPRESSION INTERDITE */
+@media print{
+  html,body{background:#fff !important}
+  body *{display:none !important;visibility:hidden !important}
+  body::before{
+    content:"Ce document est protégé et ne peut pas être imprimé. / This document is protected and cannot be printed. / Este documento está protegido y no se puede imprimir.";
+    display:block !important;visibility:visible !important;
+    position:fixed;top:0;left:0;right:0;padding:80px 40px;text-align:center;
+    font-family:Arial,sans-serif;font-size:16px;line-height:1.6;color:#000;background:#fff;
+  }
+}
+</style>
+</head>
+<body>
+<!-- Note RGPD : pas de fallback GTM <noscript> ici volontairement — le jeu est
+     100% dépendant de JavaScript (sans JS, rien n'est interactif) et un pixel de
+     suivi noscript s'exécuterait donc hors de tout consentement possible. -->
+
+<!-- WARN = PROPRIETE INTELLECTUELLE -->
+<div id="warn">
+  <div class="warn-box">
+    <div class="warn-lang-selector">
+      <button class="lang-btn lang-active" onclick="setLang('fr')" data-lang="fr" title="Français">
+        <svg viewBox="0 0 3 2" xmlns="http://www.w3.org/2000/svg" preserveAspectRatio="xMidYMid slice"><rect width="1" height="2" x="0" fill="#0055A4"/><rect width="1" height="2" x="1" fill="#FFFFFF"/><rect width="1" height="2" x="2" fill="#EF4135"/></svg>
+      </button>
+      <button class="lang-btn" onclick="setLang('es')" data-lang="es" title="Español">
+        <svg viewBox="0 0 3 2" xmlns="http://www.w3.org/2000/svg" preserveAspectRatio="xMidYMid slice"><rect width="3" height="2" y="0" fill="#AA151B"/><rect width="3" height="1" y="0.5" fill="#F1BF00"/></svg>
+      </button>
+      <button class="lang-btn" onclick="setLang('en')" data-lang="en" title="English">
+        <svg viewBox="0 0 60 30" xmlns="http://www.w3.org/2000/svg" preserveAspectRatio="xMidYMid slice"><rect width="60" height="30" fill="#012169"/><path d="M0,0 L25,15 M60,0 L35,15 M0,30 L25,15 M60,30 L35,15" stroke="#C8102E" stroke-width="4"/><rect x="25" width="10" height="30" fill="#FFF"/><rect y="10" width="60" height="10" fill="#FFF"/><rect x="27" width="6" height="30" fill="#C8102E"/><rect y="12" width="60" height="6" fill="#C8102E"/></svg>
+      </button>
+    </div>
+    <span class="warn-skull">◆</span>
+    <div class="warn-t" data-i18n="warn_title">Propriété Intellectuelle</div>
+    <div class="warn-s" data-i18n="warn_project">L'Ombre du Brouillard — © 2026</div>
+    <div class="warn-txt" data-i18n="warn_content">Ce jeu est une <strong>création originale protégée par les droits d'auteur</strong>.<br>Toute reproduction, redistribution ou revente est <strong>strictement interdite</strong> sans autorisation écrite.</div>
+    <div class="warn-cookie-txt" data-i18n="warn_cookies">Ce site utilise le stockage local du navigateur, strictement nécessaire à son fonctionnement (langue choisie, progression de l'enquête) : celui-ci reste toujours actif. Il utilise aussi des cookies de mesure d'audience (Google Tag Manager), déposés uniquement si vous cliquez sur « Accepter ». Aucune donnée n'est utilisée à des fins publicitaires. Vous pouvez changer d'avis à tout moment via le bouton 🍪 en bas de l'écran.</div>
+    <div class="warn-btns">
+      <button class="warn-btn accept" type="button" onclick="handleConsent(true)" data-i18n="warn_accept">Accepter</button>
+      <button class="warn-btn refuse" type="button" onclick="handleConsent(false)" data-i18n="warn_refuse">Refuser</button>
+    </div>
+    <div class="warn-leg" data-i18n="warn_legal">Usage strictement personnel · Non transférable · Non imprimable à des fins commerciales</div>
+  </div>
+</div>
+
+<div class="float-lang-selector">
+  <button class="lang-btn" onclick="setLang('fr')" data-lang="fr" title="Français">
+    <svg viewBox="0 0 3 2" xmlns="http://www.w3.org/2000/svg" preserveAspectRatio="xMidYMid slice"><rect width="1" height="2" x="0" fill="#0055A4"/><rect width="1" height="2" x="1" fill="#FFFFFF"/><rect width="1" height="2" x="2" fill="#EF4135"/></svg>
+  </button>
+  <button class="lang-btn" onclick="setLang('es')" data-lang="es" title="Español">
+    <svg viewBox="0 0 3 2" xmlns="http://www.w3.org/2000/svg" preserveAspectRatio="xMidYMid slice"><rect width="3" height="2" y="0" fill="#AA151B"/><rect width="3" height="1" y="0.5" fill="#F1BF00"/></svg>
+  </button>
+  <button class="lang-btn" onclick="setLang('en')" data-lang="en" title="English">
+    <svg viewBox="0 0 60 30" xmlns="http://www.w3.org/2000/svg" preserveAspectRatio="xMidYMid slice"><rect width="60" height="30" fill="#012169"/><path d="M0,0 L25,15 M60,0 L35,15 M0,30 L25,15 M60,30 L35,15" stroke="#C8102E" stroke-width="4"/><rect x="25" width="10" height="30" fill="#FFF"/><rect y="10" width="60" height="10" fill="#FFF"/><rect x="27" width="6" height="30" fill="#C8102E"/><rect y="12" width="60" height="6" fill="#C8102E"/></svg>
+  </button>
+</div>
+
+<button id="musicToggle" type="button" title="Musique">🔊</button>
+<div id="chronoBadge">00:00</div>
+<audio id="bgMusic" loop preload="none">
+  <source src="ambiance-ravenscourt.mp3" type="audio/mpeg">
+</audio>
+
+<!-- COVER -->
+<div id="cover">
+  <div class="fog"></div>
+  <div class="cinner">
+    <div class="cbadge"><span class="cbdot"></span><span data-i18n="cov_badge">Ravenscourt · Automne 1901 · Dossier d'Enquête</span></div>
+    <div class="cpre" data-i18n="cov_pre">Ravenscourt, 1901</div>
+    <div class="cmain" data-i18n="cov_main"><span class="cde">L'Ombre</span> du Brouillard</div>
+    <div class="crule"></div>
+    <div class="csub" data-i18n="cov_sub">Enquête Victorienne en 14 Actes</div>
+    <div class="ctag" data-i18n="cov_tag">Le port de Ravenscourt s'endort chaque soir sous un brouillard trop épais pour être honnête.<br>Quelque chose y chasse depuis quatorze nuits.<br>La presse l'a surnommé l'Ombre du Brouillard.<br>Vous avez été appelé pour découvrir qui il est, avant la quinzième victime.</div>
+    <input type="text" id="playerNameInput" class="cname-input" maxlength="30" data-i18n-ph="cov_name_ph">
+    <button class="cbtn" id="coverBtn" onclick="startChrono();document.getElementById('cover').style.display='none';document.getElementById('shell').style.display='block';" data-i18n="cov_btn">▶ &nbsp; Ouvrir le Dossier</button>
+  </div>
+</div>
+
+<!-- SHELL -->
+<div id="shell">
+  <div class="head">
+    <div class="eyebrow" data-i18n="header_eyebrow">Livret Interactif du Joueur</div>
+    <h1 data-i18n="header_title">L'Ombre du Brouillard</h1>
+    <div class="sub" data-i18n="header_sub">« Quatorze nuits de brouillard. Un seul nom au bout. »</div>
+  </div>
+  <div class="panel" data-day="1">
+    <div class="card">
+      <div class="stamp" data-i18n="d1_stamp">Dossier d'Enquête — Page 1 · Nuit 1</div>
+      <div class="dl" data-i18n="d1_dl">Acte 1 · Le Quai</div>
+      <div class="dt" data-i18n="d1_dt">La Première<br><em>Disparition</em></div>
+      <div class="dc" data-i18n="d1_dc">Chiffrement : Rail Fence (2 rangs)</div>
+      <div class="ambiance" data-i18n="d1_amb">Un docker manque à l'appel depuis l'aube. On ne retrouve que sa lanterne, posée bien droite sur une caisse, comme une offrande. Un message griffonné à la craie sur le bois, en zigzag, semble avoir été tracé à la hâte.</div>
+      <div class="cipher-box">B O I L R R U L A D</div>
+      <div class="note" data-i18n="d1_note">Note du Gardien : le message a été écrit en suivant deux rangées en zigzag (une lettre en haut, une en bas, en alternance), puis les deux rangées ont été recopiées l'une après l'autre. Séparez donc les 10 lettres en deux groupes de 5 : les 5 premières forment la rangée du haut, les 5 suivantes la rangée du bas. Recombinez-les ensuite en zigzag (haut, bas, haut, bas…) pour lire le mot d'origine (10 lettres).</div>
+      <div class="check-row">
+        <div class="lbl-az" data-i18n="lbl_az">Entrez le mot découvert grâce à l'énigme :</div>
+        <input class="mono" id="ans1" maxlength="14" placeholder="_ _ _ _ _ _ _ _ _ _" onkeydown="if(event.key==='Enter'){event.preventDefault();if(isSolved(1))go(1);else checkAnswer(1);}">
+        <button class="btn btn-nav" onclick="checkAnswer(1)" data-i18n="lbl_validate">Valider →</button>
+        <div class="feedback" id="fb1"></div>
+      </div>
+      <button class="hintbtn" onclick="openHint(1)" data-i18n="lbl_hintbtn">🔑 Demander un indice au Maître du Jeu</button>
+    </div>
+  </div>
+
+  <div class="panel" data-day="2">
+    <div class="card">
+      <div class="stamp" data-i18n="d2_stamp">Dossier d'Enquête — Page 2 · Nuit 2</div>
+      <div class="dl" data-i18n="d2_dl">Acte 2 · La Ruelle des Teinturiers</div>
+      <div class="dt" data-i18n="d2_dt">L'Objet<br><em>Oublié</em></div>
+      <div class="dc" data-i18n="d2_dc">Chiffrement : Carré de Polybe (grille à reconstituer)</div>
+      <div class="ambiance" data-i18n="d2_amb">Sous un porche, un vieil objet de verre a roulé jusqu'au caniveau. Gravés dans le métal de son socle, une série de nombres à deux chiffres — et, tout autour, les contours d'une grille alphabétique dont seules trois lettres restent lisibles : A, I/J et Z.</div>
+      <table class="cipher-table">
+        <tr><th></th><th>1</th><th>2</th><th>3</th><th>4</th><th>5</th></tr>
+        <tr><th>1</th><td>A</td><td><input class="gridcell" maxlength="1" oninput="gridFmt(this)"></td><td><input class="gridcell" maxlength="1" oninput="gridFmt(this)"></td><td><input class="gridcell" maxlength="1" oninput="gridFmt(this)"></td><td><input class="gridcell" maxlength="1" oninput="gridFmt(this)"></td></tr>
+        <tr><th>2</th><td><input class="gridcell" maxlength="1" oninput="gridFmt(this)"></td><td><input class="gridcell" maxlength="1" oninput="gridFmt(this)"></td><td><input class="gridcell" maxlength="1" oninput="gridFmt(this)"></td><td>I/J</td><td><input class="gridcell" maxlength="1" oninput="gridFmt(this)"></td></tr>
+        <tr><th>3</th><td><input class="gridcell" maxlength="1" oninput="gridFmt(this)"></td><td><input class="gridcell" maxlength="1" oninput="gridFmt(this)"></td><td><input class="gridcell" maxlength="1" oninput="gridFmt(this)"></td><td><input class="gridcell" maxlength="1" oninput="gridFmt(this)"></td><td><input class="gridcell" maxlength="1" oninput="gridFmt(this)"></td></tr>
+        <tr><th>4</th><td><input class="gridcell" maxlength="1" oninput="gridFmt(this)"></td><td><input class="gridcell" maxlength="1" oninput="gridFmt(this)"></td><td><input class="gridcell" maxlength="1" oninput="gridFmt(this)"></td><td><input class="gridcell" maxlength="1" oninput="gridFmt(this)"></td><td><input class="gridcell" maxlength="1" oninput="gridFmt(this)"></td></tr>
+        <tr><th>5</th><td><input class="gridcell" maxlength="1" oninput="gridFmt(this)"></td><td><input class="gridcell" maxlength="1" oninput="gridFmt(this)"></td><td><input class="gridcell" maxlength="1" oninput="gridFmt(this)"></td><td><input class="gridcell" maxlength="1" oninput="gridFmt(this)"></td><td>Z</td></tr>
+      </table>
+      <div class="cipher-box">31 · 11 · 33 · 44 · 15 · 42 · 33 · 15</div>
+      <div class="check-row">
+        <div class="lbl-az" data-i18n="lbl_az">Entrez le mot découvert grâce à l'énigme :</div>
+        <input class="mono" id="ans2" maxlength="14" placeholder="_ _ _ _ _ _ _ _" onkeydown="if(event.key==='Enter'){event.preventDefault();if(isSolved(2))go(1);else checkAnswer(2);}">
+        <button class="btn btn-nav" onclick="checkAnswer(2)" data-i18n="lbl_validate">Valider →</button>
+        <div class="feedback" id="fb2"></div>
+      </div>
+      <button class="hintbtn" onclick="openHint(2)" data-i18n="lbl_hintbtn">🔑 Demander un indice au Maître du Jeu</button>
+    </div>
+  </div>
+
+  <div class="panel" data-day="3">
+    <div class="card">
+      <div class="stamp" data-i18n="d3_stamp">Dossier d'Enquête — Page 3 · Nuit 3</div>
+      <div class="dl" data-i18n="d3_dl">Acte 3 · L'Atelier</div>
+      <div class="dt" data-i18n="d3_dt">Le Journal<br>du <em>Disparu</em></div>
+      <div class="dc" data-i18n="d3_dc">Chiffrement : Code du Livre</div>
+      <div class="ambiance" data-i18n="d3_amb">Le journal intime d'un homme disparu traîne encore sur son établi. Une page semble avoir servi de clé secrète.</div>
+      <div class="cipher-box mono" style="text-align:left;line-height:1.9">1. Toujours ces mains gercées par l'hiver et le froid mordant.
+2. Il travaille en silence, ignorant les cris qui montent des ruelles.
+3. Une odeur de laine mouillée envahit son atelier, glacial.
+4. Rien ne sert de courir, disait-il, le temps efface tout.</div>
+      <div class="cipher-box">1.1 — 3.8 — 2.1 — 3.4 — 1.8 — 1.7 — 3.1 — 4.1</div>
+      <div class="check-row">
+        <div class="lbl-az" data-i18n="lbl_az">Entrez le mot découvert grâce à l'énigme :</div>
+        <input class="mono" id="ans3" maxlength="14" placeholder="_ _ _ _ _ _ _ _" onkeydown="if(event.key==='Enter'){event.preventDefault();if(isSolved(3))go(1);else checkAnswer(3);}">
+        <button class="btn btn-nav" onclick="checkAnswer(3)" data-i18n="lbl_validate">Valider →</button>
+        <div class="feedback" id="fb3"></div>
+      </div>
+      <button class="hintbtn" onclick="openHint(3)" data-i18n="lbl_hintbtn">🔑 Demander un indice au Maître du Jeu</button>
+    </div>
+  </div>
+  <div class="panel" data-day="4">
+    <div class="card">
+      <div class="stamp" data-i18n="d4_stamp">Dossier d'Enquête — Page 4 · Nuit 4</div>
+      <div class="dl" data-i18n="d4_dl">Acte 4 · Le Cimetière des Oiseaux</div>
+      <div class="dt" data-i18n="d4_dt">Le Télégramme<br><em>Camouflé</em></div>
+      <div class="dc" data-i18n="d4_dc">Chiffrement : Bacon (bimodal)</div>
+      <div class="ambiance" data-i18n="d4_amb">Un télégramme anonyme est parvenu au bureau du journal local. Rien d'étrange à première vue — sauf l'alternance bizarre entre minuscules et majuscules, comme un code caché dans la typographie même du message.</div>
+      <table class="cipher-table">
+        <tr><th>A</th><td>aaaaa</td><th>H</th><td>aabbb</td><th>O</th><td>abbab</td><th>V/U</th><td>baabb</td></tr>
+        <tr><th>B</th><td>aaaab</td><th>I/J</th><td>abaaa</td><th>P</th><td>abbba</td><th>W</th><td>babaa</td></tr>
+        <tr><th>C</th><td>aaaba</td><th>K</th><td>abaab</td><th>Q</th><td>abbbb</td><th>X</th><td>babab</td></tr>
+        <tr><th>D</th><td>aaabb</td><th>L</th><td>ababa</td><th>R</th><td>baaaa</td><th>Y</th><td>babba</td></tr>
+        <tr><th>E</th><td>aabaa</td><th>M</th><td>ababb</td><th>S</th><td>baaab</td><th>Z</th><td>babbb</td></tr>
+        <tr><th>F</th><td>aabab</td><th>N</th><td>abbaa</td><th>T</th><td>baaba</td><td colspan="2"></td></tr>
+      </table>
+      <div class="cipher-box" style="font-family:'Crimson Text',serif;font-size:16px;letter-spacing:0">un vIeuX CoRBeau noir vOle Tres bas cE soIR</div>
+      <div class="note" data-i18n="d4_note">Note du Gardien : chaque lettre minuscule vaut "a", chaque lettre en MAJUSCULE vaut "b". Regroupez les lettres du message par paquets de 5 pour former des codes bacon, puis retrouvez le mot (7 lettres). Attention : dans le tableau classique, I/J partagent le même code, tout comme U/V — un seul des deux donnera un vrai mot français.</div>
+      <div class="check-row">
+        <div class="lbl-az" data-i18n="lbl_az">Entrez le mot découvert grâce à l'énigme :</div>
+        <input class="mono" id="ans4" maxlength="14" placeholder="_ _ _ _ _ _ _" onkeydown="if(event.key==='Enter'){event.preventDefault();if(isSolved(4))go(1);else checkAnswer(4);}">
+        <button class="btn btn-nav" onclick="checkAnswer(4)" data-i18n="lbl_validate">Valider →</button>
+        <div class="feedback" id="fb4"></div>
+      </div>
+      <button class="hintbtn" onclick="openHint(4)" data-i18n="lbl_hintbtn">🔑 Demander un indice au Maître du Jeu</button>
+    </div>
+  </div>
+
+  <div class="panel" data-day="5">
+    <div class="card">
+      <div class="stamp" data-i18n="d5_stamp">Dossier d'Enquête — Page 5 · Nuit 5</div>
+      <div class="dl" data-i18n="d5_dl">Acte 5 · La Taverne du Marin Noyé</div>
+      <div class="dt" data-i18n="d5_dt">Le Carnet<br>du <em>Barman</em></div>
+      <div class="dc" data-i18n="d5_dc">Chiffrement : Playfair</div>
+      <div class="ambiance" data-i18n="d5_amb">Le barman jure avoir servi la dernière victime son ultime verre. Sur une page de son carnet de commandes, un mot codé par paires de lettres, avec en en-tête un seul indice : le nom du port lui-même comme clé.</div>
+      <div class="note" data-i18n="d5_note1">Grille Playfair construite avec la clé RAVENSCOURT (sans lettres répétées, I et J confondus, complétée par le reste de l'alphabet) :</div>
+      <table class="cipher-table">
+        <tr><td>R</td><td>A</td><td>V</td><td>E</td><td>N</td></tr>
+        <tr><td>S</td><td>C</td><td>O</td><td>U</td><td>T</td></tr>
+        <tr><td>B</td><td>D</td><td>F</td><td>G</td><td>H</td></tr>
+        <tr><td>I</td><td>K</td><td>L</td><td>M</td><td>P</td></tr>
+        <tr><td>Q</td><td>W</td><td>X</td><td>Y</td><td>Z</td></tr>
+      </table>
+      <div class="cipher-box">RD BQ TH GN</div>
+      <div class="note" data-i18n="d5_note2">Note du Gardien : déchiffrez par paires selon les règles du Playfair — même ligne → décalez à gauche ; même colonne → décalez vers le haut ; sinon (rectangle) → chaque lettre garde sa ligne mais prend la colonne de l'autre. Exemples avec cette grille (lettres différentes du message) : OG → UF (rectangle) ; CD → AC (même colonne). Appliquez la même logique aux 4 paires du message pour retrouver le mot (8 lettres).</div>
+      <div class="check-row">
+        <div class="lbl-az" data-i18n="lbl_az">Entrez le mot découvert grâce à l'énigme :</div>
+        <input class="mono" id="ans5" maxlength="14" placeholder="_ _ _ _ _ _ _ _" onkeydown="if(event.key==='Enter'){event.preventDefault();if(isSolved(5))go(1);else checkAnswer(5);}">
+        <button class="btn btn-nav" onclick="checkAnswer(5)" data-i18n="lbl_validate">Valider →</button>
+        <div class="feedback" id="fb5"></div>
+      </div>
+      <button class="hintbtn" onclick="openHint(5)" data-i18n="lbl_hintbtn">🔑 Demander un indice au Maître du Jeu</button>
+    </div>
+  </div>
+
+  <div class="panel" data-day="6">
+    <div class="card">
+      <div class="stamp" data-i18n="d6_stamp">Dossier d'Enquête — Page 6 · Nuit 6</div>
+      <div class="dl" data-i18n="d6_dl">Acte 6 · Le Ponton Sud</div>
+      <div class="dt" data-i18n="d6_dt">Le Signal<br>des <em>Débardeurs</em></div>
+      <div class="dc" data-i18n="d6_dc">Chiffrement : Pavillons de Signalisation (légende à moitié effacée)</div>
+      <div class="ambiance" data-i18n="d6_amb">Un carnet de signaleur du port est retrouvé trempé sur le ponton. Les dockers utilisent un vieux code de pavillons, chaque lettre étant représentée par deux positions d'aiguilles d'horloge — mais l'humidité a effacé la moitié de la légende.</div>
+      <table class="cipher-table">
+        <tr><th>Lettre</th><td>A</td><td>C</td><td>D</td><td>E</td><td>R</td><td>V</td></tr>
+        <tr><th>Positions</th><td>12h-06h</td><td>?</td><td>01h-07h</td><td>?</td><td>05h-11h</td><td>?</td></tr>
+      </table>
+      <div class="cipher-box">03h-09h · 12h-06h · 01h-07h · 12h-06h · 04h-10h · 05h-11h · 02h-08h</div>
+      <div class="note" data-i18n="d6_note">Note du Gardien : l'humidité a effacé trois entrées de la légende (C, E, V). Repérez où apparaissent dans le message les codes déjà connus (A, D, R), puis déduisez les trois lettres manquantes pour compléter un mot de 7 lettres que l'on redoute de trouver sur les quais après une nuit de brouillard.</div>
+      <div class="check-row">
+        <div class="lbl-az" data-i18n="lbl_az">Entrez le mot découvert grâce à l'énigme :</div>
+        <input class="mono" id="ans6" maxlength="14" placeholder="_ _ _ _ _ _ _" onkeydown="if(event.key==='Enter'){event.preventDefault();if(isSolved(6))go(1);else checkAnswer(6);}">
+        <button class="btn btn-nav" onclick="checkAnswer(6)" data-i18n="lbl_validate">Valider →</button>
+        <div class="feedback" id="fb6"></div>
+      </div>
+      <button class="hintbtn" onclick="openHint(6)" data-i18n="lbl_hintbtn">🔑 Demander un indice au Maître du Jeu</button>
+    </div>
+  </div>
+  <div class="panel" data-day="7">
+    <div class="card">
+      <div class="stamp" data-i18n="d7_stamp">Dossier d'Enquête — Page 7 · Nuit 7</div>
+      <div class="dl" data-i18n="d7_dl">Acte 7 · La Cellule Vide</div>
+      <div class="dt" data-i18n="d7_dt">Les Coups<br>dans le <em>Mur</em></div>
+      <div class="dc" data-i18n="d7_dc">Chiffrement : Coups Comptés (A=1, Z=26)</div>
+      <div class="ambiance" data-i18n="d7_amb">Le gardien de nuit du dépôt jure avoir entendu des coups frappés contre la tôle, toute une nuit durant. Il en a noté le rythme, groupe par groupe, sous forme de nombres griffonnés à la hâte.</div>
+      <div class="cipher-box">18 · 21 · 5 · 12 · 12 · 5</div>
+      <div class="note" data-i18n="d7_note">Note du Gardien : pas de grille ici — chaque nombre correspond directement à la position de la lettre dans l'alphabet. Retrouvez le mot (6 lettres).</div>
+      <div class="check-row">
+        <div class="lbl-az" data-i18n="lbl_az">Entrez le mot découvert grâce à l'énigme :</div>
+        <input class="mono" id="ans7" maxlength="14" placeholder="_ _ _ _ _ _" onkeydown="if(event.key==='Enter'){event.preventDefault();if(isSolved(7))go(1);else checkAnswer(7);}">
+        <button class="btn btn-nav" onclick="checkAnswer(7)" data-i18n="lbl_validate">Valider →</button>
+        <div class="feedback" id="fb7"></div>
+      </div>
+      <button class="hintbtn" onclick="openHint(7)" data-i18n="lbl_hintbtn">🔑 Demander un indice au Maître du Jeu</button>
+    </div>
+  </div>
+
+  <div class="panel" data-day="8">
+    <div class="card">
+      <div class="stamp" data-i18n="d8_stamp">Dossier d'Enquête — Page 8 · Nuit 8</div>
+      <div class="dl" data-i18n="d8_dl">Acte 8 · Le Cabinet du Médecin</div>
+      <div class="dt" data-i18n="d8_dt">Le Carnet<br><em>Alchimique</em></div>
+      <div class="dc" data-i18n="d8_dc">Chiffrement : Symboles Alchimiques (légende incomplète)</div>
+      <div class="ambiance" data-i18n="d8_amb">Le cabinet d'un médecin du quartier a été fouillé de fond en comble. Seul un vieux carnet de notes, couvert de symboles planétaires hérités de l'alchimie, semble avoir un sens — mais une tache d'encre a rendu deux symboles illisibles dans la légende.</div>
+      <table class="cipher-table">
+        <tr><th>☉ Soleil</th><td>A</td><th>☽ Lune</th><td>L</td></tr>
+        <tr><th>♀ Vénus</th><td>P</td><th>♄ Saturne</th><td>S</td></tr>
+      </table>
+      <div class="cipher-box" style="font-size:26px">♄ ☿ ☉ ☽ ♀ ♂ ☽</div>
+      <div class="note" data-i18n="d8_note">Note du Gardien : la tache a effacé ☿ et ♂ de la légende. Une autre page du carnet, consacrée aux anesthésiques du cabinet, précise : « ☿, comme le premier remède que j'ai testé : le CHLOROFORME » et « ♂, comme celui qui l'a remplacé : l'ÉTHER ». Formez le mot (7 lettres) — un instrument que l'on retrouverait plutôt sur une table d'anatomie.</div>
+      <div class="check-row">
+        <div class="lbl-az" data-i18n="lbl_az">Entrez le mot découvert grâce à l'énigme :</div>
+        <input class="mono" id="ans8" maxlength="14" placeholder="_ _ _ _ _ _ _" onkeydown="if(event.key==='Enter'){event.preventDefault();if(isSolved(8))go(1);else checkAnswer(8);}">
+        <button class="btn btn-nav" onclick="checkAnswer(8)" data-i18n="lbl_validate">Valider →</button>
+        <div class="feedback" id="fb8"></div>
+      </div>
+      <button class="hintbtn" onclick="openHint(8)" data-i18n="lbl_hintbtn">🔑 Demander un indice au Maître du Jeu</button>
+    </div>
+  </div>
+
+  <div class="panel" data-day="9">
+    <div class="card">
+      <div class="stamp" data-i18n="d9_stamp">Dossier d'Enquête — Page 9 · Nuit 9</div>
+      <div class="dl" data-i18n="d9_dl">Acte 9 · La Salle Commune</div>
+      <div class="dt" data-i18n="d9_dt">La Liste<br>des <em>Habitués</em></div>
+      <div class="dc" data-i18n="d9_dc">Chiffrement : Lettre Cachée dans les Mots</div>
+      <div class="ambiance" data-i18n="d9_amb">Une liste de sept mots griffonnés à la hâte sur un sous-bock est retrouvée sous une table. À première vue, une liste sans queue ni tête — sauf si l'on regarde toujours au même endroit.</div>
+      <div class="cipher-box mono">ARTISAN &nbsp;·&nbsp; BRASSERIE &nbsp;·&nbsp; SEVERE<br>CIERGE &nbsp;·&nbsp; PARDON &nbsp;·&nbsp; MANOIR &nbsp;·&nbsp; PIERRE</div>
+      <div class="coaster-mark">3</div>
+      <div class="note" data-i18n="d9_note">Note du Gardien : le mot final compte 7 lettres.</div>
+      <div class="check-row">
+        <div class="lbl-az" data-i18n="lbl_az">Entrez le mot découvert grâce à l'énigme :</div>
+        <input class="mono" id="ans9" maxlength="14" placeholder="_ _ _ _ _ _ _" onkeydown="if(event.key==='Enter'){event.preventDefault();if(isSolved(9))go(1);else checkAnswer(9);}">
+        <button class="btn btn-nav" onclick="checkAnswer(9)" data-i18n="lbl_validate">Valider →</button>
+        <div class="feedback" id="fb9"></div>
+      </div>
+      <button class="hintbtn" onclick="openHint(9)" data-i18n="lbl_hintbtn">🔑 Demander un indice au Maître du Jeu</button>
+    </div>
+  </div>
+  <div class="panel" data-day="10">
+    <div class="card">
+      <div class="stamp" data-i18n="d10_stamp">Dossier d'Enquête — Page 10 · Nuit 10</div>
+      <div class="dl" data-i18n="d10_dl">Acte 10 · Le Théâtre Abandonné</div>
+      <div class="dt" data-i18n="d10_dt">L'Écriture<br>du <em>Miroir</em></div>
+      <div class="dc" data-i18n="d10_dc">Chiffrement : Écriture Spéculaire</div>
+      <div class="ambiance" data-i18n="d10_amb">Dans une loge d'artiste poussiéreuse, une phrase est tracée au rouge à lèvres sur le miroir de la coiffeuse — mais elle ne se lit pas normalement. Il faut la lire à l'envers, comme le ferait le miroir lui-même.</div>
+      <div class="cipher-box" style="font-size:20px">TIR LI EUQSAM EL SUOS</div>
+      <div class="note" data-i18n="d10_note">Note du Gardien : lisez le message lettre par lettre en partant de la fin (comme dans un miroir) pour reconstituer la phrase complète, et isolez-en le mot central (6 lettres).</div>
+      <div class="check-row">
+        <div class="lbl-az" data-i18n="lbl_az">Entrez le mot découvert grâce à l'énigme :</div>
+        <input class="mono" id="ans10" maxlength="14" placeholder="_ _ _ _ _ _" onkeydown="if(event.key==='Enter'){event.preventDefault();if(isSolved(10))go(1);else checkAnswer(10);}">
+        <button class="btn btn-nav" onclick="checkAnswer(10)" data-i18n="lbl_validate">Valider →</button>
+        <div class="feedback" id="fb10"></div>
+      </div>
+      <button class="hintbtn" onclick="openHint(10)" data-i18n="lbl_hintbtn">🔑 Demander un indice au Maître du Jeu</button>
+    </div>
+  </div>
+
+  <div class="panel" data-day="11">
+    <div class="card">
+      <div class="stamp" data-i18n="d11_stamp">Dossier d'Enquête — Page 11 · Nuit 11</div>
+      <div class="dl" data-i18n="d11_dl">Acte 11 · Le Commissariat</div>
+      <div class="dt" data-i18n="d11_dt">Le Témoignage<br>en <em>Vers</em></div>
+      <div class="dc" data-i18n="d11_dc">Chiffrement : Acrostiche</div>
+      <div class="ambiance" data-i18n="d11_amb">Une unique témoin accepte de parler — mais uniquement en vers, par superstition. Son témoignage, couché par écrit, semble cacher quelque chose entre les lignes.</div>
+      <div class="cipher-box mono" style="text-align:left;line-height:2">Toute la nuit, j'ai guetté son ombre.
+Elle passait sans un bruit, le pas léger.
+Ma lanterne vacillait dans le vent glacé.
+Où allait-elle, nul ne le sut jamais.
+Il faisait si froid que mon souffle se figeait.
+Nul ne me croira, pourtant j'ai tout vu.</div>
+      <div class="note" data-i18n="d11_note">Note du Gardien : le mot compte 6 lettres.</div>
+      <div class="check-row">
+        <div class="lbl-az" data-i18n="lbl_az">Entrez le mot découvert grâce à l'énigme :</div>
+        <input class="mono" id="ans11" maxlength="14" placeholder="_ _ _ _ _ _" onkeydown="if(event.key==='Enter'){event.preventDefault();if(isSolved(11))go(1);else checkAnswer(11);}">
+        <button class="btn btn-nav" onclick="checkAnswer(11)" data-i18n="lbl_validate">Valider →</button>
+        <div class="feedback" id="fb11"></div>
+      </div>
+      <button class="hintbtn" onclick="openHint(11)" data-i18n="lbl_hintbtn">🔑 Demander un indice au Maître du Jeu</button>
+    </div>
+  </div>
+
+  <div class="panel" data-day="12">
+    <div class="card">
+      <div class="stamp" data-i18n="d12_stamp">Dossier d'Enquête — Page 12 · Nuit 12</div>
+      <div class="dl" data-i18n="d12_dl">Acte 12 · Le Manoir Ashcombe</div>
+      <div class="dt" data-i18n="d12_dt">Les Horloges<br><em>Arrêtées</em></div>
+      <div class="dc" data-i18n="d12_dc">Chiffrement : Cadran d'Horloge (suite à construire)</div>
+      <div class="ambiance" data-i18n="d12_amb">Dans le manoir du défunt notable Ashcombe, sept horloges se sont arrêtées à des heures différentes, toutes le même soir. Un ancien domestique y voit un code, mais aucun tableau n'a été retrouvé — seulement une règle, griffonnée de mémoire : en partant de 1h00, qui vaudrait « A », chaque demi-heure suivante avancerait d'une lettre dans l'alphabet.</div>
+      <div class="cipher-box">4h30 · 8h00 · 9h30 · 6h30 · 8h00 · 4h00 · 3h00</div>
+      <div class="note" data-i18n="d12_note">Note du Gardien : poursuivez ce comptage, demi-heure par demi-heure depuis 1h00 = A, jusqu'à chacune des sept horloges, pour former le mot (7 lettres).</div>
+      <div class="check-row">
+        <div class="lbl-az" data-i18n="lbl_az">Entrez le mot découvert grâce à l'énigme :</div>
+        <input class="mono" id="ans12" maxlength="14" placeholder="_ _ _ _ _ _ _" onkeydown="if(event.key==='Enter'){event.preventDefault();if(isSolved(12))go(1);else checkAnswer(12);}">
+        <button class="btn btn-nav" onclick="checkAnswer(12)" data-i18n="lbl_validate">Valider →</button>
+        <div class="feedback" id="fb12"></div>
+      </div>
+      <button class="hintbtn" onclick="openHint(12)" data-i18n="lbl_hintbtn">🔑 Demander un indice au Maître du Jeu</button>
+    </div>
+  </div>
+  <div class="panel" data-day="13">
+    <div class="card">
+      <div class="stamp" data-i18n="d13_stamp">Dossier d'Enquête — Page 13 · Nuit 13</div>
+      <div class="dl" data-i18n="d13_dl">Acte 13 · L'Église Saint-Anselme</div>
+      <div class="dt" data-i18n="d13_dt">La Partition<br><em>Maudite</em></div>
+      <div class="dc" data-i18n="d13_dc">Chiffrement : Notes de Musique (grille à reconstituer)</div>
+      <div class="ambiance" data-i18n="d13_amb">L'organiste de la paroisse a griffonné une courte suite de notes en marge d'une partition, avec des chiffres d'octave. Il jure ne pas se souvenir l'avoir écrite lui-même. Seule la première case de sa table de correspondance reste lisible.</div>
+      <table class="cipher-table">
+        <tr><th>Octave</th><td>Do</td><td>Ré</td><td>Mi</td><td>Fa</td><td>Sol</td><td>La</td><td>Si</td></tr>
+        <tr><th>1</th><td>A</td><td><input class="gridcell" maxlength="1" oninput="gridFmt(this)"></td><td><input class="gridcell" maxlength="1" oninput="gridFmt(this)"></td><td><input class="gridcell" maxlength="1" oninput="gridFmt(this)"></td><td><input class="gridcell" maxlength="1" oninput="gridFmt(this)"></td><td><input class="gridcell" maxlength="1" oninput="gridFmt(this)"></td><td><input class="gridcell" maxlength="1" oninput="gridFmt(this)"></td></tr>
+        <tr><th>2</th><td><input class="gridcell" maxlength="1" oninput="gridFmt(this)"></td><td><input class="gridcell" maxlength="1" oninput="gridFmt(this)"></td><td><input class="gridcell" maxlength="1" oninput="gridFmt(this)"></td><td><input class="gridcell" maxlength="1" oninput="gridFmt(this)"></td><td><input class="gridcell" maxlength="1" oninput="gridFmt(this)"></td><td><input class="gridcell" maxlength="1" oninput="gridFmt(this)"></td><td><input class="gridcell" maxlength="1" oninput="gridFmt(this)"></td></tr>
+        <tr><th>3</th><td><input class="gridcell" maxlength="1" oninput="gridFmt(this)"></td><td><input class="gridcell" maxlength="1" oninput="gridFmt(this)"></td><td><input class="gridcell" maxlength="1" oninput="gridFmt(this)"></td><td><input class="gridcell" maxlength="1" oninput="gridFmt(this)"></td><td><input class="gridcell" maxlength="1" oninput="gridFmt(this)"></td><td><input class="gridcell" maxlength="1" oninput="gridFmt(this)"></td><td><input class="gridcell" maxlength="1" oninput="gridFmt(this)"></td></tr>
+        <tr><th>4</th><td><input class="gridcell" maxlength="1" oninput="gridFmt(this)"></td><td><input class="gridcell" maxlength="1" oninput="gridFmt(this)"></td><td><input class="gridcell" maxlength="1" oninput="gridFmt(this)"></td><td><input class="gridcell" maxlength="1" oninput="gridFmt(this)"></td><td><input class="gridcell" maxlength="1" oninput="gridFmt(this)"></td><td></td><td></td></tr>
+      </table>
+      <div class="cipher-box">Fa₃ · Sol₁ · Mi₃ · Si₃ · Ré₂ · Sol₁ · La₂</div>
+      <div class="note" data-i18n="d13_note">Note du Gardien : chaque note (Do à Si) est une colonne, chaque chiffre en indice est une octave (une ligne). Retrouvez la lettre de chaque case pour former le mot (7 lettres).</div>
+      <div class="check-row">
+        <div class="lbl-az" data-i18n="lbl_az">Entrez le mot découvert grâce à l'énigme :</div>
+        <input class="mono" id="ans13" maxlength="14" placeholder="_ _ _ _ _ _ _" onkeydown="if(event.key==='Enter'){event.preventDefault();if(isSolved(13))go(1);else checkAnswer(13);}">
+        <button class="btn btn-nav" onclick="checkAnswer(13)" data-i18n="lbl_validate">Valider →</button>
+        <div class="feedback" id="fb13"></div>
+      </div>
+      <button class="hintbtn" onclick="openHint(13)" data-i18n="lbl_hintbtn">🔑 Demander un indice au Maître du Jeu</button>
+    </div>
+  </div>
+
+  <div class="panel" data-day="14">
+    <div class="card" id="finalPage">
+      <div class="stamp" data-i18n="d14_stamp">Dossier d'Enquête — Page 14 · Nuit 14</div>
+      <div class="dl" data-i18n="d14_dl">Acte 14 · La Révélation</div>
+      <div class="dt" data-i18n="d14_dt">L'Anneau<br><em>Signé</em></div>
+      <div class="dc" data-i18n="d14_dc">Chiffrement final : Anagramme + César</div>
+      <div class="ambiance" data-i18n="d14_amb">Treize nuits de brouillard vous ont mené jusqu'à une chevalière retrouvée près du dernier corps. Une inscription y est gravée, décalée lettre par lettre, ET mélangée — le double verrou d'un homme qui se croyait intouchable.</div>
+      <div class="cipher-box" style="font-size:22px;letter-spacing:.3em">A P N L S Z L</div>
+      <div class="note" data-i18n="d14_note">Note du Gardien : cette chevalière porte la devise d'un homme méthodique, qui ne frappait jamais avant que sept coups de cloche n'aient sonné au clocher voisin. Décalez chaque lettre vers l'arrière dans l'alphabet — vous obtiendrez alors un anagramme : remettez ses lettres dans l'ordre pour lire le titre de celui qui arpente Ravenscourt depuis quatorze nuits sans jamais être soupçonné (7 lettres).</div>
+      <div class="check-row">
+        <div class="lbl-az" data-i18n="lbl_final">Prononcez le nom que cache l'Ombre du Brouillard :</div>
+        <input class="mono" id="ansFinal" maxlength="14" placeholder="_ _ _ _ _ _ _" onkeydown="if(event.key==='Enter'){event.preventDefault();checkFinal();}">
+        <button class="btn btn-nav" onclick="checkFinal()" data-i18n="lbl_validate">Valider →</button>
+        <div class="feedback" id="fbFinal"></div>
+      </div>
+      <button class="hintbtn" onclick="openHint(14)" data-i18n="lbl_hintbtn">🔑 Demander un indice au Maître du Jeu</button>
+    </div>
+    <div id="felicPage">
+      <div class="felic-badge" data-i18n="felic_badge">🏅 Bravo, vous avez résolu l'enquête !</div>
+      <h2 data-i18n="felic_title">L'Ombre Démasquée</h2>
+      <p data-i18n="felic_txt">Le légiste de Ravenscourt examinait chaque corps qu'il avait lui-même déposé dans le brouillard. Quatorze nuits durant, il a signé ses propres rapports d'autopsie. L'enquête est close — mais le port, lui, ne dort plus tout à fait comme avant.</p>
+      <p class="felic-time" id="felicTime"></p>
+    </div>
+  </div>
+
+</div><!-- /shell -->
+
+<nav class="bnav">
+  <button class="naarr" id="prevBtn" onclick="go(-1)"><span>←</span> <span data-i18n="nav_prev"></span></button>
+  <div id="ntrack"></div>
+  <button class="naarr" id="nextBtn" onclick="go(1)"><span data-i18n="nav_next"></span> <span>→</span></button>
+  <button class="mjbtn" onclick="openMJ()">🔑 <span data-i18n="mj_short"></span></button>
+  <button class="mjbtn" onclick="openCookiePrefs()" title="Cookies">🍪</button>
+  <button class="mjbtn" onclick="resetProgress()" title="Réinitialiser" style="border-color:rgba(122,21,21,.4);color:#c98a8a">↺</button>
+</nav>
+
+<!-- HINT MODAL -->
+<div id="hOv">
+  <div class="box">
+    <h3 id="hd"></h3>
+    <div id="hcont"></div>
+    <button class="btn btn-nav" style="width:100%" onclick="document.getElementById('hOv').style.display='none'" data-i18n="hint_close"></button>
+  </div>
+</div>
+
+<!-- MJ PANEL -->
+<div id="mjp">
+  <div class="box">
+    <h3 data-i18n="mj_title"></h3>
+    <div id="mPm">
+      <input type="password" id="mjPass" data-i18n-ph="mj_pass_ph">
+      <button class="btn btn-nav" style="width:100%" onclick="checkMJ()" data-i18n="mj_access_btn"></button>
+      <div id="mjErr" data-i18n="mj_err"></div>
+    </div>
+    <div id="mjSol" style="display:none"></div>
+    <button class="btn btn-nav" style="width:100%;margin-top:14px" onclick="document.getElementById('mjp').style.display='none'" data-i18n="mj_close"></button>
+  </div>
+</div>
+
+<script>
+// L'Ombre du Brouillard (Ravenscourt, 1901) — création originale © 2026
+// Auteurs : VEAU Yann · GRASON Sabrina — reproduction interdite sans autorisation écrite.
+const __ravenscourtAuthors = Object.freeze(['VEAU Yann','GRASON Sabrina']);
+const answers = {1:'BROUILLARD',2:'LANTERNE',3:'TAILLEUR',4:'CORBEAU',5:'ABSINTHE',6:'CADAVRE',7:'RUELLE',8:'SCALPEL',9:'TAVERNE',10:'MASQUE',11:'TEMOIN',12:'HORLOGE',13:'REQUIEM'};
+const finalPass = 'LEGISTE';
+
+/* ── Notifications Telegram (Maître du Jeu) ──
+   1) Créez un bot via @BotFather sur Telegram (commande /newbot), copiez le token reçu.
+   2) Envoyez n'importe quel message à votre bot, puis ouvrez dans un navigateur :
+      https://api.telegram.org/bot<VOTRE_TOKEN>/getUpdates
+      → repérez "chat":{"id": ... } dans la réponse : c'est votre CHAT_ID.
+   3) Collez les deux valeurs ci-dessous. Tant qu'elles sont vides, aucune notification n'est envoyée
+      (le jeu fonctionne normalement, sans erreur). */
+const TELEGRAM_BOT_TOKEN = '';
+const TELEGRAM_CHAT_ID = '';
+
+function notifyTelegram(text){
+  if(!TELEGRAM_BOT_TOKEN || !TELEGRAM_CHAT_ID) return;
+  fetch('https://api.telegram.org/bot'+TELEGRAM_BOT_TOKEN+'/sendMessage', {
+    method:'POST',
+    headers:{'Content-Type':'application/json'},
+    body: JSON.stringify({chat_id: TELEGRAM_CHAT_ID, text: text})
+  }).catch(function(){});
+}
+function getPlayerName(){
+  try{ return localStorage.getItem('ravenscourtPlayerName') || 'Anonyme'; }catch(e){ return 'Anonyme'; }
+}
+function getSessionTag(){
+  try{
+    let tag = localStorage.getItem('ravenscourtSessionTag');
+    if(!tag){
+      tag = Math.random().toString(36).slice(2,6).toUpperCase();
+      localStorage.setItem('ravenscourtSessionTag', tag);
+    }
+    return tag;
+  }catch(e){ return '????'; }
+}
+
+const hints = {
+  fr:{
+    1:["Deux rangées : une lettre en haut, une en bas, en alternance, sur toute la longueur du mot d'origine.","Les 5 premières lettres du message forment la rangée du haut, les 5 suivantes la rangée du bas.","Recombinez en zigzag : haut, bas, haut, bas… pour lire le mot (10 lettres, un phénomène météo bien connu du port)."],
+    2:["La grille est un carré de Polybe classique : les 26 lettres (I et J réunies) y sont rangées dans l'ordre alphabétique, ligne par ligne, de A (case 1,1) à Z (case 5,5).","Vous connaissez déjà 3 repères : A en (1,1), I/J en (2,4), Z en (5,5). Comptez les lettres de l'alphabet entre ces repères pour compléter les cases manquantes.","Une fois la grille complète, chaque paire de chiffres se lit comme d'habitude (ligne, colonne) pour former un objet qui éclaire (8 lettres)."],
+    3:["Chaque couple ligne.mot désigne un mot précis du petit journal ci-dessus.","Ne gardez que la première lettre de chaque mot désigné.","Un métier qui travaille l'aiguille et le fil (8 lettres)."],
+    4:["Le message alterne minuscules et majuscules : notez 'a' pour minuscule, 'b' pour majuscule.","Regroupez ces lettres par paquets de 5 pour obtenir des codes Bacon.","Un oiseau noir souvent associé au mauvais présage (7 lettres) — attention à l'ambiguïté U/V du tableau classique."],
+    5:["Construisez d'abord la grille avec RAVENSCOURT, puis complétez avec le reste de l'alphabet (I=J).","Découpez le message en paires de lettres : RD, BQ, TH, GN.","Pour chaque paire, appliquez la règle inverse du Playfair (une boisson trouble et interdite, 8 lettres)."],
+    6:["Le tableau ne donne que 3 lettres sur 6 : A, D et R. Repérez déjà leurs positions dans le message.","Une fois A, D et R placés, le motif obtenu est « _ A D A _ R _ » — un mot de 7 lettres.","Le mot ainsi complété est celui qu'on redoute de trouver sur les quais après une nuit de brouillard."],
+    7:["Pas besoin de grille ici : chaque nombre est simplement la position de la lettre dans l'alphabet.","18 est la 18ᵉ lettre de l'alphabet : R.","Un lieu étroit et sombre où l'on n'aime pas s'attarder la nuit (6 lettres)."],
+    8:["Quatre lettres sont déjà données par la légende : A, L, P, S.","Pour les deux symboles manquants, cherchez les initiales cachées dans les mots CHLOROFORME et ÉTHER, cités dans une autre note du carnet.","Un instrument tranchant que l'on associerait à un médecin ou... à un tueur (7 lettres)."],
+    9:["Concentrez-vous toujours sur la même position dans chaque mot de la liste.","La troisième lettre de 'ARTISAN' est un 'T'.","Le mot final nomme l'endroit même où la liste a été retrouvée (7 lettres)."],
+    10:["Le message doit être lu de la dernière lettre vers la première.","Une fois inversé, vous obtenez une phrase complète et grammaticale en français.","Le mot central de la phrase compte 6 lettres, et se porte sur le visage."],
+    11:["Chaque ligne du témoignage commence par une lettre différente.","Notez ces lettres de haut en bas, sans en sauter aucune.","Le mot obtenu (6 lettres) désigne celui ou celle qui a tout vu sans être vu(e)."],
+    12:["Il n'y a pas de tableau tout fait : construisez la suite vous-même à partir de 1h00 = A.","Comptez une lettre de plus à chaque demi-heure : 1h00=A, 1h30=B, 2h00=C… jusqu'à atteindre chaque heure demandée.","L'objet retrouvé arrêté dans tout le manoir (7 lettres)."],
+    13:["Chaque note (Do à Si) est une colonne du tableau, chaque chiffre en indice une ligne (octave).","Fa₃ correspond à la 4ᵉ colonne, 3ᵉ ligne.","Un chant funèbre que l'on joue justement à l'église (7 lettres)."],
+    14:["Décalez d'abord chaque lettre de 7 rangs vers l'arrière dans l'alphabet (un César inversé).","Une fois décalé, le résultat est un anagramme, pas encore le mot final.","Réarrangez ces 7 lettres : c'est le titre de celui qui examine les corps... et qui les a peut-être créés."]
+  },
+  es:{
+    1:["Dos filas: una letra arriba, una abajo, alternando a lo largo de toda la palabra original.","Las primeras 5 letras del mensaje forman la fila de arriba, las 5 siguientes la fila de abajo.","Recombine en zigzag: arriba, abajo, arriba, abajo... para leer la palabra (10 letras, un fenómeno meteorológico bien conocido en el puerto)."],
+    2:["La cuadrícula es un cuadrado de Polibio clásico: las 26 letras (I y J unidas) están ordenadas alfabéticamente, fila por fila, de A (casilla 1,1) a Z (casilla 5,5).","Ya conoce 3 referencias: A en (1,1), I/J en (2,4), Z en (5,5). Cuente las letras del alfabeto entre esas referencias para completar las casillas que faltan.","Con la cuadrícula completa, cada par de cifras se lee como siempre (fila, columna) para formar un objeto que alumbra (8 letras)."],
+    3:["Cada pareja línea.palabra señala una palabra concreta del pequeño diario de arriba.","Quédese solo con la primera letra de cada palabra señalada.","Un oficio que trabaja con aguja e hilo (8 letras)."],
+    4:["El mensaje alterna minúsculas y mayúsculas: anote 'a' para minúscula, 'b' para mayúscula.","Agrupe estas letras en bloques de 5 para obtener códigos Bacon.","Un ave negra a menudo asociada con el mal presagio (7 letras) — cuidado con la ambigüedad U/V de la tabla clásica."],
+    5:["Construya primero la cuadrícula con RAVENSCOURT, y complétela con el resto del alfabeto (I=J).","Divida el mensaje en pares de letras: RD, BQ, TH, GN.","Para cada par, aplique la regla inversa de Playfair (una bebida turbia y prohibida, 8 letras)."],
+    6:["La tabla solo da 3 letras de 6: A, D y R. Localice ya sus posiciones en el mensaje.","Con A, D y R colocadas, el patrón obtenido es « _ A D A _ R _ » — una palabra de 7 letras.","La palabra así completada es la que nadie desea hallar en los muelles tras una noche de niebla."],
+    7:["Aquí no hace falta cuadrícula: cada número es simplemente la posición de la letra en el alfabeto.","18 es la 18ª letra del alfabeto: R.","Un lugar estrecho y oscuro donde no conviene demorarse de noche (6 letras)."],
+    8:["Cuatro letras ya las da la leyenda: A, L, P, S.","Para los dos símbolos que faltan, busque las iniciales ocultas en las palabras CLOROFORMO y ÉTER, citadas en otra nota del cuaderno.","Un instrumento cortante que asociaríamos con un médico... o con un asesino (7 letras)."],
+    9:["Concéntrese siempre en la misma posición de cada palabra de la lista.","La tercera letra de 'ARTISAN' es una 'T'.","La palabra final nombra el propio lugar donde se halló la lista (7 letras)."],
+    10:["El mensaje debe leerse desde la última letra hasta la primera.","Una vez invertido, obtendrá una frase completa y gramatical en francés.","La palabra central de la frase tiene 6 letras y se lleva en el rostro."],
+    11:["Cada línea del testimonio empieza con una letra distinta.","Anote esas letras de arriba abajo, sin saltarse ninguna.","La palabra obtenida (6 letras) designa a quien lo vio todo sin ser visto/a."],
+    12:["No hay tabla ya hecha: construya usted mismo la secuencia a partir de la 1:00 = A.","Cuente una letra más por cada media hora: 1:00=A, 1:30=B, 2:00=C… hasta llegar a cada hora pedida.","El objeto hallado detenido en toda la mansión (7 letras)."],
+    13:["Cada nota (Do a Si) es una columna de la tabla, cada número en subíndice una fila (octava).","Fa₃ corresponde a la 4ª columna, 3ª fila.","Un canto fúnebre que se toca precisamente en la iglesia (7 letras)."],
+    14:["Desplace primero cada letra 7 posiciones hacia atrás en el alfabeto (un César invertido).","Una vez desplazado, el resultado es un anagrama, todavía no la palabra final.","Reordene esas 7 letras: es el título de quien examina los cuerpos... y quizá los creó."]
+  },
+  en:{
+    1:["Two rows: one letter on top, one on the bottom, alternating along the whole original word.","The first 5 letters of the message form the top row, the next 5 the bottom row.","Recombine in a zigzag: top, bottom, top, bottom… to read the word (10 letters, a weather phenomenon well known to the port)."],
+    2:["The grid is a classic Polybius square: the 26 letters (I and J merged) are laid out in alphabetical order, row by row, from A (cell 1,1) to Z (cell 5,5).","You already know 3 anchors: A at (1,1), I/J at (2,4), Z at (5,5). Count the letters of the alphabet between those anchors to fill in the missing cells.","Once the grid is complete, each pair of digits reads as usual (row, column) to form an object that gives light (8 letters)."],
+    3:["Each line.word pair points to a specific word in the little diary above.","Keep only the first letter of each pointed-to word.","A trade that works with needle and thread (8 letters)."],
+    4:["The message alternates lowercase and uppercase: note 'a' for lowercase, 'b' for uppercase.","Group these letters into blocks of 5 to get Bacon codes.","A black bird often associated with bad omens (7 letters) — beware the U/V ambiguity in the classic table."],
+    5:["Build the grid first with RAVENSCOURT, then complete it with the rest of the alphabet (I=J).","Split the message into letter pairs: RD, BQ, TH, GN.","For each pair, apply the reverse Playfair rule (a cloudy, forbidden drink, 8 letters)."],
+    6:["The table only gives 3 letters out of 6: A, D and R. Spot their positions in the message first.","With A, D and R placed, the pattern you get is « _ A D A _ R _ » — a 7-letter word.","The completed word is the one no one wants to find on the docks after a foggy night."],
+    7:["No grid needed here: each number is simply the letter's position in the alphabet.","18 is the 18th letter of the alphabet: R.","A narrow, dark place no one likes to linger in at night (6 letters)."],
+    8:["Four letters are already given by the key: A, L, P, S.","For the two missing symbols, look for the initials hidden in the words CHLOROFORM and ETHER, quoted in another note in the notebook.","A cutting instrument you'd associate with a doctor... or a killer (7 letters)."],
+    9:["Always focus on the same position in each word of the list.","The third letter of 'ARTISAN' is a 'T'.","The final word names the very place where the list was found (7 letters)."],
+    10:["The message must be read from the last letter to the first.","Once reversed, you get a complete, grammatical French sentence.","The sentence's central word has 6 letters, and is worn on the face."],
+    11:["Each line of the testimony begins with a different letter.","Note these letters from top to bottom, without skipping any.","The resulting word (6 letters) names the one who saw everything without being seen."],
+    12:["There's no ready-made table: build the sequence yourself starting from 1:00 = A.","Count one letter further for each half hour: 1:00=A, 1:30=B, 2:00=C… until you reach each requested time.","The object found stopped throughout the manor (7 letters)."],
+    13:["Each note (Do to Si) is a column of the table, each subscript number a row (octave).","Fa₃ corresponds to the 4th column, 3rd row.","A funeral chant played precisely in church (7 letters)."],
+    14:["First shift each letter 7 places backward in the alphabet (a reversed Caesar).","Once shifted, the result is an anagram, not yet the final word.","Rearrange those 7 letters: it's the title of the one who examines bodies... and may have created them."]
+  }
+};
+const I18N = {
+fr:{
+  warn_title:"Propriété Intellectuelle",
+  warn_project:"L'Ombre du Brouillard — © 2026",
+  warn_content:"Ce jeu est une <strong>création originale protégée par les droits d'auteur</strong>.<br>Toute reproduction, redistribution ou revente est <strong>strictement interdite</strong> sans autorisation écrite.",
+  warn_accept:"Accepter",
+  warn_refuse:"Refuser",
+  warn_legal:"Usage strictement personnel · Non transférable · Non imprimable à des fins commerciales",
+  warn_cookies:"Ce site utilise le stockage local du navigateur, strictement nécessaire à son fonctionnement (langue choisie, progression de l'enquête) : celui-ci reste toujours actif. Il utilise aussi des cookies de mesure d'audience (Google Tag Manager), déposés uniquement si vous cliquez sur « Accepter ». Aucune donnée n'est utilisée à des fins publicitaires. Vous pouvez changer d'avis à tout moment via le bouton 🍪 en bas de l'écran.",
+
+  cov_badge:"Ravenscourt · Automne 1901 · Dossier d'Enquête",
+  cov_pre:"Ravenscourt, 1901",
+  cov_main:"<span class=\"cde\">L'Ombre</span> du Brouillard",
+  cov_sub:"Enquête Victorienne en 14 Actes",
+  cov_tag:"Le port de Ravenscourt s'endort chaque soir sous un brouillard trop épais pour être honnête.<br>Quelque chose y chasse depuis quatorze nuits.<br>La presse l'a surnommé l'Ombre du Brouillard.<br>Vous avez été appelé pour découvrir qui il est, avant la quinzième victime.",
+  cov_btn:"▶ &nbsp; Ouvrir le Dossier",
+  cov_name_ph:"Pseudo (optionnel)",
+
+  header_eyebrow:"Livret Interactif du Joueur",
+  header_title:"L'Ombre du Brouillard",
+  header_sub:"« Quatorze nuits de brouillard. Un seul nom au bout. »",
+  lbl_az:"Entrez le mot découvert grâce à l'énigme :",
+  lbl_validate:"Valider →",
+  lbl_hintbtn:"🔑 Demander un indice au Maître du Jeu",
+  lbl_final:"Prononcez le nom que cache l'Ombre du Brouillard :",
+
+  d1_stamp:"Dossier d'Enquête — Page 1 · Nuit 1", d1_dl:"Acte 1 · Le Quai",
+  d1_dt:"La Première<br><em>Disparition</em>", d1_dc:"Chiffrement : Rail Fence (2 rangs)",
+  d1_amb:"Un docker manque à l'appel depuis l'aube. On ne retrouve que sa lanterne, posée bien droite sur une caisse, comme une offrande. Un message griffonné à la craie sur le bois, en zigzag, semble avoir été tracé à la hâte.",
+  d1_note:"Note du Gardien : le message a été écrit en suivant deux rangées en zigzag (une lettre en haut, une en bas, en alternance), puis les deux rangées ont été recopiées l'une après l'autre. Séparez donc les 10 lettres en deux groupes de 5 : les 5 premières forment la rangée du haut, les 5 suivantes la rangée du bas. Recombinez-les ensuite en zigzag (haut, bas, haut, bas…) pour lire le mot d'origine (10 lettres).",
+
+  d2_stamp:"Dossier d'Enquête — Page 2 · Nuit 2", d2_dl:"Acte 2 · La Ruelle des Teinturiers",
+  d2_dt:"L'Objet<br><em>Oublié</em>", d2_dc:"Chiffrement : Carré de Polybe (grille à reconstituer)",
+  d2_amb:"Sous un porche, un vieil objet de verre a roulé jusqu'au caniveau. Gravés dans le métal de son socle, une série de nombres à deux chiffres — et, tout autour, les contours d'une grille alphabétique dont seules trois lettres restent lisibles : A, I/J et Z.",
+
+  d3_stamp:"Dossier d'Enquête — Page 3 · Nuit 3", d3_dl:"Acte 3 · L'Atelier",
+  d3_dt:"Le Journal<br>du <em>Disparu</em>", d3_dc:"Chiffrement : Code du Livre",
+  d3_amb:"Le journal intime d'un homme disparu traîne encore sur son établi. Une page semble avoir servi de clé secrète.",
+
+  d4_stamp:"Dossier d'Enquête — Page 4 · Nuit 4", d4_dl:"Acte 4 · Le Cimetière des Oiseaux",
+  d4_dt:"Le Télégramme<br><em>Camouflé</em>", d4_dc:"Chiffrement : Bacon (bimodal)",
+  d4_amb:"Un télégramme anonyme est parvenu au bureau du journal local. Rien d'étrange à première vue — sauf l'alternance bizarre entre minuscules et majuscules, comme un code caché dans la typographie même du message.",
+  d4_note:"Note du Gardien : chaque lettre minuscule vaut « a », chaque lettre en MAJUSCULE vaut « b ». Regroupez les lettres du message par paquets de 5 pour former des codes bacon, puis retrouvez le mot (7 lettres). Attention : dans le tableau classique, I/J partagent le même code, tout comme U/V — un seul des deux donnera un vrai mot français.",
+
+  d5_stamp:"Dossier d'Enquête — Page 5 · Nuit 5", d5_dl:"Acte 5 · La Taverne du Marin Noyé",
+  d5_dt:"Le Carnet<br>du <em>Barman</em>", d5_dc:"Chiffrement : Playfair",
+  d5_amb:"Le barman jure avoir servi la dernière victime son ultime verre. Sur une page de son carnet de commandes, un mot codé par paires de lettres, avec en en-tête un seul indice : le nom du port lui-même comme clé.",
+  d5_note1:"Grille Playfair construite avec la clé RAVENSCOURT (sans lettres répétées, I et J confondus, complétée par le reste de l'alphabet) :",
+  d5_note2:"Note du Gardien : déchiffrez par paires selon les règles du Playfair — même ligne → décalez à gauche ; même colonne → décalez vers le haut ; sinon (rectangle) → chaque lettre garde sa ligne mais prend la colonne de l'autre. Exemples avec cette grille (lettres différentes du message) : OG → UF (rectangle) ; CD → AC (même colonne). Appliquez la même logique aux 4 paires du message pour retrouver le mot (8 lettres).",
+
+  d6_stamp:"Dossier d'Enquête — Page 6 · Nuit 6", d6_dl:"Acte 6 · Le Ponton Sud",
+  d6_dt:"Le Signal<br>des <em>Débardeurs</em>", d6_dc:"Chiffrement : Pavillons de Signalisation (légende à moitié effacée)",
+  d6_amb:"Un carnet de signaleur du port est retrouvé trempé sur le ponton. Les dockers utilisent un vieux code de pavillons, chaque lettre étant représentée par deux positions d'aiguilles d'horloge — mais l'humidité a effacé la moitié de la légende.",
+  d6_note:"Note du Gardien : l'humidité a effacé trois entrées de la légende (C, E, V). Repérez où apparaissent dans le message les codes déjà connus (A, D, R), puis déduisez les trois lettres manquantes pour compléter un mot de 7 lettres que l'on redoute de trouver sur les quais après une nuit de brouillard.",
+
+  d7_stamp:"Dossier d'Enquête — Page 7 · Nuit 7", d7_dl:"Acte 7 · La Cellule Vide",
+  d7_dt:"Les Coups<br>dans le <em>Mur</em>", d7_dc:"Chiffrement : Coups Comptés (A=1, Z=26)",
+  d7_amb:"Le gardien de nuit du dépôt jure avoir entendu des coups frappés contre la tôle, toute une nuit durant. Il en a noté le rythme, groupe par groupe, sous forme de nombres griffonnés à la hâte.",
+  d7_note:"Note du Gardien : pas de grille ici — chaque nombre correspond directement à la position de la lettre dans l'alphabet. Retrouvez le mot (6 lettres).",
+
+  d8_stamp:"Dossier d'Enquête — Page 8 · Nuit 8", d8_dl:"Acte 8 · Le Cabinet du Médecin",
+  d8_dt:"Le Carnet<br><em>Alchimique</em>", d8_dc:"Chiffrement : Symboles Alchimiques (légende incomplète)",
+  d8_amb:"Le cabinet d'un médecin du quartier a été fouillé de fond en comble. Seul un vieux carnet de notes, couvert de symboles planétaires hérités de l'alchimie, semble avoir un sens — mais une tache d'encre a rendu deux symboles illisibles dans la légende.",
+  d8_note:"Note du Gardien : la tache a effacé ☿ et ♂ de la légende. Une autre page du carnet, consacrée aux anesthésiques du cabinet, précise : « ☿, comme le premier remède que j'ai testé : le CHLOROFORME » et « ♂, comme celui qui l'a remplacé : l'ÉTHER ». Formez le mot (7 lettres) — un instrument que l'on retrouverait plutôt sur une table d'anatomie.",
+
+  d9_stamp:"Dossier d'Enquête — Page 9 · Nuit 9", d9_dl:"Acte 9 · La Salle Commune",
+  d9_dt:"La Liste<br>des <em>Habitués</em>", d9_dc:"Chiffrement : Lettre Cachée dans les Mots",
+  d9_amb:"Une liste de sept mots griffonnés à la hâte sur un sous-bock est retrouvée sous une table. À première vue, une liste sans queue ni tête — sauf si l'on regarde toujours au même endroit.",
+  d9_note:"Note du Gardien : le mot final compte 7 lettres.",
+
+  d10_stamp:"Dossier d'Enquête — Page 10 · Nuit 10", d10_dl:"Acte 10 · Le Théâtre Abandonné",
+  d10_dt:"L'Écriture<br>du <em>Miroir</em>", d10_dc:"Chiffrement : Écriture Spéculaire",
+  d10_amb:"Dans une loge d'artiste poussiéreuse, une phrase est tracée au rouge à lèvres sur le miroir de la coiffeuse — mais elle ne se lit pas normalement. Il faut la lire à l'envers, comme le ferait le miroir lui-même.",
+  d10_note:"Note du Gardien : lisez le message lettre par lettre en partant de la fin (comme dans un miroir) pour reconstituer la phrase complète, et isolez-en le mot central (6 lettres).",
+
+  d11_stamp:"Dossier d'Enquête — Page 11 · Nuit 11", d11_dl:"Acte 11 · Le Commissariat",
+  d11_dt:"Le Témoignage<br>en <em>Vers</em>", d11_dc:"Chiffrement : Acrostiche",
+  d11_amb:"Une unique témoin accepte de parler — mais uniquement en vers, par superstition. Son témoignage, couché par écrit, semble cacher quelque chose entre les lignes.",
+  d11_note:"Note du Gardien : le mot compte 6 lettres.",
+
+  d12_stamp:"Dossier d'Enquête — Page 12 · Nuit 12", d12_dl:"Acte 12 · Le Manoir Ashcombe",
+  d12_dt:"Les Horloges<br><em>Arrêtées</em>", d12_dc:"Chiffrement : Cadran d'Horloge (suite à construire)",
+  d12_amb:"Dans le manoir du défunt notable Ashcombe, sept horloges se sont arrêtées à des heures différentes, toutes le même soir. Un ancien domestique y voit un code, mais aucun tableau n'a été retrouvé — seulement une règle, griffonnée de mémoire : en partant de 1h00, qui vaudrait « A », chaque demi-heure suivante avancerait d'une lettre dans l'alphabet.",
+  d12_note:"Note du Gardien : poursuivez ce comptage, demi-heure par demi-heure depuis 1h00 = A, jusqu'à chacune des sept horloges, pour former le mot (7 lettres).",
+
+  d13_stamp:"Dossier d'Enquête — Page 13 · Nuit 13", d13_dl:"Acte 13 · L'Église Saint-Anselme",
+  d13_dt:"La Partition<br><em>Maudite</em>", d13_dc:"Chiffrement : Notes de Musique (grille à reconstituer)",
+  d13_amb:"L'organiste de la paroisse a griffonné une courte suite de notes en marge d'une partition, avec des chiffres d'octave. Il jure ne pas se souvenir l'avoir écrite lui-même. Seule la première case de sa table de correspondance reste lisible.",
+  d13_note:"Note du Gardien : chaque note (Do à Si) est une colonne, chaque chiffre en indice est une octave (une ligne). Retrouvez la lettre de chaque case pour former le mot (7 lettres).",
+
+  d14_stamp:"Dossier d'Enquête — Page 14 · Nuit 14", d14_dl:"Acte 14 · La Révélation",
+  d14_dt:"L'Anneau<br><em>Signé</em>", d14_dc:"Chiffrement final : Anagramme + César",
+  d14_amb:"Treize nuits de brouillard vous ont mené jusqu'à une chevalière retrouvée près du dernier corps. Une inscription y est gravée, décalée lettre par lettre, ET mélangée — le double verrou d'un homme qui se croyait intouchable.",
+  d14_note:"Note du Gardien : cette chevalière porte la devise d'un homme méthodique, qui ne frappait jamais avant que sept coups de cloche n'aient sonné au clocher voisin. Décalez chaque lettre vers l'arrière dans l'alphabet — vous obtiendrez alors un anagramme : remettez ses lettres dans l'ordre pour lire le titre de celui qui arpente Ravenscourt depuis quatorze nuits sans jamais être soupçonné (7 lettres).",
+
+  nav_prev:"Préc.", nav_next:"Suiv.", mj_short:"MJ",
+  fb_ok:"✓ Étape", fb_ok2:"résolue.", fb_ko:"✗ Ce n'est pas le bon mot.", fb_locked:"Résolvez l'étape en cours avant d'avancer.", fbf_ko:"✗ Ce nom n'est pas le bon.",
+  hint_more:"… (indice suivant disponible après un nouveau clic)", hint_close:"Fermer",
+  mj_btn:"🕯 Maître du Jeu", mj_title:"Espace Maître du Jeu",
+  mj_pass_ph:"Mot de passe MJ", mj_access_btn:"Accéder aux solutions",
+  mj_err:"Mot de passe incorrect.", mj_close:"Fermer",
+  felic_badge:"🏅 Bravo, vous avez résolu l'enquête !",
+  felic_title:"L'Ombre Démasquée",
+  felic_txt:"Le légiste de Ravenscourt examinait chaque corps qu'il avait lui-même déposé dans le brouillard. Quatorze nuits durant, il a signé ses propres rapports d'autopsie. L'enquête est close — mais le port, lui, ne dort plus tout à fait comme avant.",
+  mj_sol:[
+    ["Acte 1 — BROUILLARD","Rail Fence 2 rangs : BOILRRULAD → zigzag inverse."],
+    ["Acte 2 — LANTERNE","Carré de Polybe à reconstituer depuis A(1,1), I/J(2,4), Z(5,5) : grille ABCDE/FGHIK/LMNOP/QRSTU/VWXYZ."],
+    ["Acte 3 — TAILLEUR","Code du livre : 1re lettre des mots 1.1, 3.8, 2.1, 3.4, 1.8, 1.7, 3.1, 4.1."],
+    ["Acte 4 — CORBEAU","Bacon bimodal (casse) : « un vIeuX CoRBeau noir vOle Tres bas cE soIR »."],
+    ["Acte 5 — ABSINTHE","Playfair, clé RAVENSCOURT : RD BQ TH GN."],
+    ["Acte 6 — CADAVRE","Pavillons/horloge à clé partielle : A=12-6, D=1-7, R=5-11 donnés ; C=3-9, E=2-8, V=4-10 déduits via le motif _A D A _R_ → CADAVRE."],
+    ["Acte 7 — RUELLE","Comptage positionnel A=1…Z=26 (pas de grille) : 18,21,5,12,12,5 → R,U,E,L,L,E."],
+    ["Acte 8 — SCALPEL","Symboles alchimiques, légende partielle : ☉=A,☽=L,♀=P,♄=S donnés ; ☿=C (CHLOROFORME) et ♂=E (ÉTHER) déduits via les notes du carnet."],
+    ["Acte 9 — TAVERNE","3e lettre de chaque mot : ARTISAN,BRASSERIE,SEVERE,CIERGE,PARDON,MANOIR,PIERRE."],
+    ["Acte 10 — MASQUE","Écriture miroir : « TIR LI EUQSAM EL SUOS » → « SOUS LE MASQUE IL RIT »."],
+    ["Acte 11 — TEMOIN","Acrostiche : 1re lettre de chaque ligne du poème (T,E,M,O,I,N)."],
+    ["Acte 12 — HORLOGE","Suite continue depuis 1h00=A (une lettre/demi-heure, aucun tableau fourni) : 4h30=H,8h00=O,9h30=R,6h30=L,8h00=O,4h00=G,3h00=E."],
+    ["Acte 13 — REQUIEM","Notes/octaves : Fa3,Sol1,Mi3,Si3,Ré2,Sol1,La2."],
+    ["Acte 14 — LEGISTE (mot de passe final)","César +7 sur APNLSZL → TIGELSE (anagramme) → LEGISTE. Révélation : le tueur est le légiste de la ville."]
+  ]
+},
+es:{
+  warn_title:"Propiedad Intelectual",
+  warn_project:"La Sombra de la Niebla — © 2026",
+  warn_content:"Este juego es una <strong>creación original protegida por derechos de autor</strong>.<br>Queda <strong>estrictamente prohibida</strong> su reproducción, redistribución o reventa sin autorización escrita.",
+  warn_accept:"Aceptar",
+  warn_refuse:"Rechazar",
+  warn_legal:"Uso estrictamente personal · No transferible · No imprimible con fines comerciales",
+  warn_cookies:"Este sitio utiliza el almacenamiento local del navegador, estrictamente necesario para su funcionamiento (idioma elegido, progreso de la investigación): este permanece siempre activo. También utiliza cookies de medición de audiencia (Google Tag Manager), que solo se instalan si hace clic en «Aceptar». Ningún dato se usa con fines publicitarios. Puede cambiar de opinión en cualquier momento mediante el botón 🍪 en la parte inferior de la pantalla.",
+
+  cov_badge:"Ravenscourt · Otoño de 1901 · Expediente de Investigación",
+  cov_pre:"Ravenscourt, 1901",
+  cov_main:"<span class=\"cde\">La Sombra</span> de la Niebla",
+  cov_sub:"Investigación Victoriana en 14 Actos",
+  cov_tag:"El puerto de Ravenscourt se duerme cada noche bajo una niebla demasiado espesa para ser honesta.<br>Algo caza allí desde hace catorce noches.<br>La prensa lo apodó la Sombra de la Niebla.<br>Le han llamado para descubrir quién es, antes de la decimoquinta víctima.",
+  cov_btn:"▶ &nbsp; Abrir el Expediente",
+  cov_name_ph:"Apodo (opcional)",
+
+  header_eyebrow:"Cuaderno Interactivo del Jugador",
+  header_title:"La Sombra de la Niebla",
+  header_sub:"« Catorce noches de niebla. Un solo nombre al final. »",
+  lbl_az:"Introduzca la palabra descubierta gracias al enigma:",
+  lbl_validate:"Validar →",
+  lbl_hintbtn:"🔑 Pedir una pista al Director de Juego",
+  lbl_final:"Pronuncie el nombre que oculta la Sombra de la Niebla:",
+
+  d1_stamp:"Expediente — Página 1 · Noche 1", d1_dl:"Acto 1 · El Muelle",
+  d1_dt:"La Primera<br><em>Desaparición</em>", d1_dc:"Cifrado: Cerca (Rail Fence, 2 filas)",
+  d1_amb:"Un estibador falta desde el amanecer. Solo se encuentra su linterna, colocada muy recta sobre una caja, como una ofrenda. Un mensaje garabateado con tiza sobre la madera, en zigzag, parece trazado con prisa.",
+  d1_note:"Nota del Guardián: el mensaje se escribió siguiendo dos filas en zigzag (una letra arriba, una abajo, alternando), luego ambas filas se copiaron una tras otra. Separe entonces las 10 letras en dos grupos de 5: las primeras 5 forman la fila de arriba, las 5 siguientes la fila de abajo. Luego recombínelas en zigzag (arriba, abajo, arriba, abajo…) para leer la palabra original (10 letras).",
+
+  d2_stamp:"Expediente — Página 2 · Noche 2", d2_dl:"Acto 2 · El Callejón de los Tintoreros",
+  d2_dt:"El Objeto<br><em>Olvidado</em>", d2_dc:"Cifrado: Cuadrado de Polibio (cuadrícula por reconstruir)",
+  d2_amb:"Bajo un porche, un viejo objeto de cristal ha rodado hasta la alcantarilla. Grabada en el metal de su base, una serie de números de dos cifras — y, alrededor, los contornos de una cuadrícula alfabética de la que solo quedan legibles tres letras: A, I/J y Z.",
+
+  d3_stamp:"Expediente — Página 3 · Noche 3", d3_dl:"Acto 3 · El Taller",
+  d3_dt:"El Diario<br>del <em>Desaparecido</em>", d3_dc:"Cifrado: Código del Libro",
+  d3_amb:"El diario íntimo de un hombre desaparecido sigue sobre su mesa de trabajo. Una página parece haber servido de clave secreta.",
+
+  d4_stamp:"Expediente — Página 4 · Noche 4", d4_dl:"Acto 4 · El Cementerio de los Pájaros",
+  d4_dt:"El Telegrama<br><em>Camuflado</em>", d4_dc:"Cifrado: Bacon (bimodal)",
+  d4_amb:"Un telegrama anónimo llegó a la redacción del periódico local. Nada extraño a primera vista — salvo la extraña alternancia entre minúsculas y mayúsculas, como un código oculto en la propia tipografía del mensaje.",
+  d4_note:"Nota del Guardián: cada letra minúscula vale «a», cada MAYÚSCULA vale «b». Agrupe las letras del mensaje en bloques de 5 para formar códigos Bacon, y halle la palabra (7 letras). Cuidado: en la tabla clásica, I/J comparten código, igual que U/V — solo una de las dos dará una palabra real en francés.",
+
+  d5_stamp:"Expediente — Página 5 · Noche 5", d5_dl:"Acto 5 · La Taberna del Marinero Ahogado",
+  d5_dt:"El Cuaderno<br>del <em>Camarero</em>", d5_dc:"Cifrado: Playfair",
+  d5_amb:"El camarero jura haber servido a la última víctima su copa final. En una página de su cuaderno de pedidos, una palabra codificada por parejas de letras, con una sola pista como encabezado: el nombre del propio puerto como clave.",
+  d5_note1:"Cuadrícula Playfair construida con la clave RAVENSCOURT (sin letras repetidas, I y J fusionadas, completada con el resto del alfabeto):",
+  d5_note2:"Nota del Guardián: descifre por parejas según las reglas de Playfair — misma fila → desplace a la izquierda; misma columna → desplace hacia arriba; si no (rectángulo) → cada letra conserva su fila pero toma la columna de la otra. Ejemplos con esta cuadrícula (letras distintas del mensaje): OG → UF (rectángulo); CD → AC (misma columna). Aplique la misma lógica a las 4 parejas del mensaje para hallar la palabra (8 letras).",
+
+  d6_stamp:"Expediente — Página 6 · Noche 6", d6_dl:"Acto 6 · El Pantalán Sur",
+  d6_dt:"La Señal<br>de los <em>Estibadores</em>", d6_dc:"Cifrado: Banderas de Señales (leyenda a medio borrar)",
+  d6_amb:"Se halla empapado en el pantalán un cuaderno de señalero del puerto. Los estibadores usan un viejo código de banderas, cada letra representada por dos posiciones de las agujas de un reloj — pero la humedad ha borrado la mitad de la leyenda.",
+  d6_note:"Nota del Guardián: la humedad ha borrado tres entradas de la leyenda (C, E, V). Localice dónde aparecen en el mensaje los códigos ya conocidos (A, D, R), y deduzca las tres letras que faltan para completar una palabra de 7 letras que nadie desea hallar en los muelles tras una noche de niebla.",
+
+  d7_stamp:"Expediente — Página 7 · Noche 7", d7_dl:"Acto 7 · La Celda Vacía",
+  d7_dt:"Los Golpes<br>en el <em>Muro</em>", d7_dc:"Cifrado: Golpes Contados (A=1, Z=26)",
+  d7_amb:"El vigilante nocturno del depósito jura haber oído golpes contra la chapa, durante toda una noche. Anotó el ritmo, grupo por grupo, en forma de números garabateados a toda prisa.",
+  d7_note:"Nota del Guardián: aquí no hay cuadrícula — cada número corresponde directamente a la posición de la letra en el alfabeto. Halle la palabra (6 letras).",
+
+  d8_stamp:"Expediente — Página 8 · Noche 8", d8_dl:"Acto 8 · El Gabinete del Médico",
+  d8_dt:"El Cuaderno<br><em>Alquímico</em>", d8_dc:"Cifrado: Símbolos Alquímicos (leyenda incompleta)",
+  d8_amb:"El gabinete de un médico del barrio ha sido registrado de arriba abajo. Solo un viejo cuaderno de notas, cubierto de símbolos planetarios heredados de la alquimia, parece tener sentido — pero una mancha de tinta ha vuelto ilegibles dos símbolos de la leyenda.",
+  d8_note:"Nota del Guardián: la mancha ha borrado ☿ y ♂ de la leyenda. Otra página del cuaderno, dedicada a los anestésicos del gabinete, precisa: «☿, como el primer remedio que probé: el CLOROFORMO» y «♂, como el que lo sustituyó: el ÉTER». Forme la palabra (7 letras) — un instrumento que se hallaría más bien en una mesa de anatomía.",
+
+  d9_stamp:"Expediente — Página 9 · Noche 9", d9_dl:"Acto 9 · La Sala Común",
+  d9_dt:"La Lista<br>de <em>Habituales</em>", d9_dc:"Cifrado: Letra Oculta en las Palabras",
+  d9_amb:"Se halla bajo una mesa una lista de siete palabras garabateadas a toda prisa en un posavasos. A primera vista, una lista sin sentido — salvo si se mira siempre en el mismo lugar.",
+  d9_note:"Nota del Guardián: la palabra final tiene 7 letras.",
+
+  d10_stamp:"Expediente — Página 10 · Noche 10", d10_dl:"Acto 10 · El Teatro Abandonado",
+  d10_dt:"La Escritura<br>del <em>Espejo</em>", d10_dc:"Cifrado: Escritura Especular",
+  d10_amb:"En un camerino polvoriento, una frase está escrita con pintalabios sobre el espejo del tocador — pero no se lee normalmente. Hay que leerla al revés, como lo haría el propio espejo.",
+  d10_note:"Nota del Guardián: lea el mensaje letra por letra desde el final (como en un espejo) para reconstruir la frase completa, y aísle su palabra central (6 letras).",
+
+  d11_stamp:"Expediente — Página 11 · Noche 11", d11_dl:"Acto 11 · La Comisaría",
+  d11_dt:"El Testimonio<br>en <em>Verso</em>", d11_dc:"Cifrado: Acróstico",
+  d11_amb:"Una única testigo accede a hablar — pero solo en verso, por superstición. Su testimonio, puesto por escrito, parece ocultar algo entre líneas.",
+  d11_note:"Nota del Guardián: la palabra tiene 6 letras.",
+
+  d12_stamp:"Expediente — Página 12 · Noche 12", d12_dl:"Acto 12 · La Mansión Ashcombe",
+  d12_dt:"Los Relojes<br><em>Detenidos</em>", d12_dc:"Cifrado: Esfera de Reloj (secuencia por construir)",
+  d12_amb:"En la mansión del difunto notable Ashcombe, siete relojes se detuvieron a horas distintas, todos la misma noche. Un antiguo sirviente ve en ello un código, pero no se halló tabla alguna — solo una regla, garabateada de memoria: empezando en la 1:00, que valdría «A», cada media hora siguiente avanzaría una letra en el alfabeto.",
+  d12_note:"Nota del Guardián: continúe ese conteo, media hora tras media hora desde la 1:00 = A, hasta cada uno de los siete relojes, para formar la palabra (7 letras).",
+
+  d13_stamp:"Expediente — Página 13 · Noche 13", d13_dl:"Acto 13 · La Iglesia de San Anselmo",
+  d13_dt:"La Partitura<br><em>Maldita</em>", d13_dc:"Cifrado: Notas Musicales (cuadrícula por reconstruir)",
+  d13_amb:"El organista de la parroquia garabateó una breve serie de notas al margen de una partitura, con números de octava. Jura no recordar haberla escrito él mismo. Solo la primera casilla de su tabla de correspondencia sigue siendo legible.",
+  d13_note:"Nota del Guardián: cada nota (Do a Si) es una columna, cada número en subíndice es una octava (una fila). Halle la letra de cada casilla para formar la palabra (7 letras).",
+
+  d14_stamp:"Expediente — Página 14 · Noche 14", d14_dl:"Acto 14 · La Revelación",
+  d14_dt:"El Anillo<br><em>Firmado</em>", d14_dc:"Cifrado final: Anagrama + César",
+  d14_amb:"Trece noches de niebla le han llevado hasta un anillo de sello hallado junto al último cuerpo. Una inscripción está grabada en él, desplazada letra por letra, Y mezclada — el doble cerrojo de un hombre que se creía intocable.",
+  d14_note:"Nota del Guardián: este anillo de sello lleva el lema de un hombre metódico, que nunca atacaba antes de que sonaran siete campanadas en el campanario vecino. Desplace cada letra hacia atrás en el alfabeto — obtendrá entonces un anagrama: reordene esas letras para leer el título de quien recorre Ravenscourt desde hace catorce noches sin ser jamás sospechoso (7 letras).",
+
+  nav_prev:"Ant.", nav_next:"Sig.", mj_short:"DJ",
+  fb_ok:"✓ Acto", fb_ok2:"resuelto.", fb_ko:"✗ Esa no es la palabra correcta.", fb_locked:"Resuelva el acto actual antes de avanzar.", fbf_ko:"✗ Ese nombre no es correcto.",
+  hint_more:"… (siguiente pista disponible con un nuevo clic)", hint_close:"Cerrar",
+  mj_btn:"🕯 Director de Juego", mj_title:"Espacio del Director de Juego",
+  mj_pass_ph:"Contraseña del DJ", mj_access_btn:"Acceder a las soluciones",
+  mj_err:"Contraseña incorrecta.", mj_close:"Cerrar",
+  felic_badge:"🏅 ¡Enhorabuena, ha resuelto la investigación!",
+  felic_title:"La Sombra Desenmascarada",
+  felic_txt:"El forense de Ravenscourt examinaba cada cuerpo que él mismo había depositado en la niebla. Durante catorce noches, firmó sus propios informes de autopsia. La investigación se cierra — pero el puerto ya no duerme del todo igual.",
+  mj_sol:[
+    ["Acto 1 — BROUILLARD","Rail Fence 2 filas: BOILRRULAD → zigzag inverso."],
+    ["Acto 2 — LANTERNE","Cuadrado de Polibio por reconstruir desde A(1,1), I/J(2,4), Z(5,5): cuadrícula ABCDE/FGHIK/LMNOP/QRSTU/VWXYZ."],
+    ["Acto 3 — TAILLEUR","Código del libro: 1ª letra de las palabras 1.1, 3.8, 2.1, 3.4, 1.8, 1.7, 3.1, 4.1."],
+    ["Acto 4 — CORBEAU","Bacon bimodal (mayús/minús): «un vIeuX CoRBeau noir vOle Tres bas cE soIR»."],
+    ["Acto 5 — ABSINTHE","Playfair, clave RAVENSCOURT: RD BQ TH GN."],
+    ["Acto 6 — CADAVRE","Banderas/reloj con clave parcial: A=12-6, D=1-7, R=5-11 dados; C=3-9, E=2-8, V=4-10 deducidos mediante el patrón _A D A _R_ → CADAVRE."],
+    ["Acto 7 — RUELLE","Conteo posicional A=1…Z=26 (sin cuadrícula): 18,21,5,12,12,5 → R,U,E,L,L,E."],
+    ["Acto 8 — SCALPEL","Símbolos alquímicos, leyenda parcial: ☉=A,☽=L,♀=P,♄=S dados; ☿=C (CLOROFORMO) y ♂=E (ÉTER) deducidos mediante las notas del cuaderno."],
+    ["Acto 9 — TAVERNE","3ª letra de cada palabra: ARTISAN,BRASSERIE,SEVERE,CIERGE,PARDON,MANOIR,PIERRE."],
+    ["Acto 10 — MASQUE","Escritura especular: «TIR LI EUQSAM EL SUOS» → «SOUS LE MASQUE IL RIT»."],
+    ["Acto 11 — TEMOIN","Acróstico: 1ª letra de cada línea del poema (T,E,M,O,I,N)."],
+    ["Acto 12 — HORLOGE","Secuencia continua desde la 1:00=A (una letra/media hora, sin tabla): 4:30=H,8:00=O,9:30=R,6:30=L,8:00=O,4:00=G,3:00=E."],
+    ["Acto 13 — REQUIEM","Notas/octavas: Fa3,Sol1,Mi3,Si3,Ré2,Sol1,La2."],
+    ["Acto 14 — LEGISTE (contraseña final)","César +7 sobre APNLSZL → TIGELSE (anagrama) → LEGISTE. Revelación: el asesino es el forense de la ciudad."]
+  ]
+},
+en:{
+  warn_title:"Intellectual Property",
+  warn_project:"The Shadow of the Fog — © 2026",
+  warn_content:"This game is an <strong>original creation protected by copyright</strong>.<br>Any reproduction, redistribution or resale is <strong>strictly prohibited</strong> without written permission.",
+  warn_accept:"Accept",
+  warn_refuse:"Refuse",
+  warn_legal:"Strictly personal use · Non-transferable · Not printable for commercial purposes",
+  warn_cookies:"This site uses browser local storage, strictly necessary for its operation (chosen language, investigation progress): this always stays active. It also uses audience-measurement cookies (Google Tag Manager), only set if you click \"Accept\". No data is used for advertising purposes. You can change your mind at any time via the 🍪 button at the bottom of the screen.",
+
+  cov_badge:"Ravenscourt · Autumn 1901 · Investigation File",
+  cov_pre:"Ravenscourt, 1901",
+  cov_main:"<span class=\"cde\">The Shadow</span> of the Fog",
+  cov_sub:"A Victorian Investigation in 14 Acts",
+  cov_tag:"The port of Ravenscourt falls asleep every night under a fog too thick to be honest.<br>Something has been hunting there for fourteen nights.<br>The press nicknamed it the Shadow of the Fog.<br>You have been called to discover who it is, before the fifteenth victim.",
+  cov_btn:"▶ &nbsp; Open the File",
+  cov_name_ph:"Nickname (optional)",
+
+  header_eyebrow:"Interactive Player's Booklet",
+  header_title:"The Shadow of the Fog",
+  header_sub:"« Fourteen nights of fog. One name at the end. »",
+  lbl_az:"Enter the word discovered through the puzzle:",
+  lbl_validate:"Validate →",
+  lbl_hintbtn:"🔑 Ask the Game Master for a hint",
+  lbl_final:"Speak the name hidden by the Shadow of the Fog:",
+
+  d1_stamp:"Investigation File — Page 1 · Night 1", d1_dl:"Act 1 · The Quay",
+  d1_dt:"The First<br><em>Disappearance</em>", d1_dc:"Cipher: Rail Fence (2 rails)",
+  d1_amb:"A dockworker has been missing since dawn. Only his lantern is found, standing upright on a crate, like an offering. A message scrawled in chalk on the wood, in a zigzag, seems to have been traced in haste.",
+  d1_note:"Keeper's Note: the message was written along two zigzag rows (one letter on top, one on the bottom, alternating), then the two rows were copied out one after the other. So split the 10 letters into two groups of 5: the first 5 form the top row, the next 5 the bottom row. Then recombine them in a zigzag (top, bottom, top, bottom…) to read the original word (10 letters).",
+
+  d2_stamp:"Investigation File — Page 2 · Night 2", d2_dl:"Act 2 · Dyers' Alley",
+  d2_dt:"The Forgotten<br><em>Object</em>", d2_dc:"Cipher: Polybius Square (grid to rebuild)",
+  d2_amb:"Under a porch, an old glass object has rolled into the gutter. Engraved into the metal of its base, a series of two-digit numbers — and, around them, the outline of an alphabet grid of which only three letters remain legible: A, I/J and Z.",
+
+  d3_stamp:"Investigation File — Page 3 · Night 3", d3_dl:"Act 3 · The Workshop",
+  d3_dt:"The Missing Man's<br><em>Diary</em>", d3_dc:"Cipher: Book Code",
+  d3_amb:"The diary of a missing man still lies on his workbench. One page seems to have served as a secret key.",
+
+  d4_stamp:"Investigation File — Page 4 · Night 4", d4_dl:"Act 4 · The Birds' Cemetery",
+  d4_dt:"The Disguised<br><em>Telegram</em>", d4_dc:"Cipher: Bacon (bimodal)",
+  d4_amb:"An anonymous telegram reached the local newspaper's office. Nothing odd at first glance — except the strange alternation between lowercase and uppercase letters, as if a code were hidden in the very typography of the message.",
+  d4_note:"Keeper's Note: each lowercase letter counts as « a », each UPPERCASE letter as « b ». Group the letters of the message into blocks of 5 to form Bacon codes, then find the word (7 letters). Careful: in the classic table, I/J share the same code, as do U/V — only one of the two gives a real French word.",
+
+  d5_stamp:"Investigation File — Page 5 · Night 5", d5_dl:"Act 5 · The Drowned Sailor Tavern",
+  d5_dt:"The Barman's<br><em>Notebook</em>", d5_dc:"Cipher: Playfair",
+  d5_amb:"The barman swears he served the last victim his final drink. On a page of his order notebook, a word coded in letter pairs, with a single clue as a header: the name of the port itself as the key.",
+  d5_note1:"Playfair grid built with the keyword RAVENSCOURT (no repeated letters, I and J merged, completed with the rest of the alphabet):",
+  d5_note2:"Keeper's Note: decode by pairs following the Playfair rules — same row → shift left; same column → shift up; otherwise (rectangle) → each letter keeps its row but takes the other's column. Examples with this grid (letters not from the message): OG → UF (rectangle); CD → AC (same column). Apply the same logic to the 4 pairs of the message to find the word (8 letters).",
+
+  d6_stamp:"Investigation File — Page 6 · Night 6", d6_dl:"Act 6 · The South Pier",
+  d6_dt:"The Dockers'<br><em>Signal</em>", d6_dc:"Cipher: Signal Flags (half-erased key)",
+  d6_amb:"A port signalman's notebook is found soaked on the pier. The dockers use an old flag code, each letter represented by two clock-hand positions — but the damp has erased half of the key.",
+  d6_note:"Keeper's Note: the damp erased three entries of the key (C, E, V). Spot where the already-known codes (A, D, R) appear in the message, then deduce the three missing letters to complete a 7-letter word no one wants to find on the docks after a foggy night.",
+
+  d7_stamp:"Investigation File — Page 7 · Night 7", d7_dl:"Act 7 · The Empty Cell",
+  d7_dt:"The Knocks<br>in the <em>Wall</em>", d7_dc:"Cipher: Counted Knocks (A=1, Z=26)",
+  d7_amb:"The depot's night watchman swears he heard knocking against the sheet metal all night long. He noted down the rhythm, group by group, as numbers scrawled in haste.",
+  d7_note:"Keeper's Note: no grid here — each number is directly the letter's position in the alphabet. Find the word (6 letters).",
+
+  d8_stamp:"Investigation File — Page 8 · Night 8", d8_dl:"Act 8 · The Doctor's Office",
+  d8_dt:"The Alchemical<br><em>Notebook</em>", d8_dc:"Cipher: Alchemical Symbols (incomplete key)",
+  d8_amb:"A neighbourhood doctor's office has been ransacked from top to bottom. Only an old notebook, covered in planetary symbols inherited from alchemy, seems to make any sense — but an ink stain has made two symbols illegible in the key.",
+  d8_note:"Keeper's Note: the stain erased ☿ and ♂ from the key. Another page of the notebook, devoted to the office's anaesthetics, states: « ☿, like the first remedy I tried: CHLOROFORM » and « ♂, like the one that replaced it: ETHER ». Form the word (7 letters) — an instrument more likely found on an anatomy table.",
+
+  d9_stamp:"Investigation File — Page 9 · Night 9", d9_dl:"Act 9 · The Common Room",
+  d9_dt:"The List of<br><em>Regulars</em>", d9_dc:"Cipher: Hidden Letter in Words",
+  d9_amb:"A list of seven words hastily scrawled on a beer coaster is found under a table. At first glance, a list with neither head nor tail — unless you always look at the same spot.",
+  d9_note:"Keeper's Note: the final word has 7 letters.",
+
+  d10_stamp:"Investigation File — Page 10 · Night 10", d10_dl:"Act 10 · The Abandoned Theatre",
+  d10_dt:"The Mirror<br><em>Writing</em>", d10_dc:"Cipher: Mirror Writing",
+  d10_amb:"In a dusty dressing room, a sentence is traced in lipstick on the dressing table's mirror — but it doesn't read normally. It must be read backwards, as the mirror itself would show it.",
+  d10_note:"Keeper's Note: read the message letter by letter starting from the end (as in a mirror) to reconstruct the full sentence, and isolate its central word (6 letters).",
+
+  d11_stamp:"Investigation File — Page 11 · Night 11", d11_dl:"Act 11 · The Police Station",
+  d11_dt:"The Testimony<br>in <em>Verse</em>", d11_dc:"Cipher: Acrostic",
+  d11_amb:"A single witness agrees to speak — but only in verse, out of superstition. Her testimony, written down, seems to hide something between the lines.",
+  d11_note:"Keeper's Note: the word has 6 letters.",
+
+  d12_stamp:"Investigation File — Page 12 · Night 12", d12_dl:"Act 12 · Ashcombe Manor",
+  d12_dt:"The Stopped<br><em>Clocks</em>", d12_dc:"Cipher: Clock Face (sequence to build)",
+  d12_amb:"In the manor of the late notable Ashcombe, seven clocks stopped at different hours, all on the same evening. An old servant sees a code in it, but no table was ever found — only a rule, scrawled from memory: starting at 1:00, worth « A », each following half hour would advance one letter in the alphabet.",
+  d12_note:"Keeper's Note: continue this count, half hour by half hour from 1:00 = A, up to each of the seven clocks, to form the word (7 letters).",
+
+  d13_stamp:"Investigation File — Page 13 · Night 13", d13_dl:"Act 13 · St. Anselm's Church",
+  d13_dt:"The Cursed<br><em>Score</em>", d13_dc:"Cipher: Musical Notes (grid to rebuild)",
+  d13_amb:"The parish organist scrawled a short sequence of notes in the margin of a score, with octave numbers. He swears he doesn't remember writing it himself. Only the first cell of his correspondence table is still legible.",
+  d13_note:"Keeper's Note: each note (Do to Si) is a column, each subscript number is an octave (a row). Find the letter for each cell to form the word (7 letters).",
+
+  d14_stamp:"Investigation File — Page 14 · Night 14", d14_dl:"Act 14 · The Revelation",
+  d14_dt:"The Signed<br><em>Ring</em>", d14_dc:"Final cipher: Anagram + Caesar",
+  d14_amb:"Thirteen nights of fog have led you to a signet ring found near the last body. An inscription is engraved on it, shifted letter by letter, AND scrambled — the double lock of a man who thought himself untouchable.",
+  d14_note:"Keeper's Note: this signet ring bears the motto of a methodical man, who never struck before seven bells had tolled from the nearby church tower. Shift each letter backward in the alphabet — you will then get an anagram: rearrange its letters to read the title of the one who has walked Ravenscourt for fourteen nights without ever being suspected (7 letters).",
+
+  nav_prev:"Prev.", nav_next:"Next", mj_short:"GM",
+  fb_ok:"✓ Act", fb_ok2:"solved.", fb_ko:"✗ That is not the right word.", fb_locked:"Solve the current act before moving on.", fbf_ko:"✗ That name is not correct.",
+  hint_more:"… (next hint available after clicking again)", hint_close:"Close",
+  mj_btn:"🕯 Game Master", mj_title:"Game Master Area",
+  mj_pass_ph:"GM password", mj_access_btn:"Access solutions",
+  mj_err:"Incorrect password.", mj_close:"Close",
+  felic_badge:"🏅 Congratulations, you solved the investigation!",
+  felic_title:"The Shadow Unmasked",
+  felic_txt:"Ravenscourt's coroner examined every body he himself had left in the fog. For fourteen nights, he signed his own autopsy reports. The case is closed — but the port no longer quite sleeps the way it used to.",
+  mj_sol:[
+    ["Act 1 — BROUILLARD","Rail Fence, 2 rails: BOILRRULAD → reverse zigzag."],
+    ["Act 2 — LANTERNE","Polybius square to rebuild from A(1,1), I/J(2,4), Z(5,5): grid ABCDE/FGHIK/LMNOP/QRSTU/VWXYZ."],
+    ["Act 3 — TAILLEUR","Book code: 1st letter of words 1.1, 3.8, 2.1, 3.4, 1.8, 1.7, 3.1, 4.1."],
+    ["Act 4 — CORBEAU","Bimodal Bacon (letter case): «un vIeuX CoRBeau noir vOle Tres bas cE soIR»."],
+    ["Act 5 — ABSINTHE","Playfair, keyword RAVENSCOURT: RD BQ TH GN."],
+    ["Act 6 — CADAVRE","Flags/clock with partial key: A=12-6, D=1-7, R=5-11 given; C=3-9, E=2-8, V=4-10 deduced via the pattern _A D A _R_ → CADAVRE."],
+    ["Act 7 — RUELLE","Positional count A=1…Z=26 (no grid): 18,21,5,12,12,5 → R,U,E,L,L,E."],
+    ["Act 8 — SCALPEL","Alchemical symbols, partial key: ☉=A,☽=L,♀=P,♄=S given; ☿=C (CHLOROFORM) and ♂=E (ETHER) deduced from notebook clues."],
+    ["Act 9 — TAVERNE","3rd letter of each word: ARTISAN,BRASSERIE,SEVERE,CIERGE,PARDON,MANOIR,PIERRE."],
+    ["Act 10 — MASQUE","Mirror writing: «TIR LI EUQSAM EL SUOS» → «SOUS LE MASQUE IL RIT» (Under the mask, he laughs)."],
+    ["Act 11 — TEMOIN","Acrostic: 1st letter of each line of the poem (T,E,M,O,I,N)."],
+    ["Act 12 — HORLOGE","Continuous sequence from 1:00=A (one letter per half hour, no table given): 4:30=H,8:00=O,9:30=R,6:30=L,8:00=O,4:00=G,3:00=E."],
+    ["Act 13 — REQUIEM","Notes/octaves: Fa3, Sol1, Mi3, Si3, Ré2, Sol1, La2."],
+    ["Act 14 — LEGISTE (final password)","Caesar +7 on APNLSZL → TIGELSE (anagram) → LEGISTE (coroner). Revelation: the killer is the city's coroner."]
+  ]
+}
+};
+let currentLang = 'fr';
+
+function applyI18n(){
+  const dict = I18N[currentLang];
+  document.querySelectorAll('[data-i18n]').forEach(el=>{
+    const key = el.getAttribute('data-i18n');
+    if(dict[key]!==undefined) el.innerHTML = dict[key];
+  });
+  document.querySelectorAll('[data-i18n-ph]').forEach(el=>{
+    const key = el.getAttribute('data-i18n-ph');
+    if(dict[key]!==undefined) el.setAttribute('placeholder', dict[key]);
+  });
+  const solBox = document.getElementById('mjSol');
+  solBox.innerHTML = dict.mj_sol.map(s=>'<div class="sol"><b>'+s[0]+'</b><br>'+s[1]+'</div>').join('');
+  document.querySelectorAll('.lang-btn').forEach(b=>b.classList.toggle('lang-active', b.getAttribute('data-lang')===currentLang));
+  document.documentElement.lang = currentLang;
+  if(navReady) updateDayLabels();
+  if(gameFinalMs!==null) showFinalTime();
+}
+function setLang(l){ currentLang = l; applyI18n(); }
+
+let day = 1;
+const total = 14;
+let navReady = false;
+
+function isSolved(n){ return localStorage.getItem('ravenscourt_a'+n)==='1'; }
+function canReach(n){
+  if(n<=1) return true;
+  for(let d=1; d<n; d++) if(!isSolved(d)) return false;
+  return true;
+}
+
+function buildTrack(){
+  const t = document.getElementById('ntrack');
+  t.innerHTML='';
+  for(let i=1;i<=total;i++){
+    if(i>1){
+      const seg=document.createElement('div');
+      seg.className='nseg'; seg.id='sg'+i;
+      t.appendChild(seg);
+    }
+    const n=document.createElement('div');
+    n.className='nnode'; n.id='nd'+i;
+    n.innerHTML='<div class="ndot">'+i+'</div>';
+    n.onclick=()=>gotoDay(i);
+    t.appendChild(n);
+  }
+  navReady=true;
+}
+function render(){
+  document.querySelectorAll('.panel').forEach(p=>p.classList.remove('show'));
+  document.querySelector('.panel[data-day="'+day+'"]').classList.add('show');
+  for(let i=1;i<=total;i++){
+    const n=document.getElementById('nd'+i);
+    if(!n) continue;
+    n.classList.remove('active','visited','locked');
+    if(i===day) n.classList.add('active');
+    else if(isSolved(i)||i<day) n.classList.add('visited');
+    if(!canReach(i) && i!==day) n.classList.add('locked');
+    if(i>1){ const s=document.getElementById('sg'+i); if(s) s.classList.toggle('on', isSolved(i-1)); }
+  }
+  document.getElementById('prevBtn').disabled = false;
+  const nb = document.getElementById('nextBtn');
+  nb.disabled = (day===total);
+  nb.classList.toggle('locked', day<total && !isSolved(day));
+}
+function updateDayLabels(){}
+function shakeNav(n){
+  const nb = document.getElementById('nextBtn');
+  nb.style.transform='translateX(-5px)';
+  setTimeout(()=>nb.style.transform='translateX(5px)',80);
+  setTimeout(()=>nb.style.transform='translateX(0)',200);
+  const fb = document.getElementById('fb'+n);
+  if(fb){
+    fb.className='feedback ko';
+    fb.textContent = I18N[currentLang].fb_locked;
+  }
+}
+function showFinalPuzzleAgain(){
+  const fp = document.getElementById('finalPage');
+  const felic = document.getElementById('felicPage');
+  if(fp) fp.style.display='block';
+  if(felic) felic.style.display='none';
+}
+function gotoDay(n){
+  if(n<1||n>total) return;
+  if(!canReach(n)){ shakeNav(day); return; }
+  day=n; render();
+  if(day===14) showFinalPuzzleAgain();
+}
+function go(dir){
+  const nd = day+dir;
+  if(nd<1){
+    document.getElementById('shell').style.display='none';
+    document.getElementById('cover').style.display='block';
+    return;
+  }
+  if(nd>total) return;
+  if(nd>day && !isSolved(day)){ shakeNav(day); return; }
+  day=nd; render();
+  if(day===14) showFinalPuzzleAgain();
+}
+function norm(s){ return (s||'').trim().toUpperCase().normalize('NFD').replace(/[\u0300-\u036f]/g,''); }
+function gridFmt(el){
+  el.value = el.value.toUpperCase().replace(/[^A-Z]/g,'');
+  if(el.value){
+    const table = el.closest('table');
+    if(table){
+      const cells = Array.from(table.querySelectorAll('.gridcell'));
+      const idx = cells.indexOf(el);
+      if(idx>-1 && idx<cells.length-1) cells[idx+1].focus();
+    }
+  }
+}
+function checkAnswer(n){
+  const val = norm(document.getElementById('ans'+n).value);
+  const fb = document.getElementById('fb'+n);
+  const dict = I18N[currentLang];
+  if(val===answers[n]){
+    fb.textContent = dict.fb_ok+' '+n+' '+dict.fb_ok2;
+    fb.className='feedback ok';
+    localStorage.setItem('ravenscourt_a'+n,'1');
+    render();
+    setTimeout(function(){ if(day===n) go(1); }, 700);
+  } else {
+    fb.textContent = dict.fb_ko;
+    fb.className='feedback ko';
+    const werrKey = 'ravenscourt_werr'+n;
+    if(!localStorage.getItem(werrKey)){
+      localStorage.setItem(werrKey,'1');
+      notifyTelegram('❌ '+getPlayerName()+' ['+getSessionTag()+'] — mauvaise réponse Acte '+n+' : "'+val+'"');
+    }
+  }
+}
+function openHint(n){
+  const key = 'ravenscourt_h'+n;
+  let step = parseInt(localStorage.getItem(key)||'0');
+  const list = hints[currentLang][n];
+  if(step < list.length) step++;
+  localStorage.setItem(key, step);
+  const hdLabel = currentLang==='fr'?'Indice — Acte ':currentLang==='es'?'Pista — Acto ':'Hint — Act ';
+  document.getElementById('hd').textContent = hdLabel+n;
+  let html='';
+  for(let i=0;i<step;i++){ html += '<div class="hint-line">'+list[i]+'</div>'; }
+  if(step<list.length){ html += '<div class="hint-line" style="opacity:.6">'+I18N[currentLang].hint_more+'</div>'; }
+  document.getElementById('hcont').innerHTML = html;
+  document.getElementById('hOv').style.display='flex';
+}
+function checkFinal(){
+  const val = norm(document.getElementById('ansFinal').value);
+  const fb = document.getElementById('fbFinal');
+  if(val===finalPass){
+    document.getElementById('finalPage').style.display='none';
+    document.getElementById('felicPage').style.display='block';
+    const alreadyFinished = gameFinalMs !== null;
+    const elapsed = finishChrono();
+    showFinalTime();
+    if(!alreadyFinished){
+      notifyTelegram('🏆 '+getPlayerName()+' ['+getSessionTag()+'] a résolu l\'enquête en '+formatElapsed(elapsed)+' !');
+    }
+  } else {
+    fb.textContent=I18N[currentLang].fbf_ko;
+    fb.className='feedback ko';
+    if(!localStorage.getItem('ravenscourt_werrFinal')){
+      localStorage.setItem('ravenscourt_werrFinal','1');
+      notifyTelegram('❌ '+getPlayerName()+' ['+getSessionTag()+'] — mauvaise réponse finale : "'+val+'"');
+    }
+  }
+}
+function resetProgress(){
+  const msg = currentLang==='fr'
+    ? "Effacer toute la progression (réponses trouvées, indices débloqués) et recommencer l'enquête depuis le début ?"
+    : currentLang==='es'
+    ? "¿Borrar todo el progreso (respuestas encontradas, pistas desbloqueadas) y reiniciar la investigación desde el principio?"
+    : "Erase all progress (answers found, hints unlocked) and restart the investigation from the beginning?";
+  if(!confirm(msg)) return;
+  for(let n=1;n<=13;n++){
+    localStorage.removeItem('ravenscourt_a'+n);
+    localStorage.removeItem('ravenscourt_h'+n);
+    localStorage.removeItem('ravenscourt_werr'+n);
+    const inp=document.getElementById('ans'+n);
+    if(inp) inp.value='';
+    const fb=document.getElementById('fb'+n);
+    if(fb){ fb.textContent=''; fb.className='feedback'; }
+  }
+  localStorage.removeItem('ravenscourt_werrFinal');
+  localStorage.removeItem('ravenscourtGameStarted');
+  localStorage.removeItem('ravenscourtChronoAccum');
+  localStorage.removeItem('ravenscourtFinalMs');
+  localStorage.removeItem('ravenscourtPlayerName');
+  localStorage.removeItem('ravenscourtSessionTag');
+  localStorage.removeItem('ravenscourtCookieConsent');
+  const inpName=document.getElementById('playerNameInput');
+  if(inpName) inpName.value='';
+  const inpF=document.getElementById('ansFinal');
+  if(inpF) inpF.value='';
+  const fbF=document.getElementById('fbFinal');
+  if(fbF){ fbF.textContent=''; fbF.className='feedback'; }
+  document.getElementById('felicPage').style.display='none';
+  document.getElementById('finalPage').style.display='block';
+  chronoAccumMs=0; chronoSessionStart=null; gameStarted=false; gameFinalMs=null;
+  if(chronoInterval){clearInterval(chronoInterval);chronoInterval=null;}
+  const badge=document.getElementById('chronoBadge');
+  if(badge){badge.classList.remove('show');badge.textContent='00:00';}
+  day=1;
+  document.getElementById('shell').style.display='none';
+  document.getElementById('cover').style.display='none';
+  document.getElementById('warn').style.display='flex';
+  render();
+}
+function openMJ(){ document.getElementById('mjp').style.display='flex'; }
+function checkMJ(){
+  const p = document.getElementById('mjPass').value;
+  if(p==='ravenscourt1901'){
+    document.getElementById('mPm').style.display='none';
+    document.getElementById('mjSol').style.display='block';
+    document.getElementById('mjErr').style.display='none';
+  } else {
+    document.getElementById('mjErr').style.display='block';
+  }
+}
+
+/* ── Consentement cookies (RGPD) ── */
+function handleConsent(accepted){
+  try{ localStorage.setItem('ravenscourtCookieConsent', accepted ? 'accepted' : 'refused'); }catch(e){}
+  if(accepted){ ravenscourtLoadGTM(); ravenscourtLoadGA(); }
+  document.getElementById('warn').style.display='none';
+  const shellVisible = document.getElementById('shell').style.display==='block';
+  const coverVisible = document.getElementById('cover').style.display==='block';
+  if(!shellVisible && !coverVisible){
+    document.getElementById('cover').style.display='block';
+    musicTryStart();
+  }
+}
+function openCookiePrefs(){
+  document.getElementById('warn').style.display='flex';
+}
+function initConsent(){
+  let consent=null;
+  try{ consent = localStorage.getItem('ravenscourtCookieConsent'); }catch(e){}
+  if(consent){
+    if(consent==='accepted'){ ravenscourtLoadGTM(); ravenscourtLoadGA(); }
+    document.getElementById('warn').style.display='none';
+    document.getElementById('cover').style.display='block';
+  }
+}
+
+/* ── Validation par Entrée (double Entrée pour avancer) ── */
+document.addEventListener('keydown', function(e){
+  if(e.key !== 'Enter') return;
+  if(document.getElementById('mjp').style.display==='flex'){ checkMJ(); return; }
+  if(document.getElementById('hOv').style.display==='flex'){ return; }
+  if(document.getElementById('shell').style.display!=='block') return;
+  if(day>=1 && day<=13){
+    e.preventDefault();
+    if(isSolved(day)) go(1); else checkAnswer(day);
+  } else if(day===14 && document.getElementById('finalPage').style.display!=='none'){
+    e.preventDefault();
+    checkFinal();
+  }
+});
+
+/* ── Chronomètre ── */
+let chronoAccumMs=0, chronoSessionStart=null, gameStarted=false, gameFinalMs=null, chronoInterval=null;
+function formatElapsed(ms){
+  const totalSec=Math.max(0,Math.floor(ms/1000));
+  const h=Math.floor(totalSec/3600), m=Math.floor((totalSec%3600)/60), s=totalSec%60;
+  const pad=n=>String(n).padStart(2,'0');
+  return h>0 ? `${h}:${pad(m)}:${pad(s)}` : `${pad(m)}:${pad(s)}`;
+}
+function currentElapsed(){
+  if(gameFinalMs!==null) return gameFinalMs;
+  if(!gameStarted) return 0;
+  return chronoAccumMs + (chronoSessionStart ? (Date.now()-chronoSessionStart) : 0);
+}
+function tickChrono(){
+  const badge=document.getElementById('chronoBadge');
+  if(!badge||!gameStarted) return;
+  badge.classList.add('show');
+  badge.textContent=formatElapsed(currentElapsed());
+}
+function runChronoDisplay(){
+  tickChrono();
+  if(chronoInterval){clearInterval(chronoInterval);chronoInterval=null;}
+  if(gameFinalMs===null){ chronoInterval=setInterval(tickChrono,1000); }
+}
+function commitChronoSession(){
+  if(chronoSessionStart){
+    chronoAccumMs += Date.now()-chronoSessionStart;
+    chronoSessionStart=null;
+    try{ localStorage.setItem('ravenscourtChronoAccum', String(chronoAccumMs)); }catch(e){}
+  }
+}
+function startChrono(){
+  try{
+    const nameInput = document.getElementById('playerNameInput');
+    if(nameInput && nameInput.value.trim()){
+      localStorage.setItem('ravenscourtPlayerName', nameInput.value.trim().slice(0,30));
+    }
+  }catch(e){}
+  if(gameStarted) return;
+  gameStarted=true;
+  chronoAccumMs=0;
+  chronoSessionStart=Date.now();
+  try{
+    localStorage.setItem('ravenscourtGameStarted','1');
+    localStorage.setItem('ravenscourtChronoAccum','0');
+  }catch(e){}
+  runChronoDisplay();
+}
+function finishChrono(){
+  if(gameFinalMs!==null) return gameFinalMs;
+  commitChronoSession();
+  gameFinalMs=chronoAccumMs;
+  try{ localStorage.setItem('ravenscourtFinalMs', String(gameFinalMs)); }catch(e){}
+  if(chronoInterval){clearInterval(chronoInterval);chronoInterval=null;}
+  tickChrono();
+  return gameFinalMs;
+}
+function showFinalTime(){
+  const el=document.getElementById('felicTime');
+  if(!el||gameFinalMs===null) return;
+  const timeLabel = currentLang==='fr' ? 'Enquête résolue en ' : currentLang==='es' ? 'Investigación resuelta en ' : 'Investigation solved in ';
+  el.textContent = timeLabel + formatElapsed(gameFinalMs);
+}
+function loadTimer(){
+  try{
+    gameStarted = localStorage.getItem('ravenscourtGameStarted')==='1';
+    const acc=localStorage.getItem('ravenscourtChronoAccum');
+    if(acc!==null && acc!==undefined && acc!=='') chronoAccumMs=Number(acc);
+    const fm=localStorage.getItem('ravenscourtFinalMs');
+    if(fm!==null && fm!==undefined && fm!=='') gameFinalMs=Number(fm);
+  }catch(e){}
+  if(gameStarted && gameFinalMs===null){
+    chronoSessionStart=Date.now();
+    runChronoDisplay();
+  }else if(gameFinalMs!==null){
+    tickChrono();
+    showFinalTime();
+  }
+}
+document.addEventListener('visibilitychange', function(){
+  if(document.visibilityState==='hidden'){
+    commitChronoSession();
+  }else if(document.visibilityState==='visible' && gameStarted && gameFinalMs===null){
+    chronoSessionStart=Date.now();
+    runChronoDisplay();
+  }
+});
+window.addEventListener('beforeunload', commitChronoSession);
+window.addEventListener('pagehide', commitChronoSession);
+
+/* ── Musique d'ambiance ── */
+(function(){
+  const audio=document.getElementById('bgMusic');
+  const btn=document.getElementById('musicToggle');
+  if(!audio||!btn) return;
+  let muted=false;
+  try{ muted = localStorage.getItem('ravenscourtMuted') === '1'; }catch(e){}
+  audio.volume=0.35;
+  function updateIcon(){ btn.textContent = muted ? '🔇' : '🔊'; }
+  function applyMute(){
+    audio.muted=muted;
+    updateIcon();
+    try{ localStorage.setItem('ravenscourtMuted', muted ? '1' : '0'); }catch(e){}
+  }
+  applyMute();
+  window.musicTryStart=function(){
+    if(!muted && audio.paused){ audio.play().catch(function(){}); }
+  };
+  function toggleMusic(){
+    muted=!muted;
+    applyMute();
+    if(!muted) window.musicTryStart();
+  }
+  btn.addEventListener('click',toggleMusic,{passive:true});
+  btn.addEventListener('touchend',function(e){e.preventDefault();toggleMusic();},{passive:false});
+})();
+
+buildTrack();
+applyI18n();
+render();
+loadTimer();
+initConsent();
+</script>
+</body>
+<!-- Fin — L'Ombre du Brouillard (Ravenscourt, 1901) © 2026 — VEAU Yann / GRASON Sabrina — création originale, tous droits réservés -->
+</html>
