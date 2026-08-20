@@ -32,7 +32,7 @@ function ravenscourtLoadGTM(){
      Un seul identifiant valide suffit pour activer le suivi ; ceux qui restent au format
      "G-XXXXXXXXXX" / "G-YYYYYYYYYY" sont ignorés (pas d'erreur, pas d'appel réseau). -->
 <script>
-const GA_MEASUREMENT_IDS = ['G-XXXXXXXXXX', 'G-YYYYYYYYYY'];
+const GA_MEASUREMENT_IDS = ['G-246FKENXGR', 'G-YYYYYYYYYY'];
 function gtag(){ window.dataLayer.push(arguments); }
 function ravenscourtLoadGA(){
   if(window.__ravenscourtGaLoaded) return;
@@ -108,7 +108,7 @@ h1,h2,h3,.disp{font-family:'Playfair Display',serif}
 .warn-leg{margin-top:22px;font-size:11px;letter-spacing:.03em;color:var(--sl)}
 
 /* COVER */
-#cover{display:none;position:fixed;inset:0;z-index:9000;overflow:hidden;
+#cover{display:none;position:fixed;inset:0;z-index:9000;overflow:hidden;background-color:#05060a;
   background-image:
     radial-gradient(ellipse at 50% -10%, rgba(122,21,21,.22), transparent 55%),
     url('cover-ravenscourt.jpg');
@@ -294,7 +294,7 @@ input.mono{font-family:'Courier Prime',monospace;font-size:16px;letter-spacing:.
     <div class="csub" data-i18n="cov_sub">Enquête Victorienne en 14 Actes</div>
     <div class="ctag" data-i18n="cov_tag">Le port de Ravenscourt s'endort chaque soir sous un brouillard trop épais pour être honnête.<br>Quelque chose y chasse depuis quatorze nuits.<br>La presse l'a surnommé l'Ombre du Brouillard.<br>Vous avez été appelé pour découvrir qui il est, avant la quinzième victime.</div>
     <input type="text" id="playerNameInput" class="cname-input" maxlength="30" data-i18n-ph="cov_name_ph">
-    <button class="cbtn" id="coverBtn" onclick="startChrono();document.getElementById('cover').style.display='none';document.getElementById('shell').style.display='block';" data-i18n="cov_btn">▶ &nbsp; Ouvrir le Dossier</button>
+    <button class="cbtn" id="coverBtn" onclick="startChrono();document.getElementById('cover').style.display='none';document.getElementById('shell').style.display='block';musicTryStart();" data-i18n="cov_btn">▶ &nbsp; Ouvrir le Dossier</button>
   </div>
 </div>
 
@@ -1482,6 +1482,12 @@ window.addEventListener('pagehide', commitChronoSession);
   }
   btn.addEventListener('click',toggleMusic,{passive:true});
   btn.addEventListener('touchend',function(e){e.preventDefault();toggleMusic();},{passive:false});
+  /* Filet de sécurité : certains navigateurs bloquent la toute première tentative
+     de lecture automatique. On retente à la première interaction de l'utilisateur,
+     quelle qu'elle soit, sans changer son choix muet/non-muet. */
+  ['pointerdown','keydown'].forEach(function(evt){
+    document.addEventListener(evt, function(){ window.musicTryStart(); }, {once:true, passive:true});
+  });
 })();
 
 buildTrack();
