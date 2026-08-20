@@ -311,12 +311,12 @@ input.mono{font-family:'Courier Prime',monospace;font-size:16px;letter-spacing:.
       <div class="dl" data-i18n="d1_dl">Acte 1 · Le Quai</div>
       <div class="dt" data-i18n="d1_dt">La Première<br><em>Disparition</em></div>
       <div class="dc" data-i18n="d1_dc">Chiffrement : Rail Fence (2 rangs)</div>
-      <div class="ambiance" data-i18n="d1_amb">Un docker manque à l'appel depuis l'aube. On ne retrouve que sa lanterne, posée bien droite sur une caisse, comme une offrande. Un message griffonné à la craie sur le bois, en zigzag, semble avoir été tracé à la hâte.</div>
-      <div class="cipher-box">B O I L R R U L A D</div>
+      <div class="ambiance" data-i18n="d1_amb">Un docker manque à l'appel depuis l'aube. On ne retrouve que sa lanterne, posée bien droite sur une caisse, comme une offrande. Un message griffonné à la craie sur le bois, en zigzag, semble avoir été tracé à la hâte. Un pêcheur matinal jure avoir croisé, dans la brume, une silhouette en blouse pâle qui s'éloignait sans un bruit.</div>
+      <div class="cipher-box" data-i18n="d1_cipher">B O I L R R U L A D</div>
       <div class="note" data-i18n="d1_note">Note du Gardien : le message a été écrit en suivant deux rangées en zigzag (une lettre en haut, une en bas, en alternance), puis les deux rangées ont été recopiées l'une après l'autre. Séparez donc les 10 lettres en deux groupes de 5 : les 5 premières forment la rangée du haut, les 5 suivantes la rangée du bas. Recombinez-les ensuite en zigzag (haut, bas, haut, bas…) pour lire le mot d'origine (10 lettres).</div>
       <div class="check-row">
         <div class="lbl-az" data-i18n="lbl_az">Entrez le mot découvert grâce à l'énigme :</div>
-        <input class="mono" id="ans1" maxlength="14" placeholder="_ _ _ _ _ _ _ _ _ _" onkeydown="if(event.key==='Enter'){event.preventDefault();if(isSolved(1))go(1);else checkAnswer(1);}">
+        <input class="mono" id="ans1" maxlength="14" placeholder="_ _ _ _ _ _ _ _ _ _" data-i18n-ph="d1_ph" onkeydown="if(event.key==='Enter'){event.preventDefault();if(isSolved(1))go(1);else checkAnswer(1);}">
         <button class="btn btn-nav" onclick="checkAnswer(1)" data-i18n="lbl_validate">Valider →</button>
         <div class="feedback" id="fb1"></div>
       </div>
@@ -339,10 +339,10 @@ input.mono{font-family:'Courier Prime',monospace;font-size:16px;letter-spacing:.
         <tr><th>4</th><td><input class="gridcell" maxlength="1" oninput="gridFmt(this)"></td><td><input class="gridcell" maxlength="1" oninput="gridFmt(this)"></td><td><input class="gridcell" maxlength="1" oninput="gridFmt(this)"></td><td><input class="gridcell" maxlength="1" oninput="gridFmt(this)"></td><td><input class="gridcell" maxlength="1" oninput="gridFmt(this)"></td></tr>
         <tr><th>5</th><td><input class="gridcell" maxlength="1" oninput="gridFmt(this)"></td><td><input class="gridcell" maxlength="1" oninput="gridFmt(this)"></td><td><input class="gridcell" maxlength="1" oninput="gridFmt(this)"></td><td><input class="gridcell" maxlength="1" oninput="gridFmt(this)"></td><td>Z</td></tr>
       </table>
-      <div class="cipher-box">31 · 11 · 33 · 44 · 15 · 42 · 33 · 15</div>
+      <div class="cipher-box" data-i18n="d2_cipher">31 · 11 · 33 · 44 · 15 · 42 · 33 · 15</div>
       <div class="check-row">
         <div class="lbl-az" data-i18n="lbl_az">Entrez le mot découvert grâce à l'énigme :</div>
-        <input class="mono" id="ans2" maxlength="14" placeholder="_ _ _ _ _ _ _ _" onkeydown="if(event.key==='Enter'){event.preventDefault();if(isSolved(2))go(1);else checkAnswer(2);}">
+        <input class="mono" id="ans2" maxlength="14" placeholder="_ _ _ _ _ _ _ _" data-i18n-ph="d2_ph" onkeydown="if(event.key==='Enter'){event.preventDefault();if(isSolved(2))go(1);else checkAnswer(2);}">
         <button class="btn btn-nav" onclick="checkAnswer(2)" data-i18n="lbl_validate">Valider →</button>
         <div class="feedback" id="fb2"></div>
       </div>
@@ -357,14 +357,14 @@ input.mono{font-family:'Courier Prime',monospace;font-size:16px;letter-spacing:.
       <div class="dt" data-i18n="d3_dt">Le Journal<br>du <em>Disparu</em></div>
       <div class="dc" data-i18n="d3_dc">Chiffrement : Code du Livre</div>
       <div class="ambiance" data-i18n="d3_amb">Le journal intime d'un homme disparu traîne encore sur son établi. Une page semble avoir servi de clé secrète.</div>
-      <div class="cipher-box mono" style="text-align:left;line-height:1.9">1. Toujours ces mains gercées par l'hiver et le froid mordant.
+      <div class="cipher-box mono" style="text-align:left;line-height:1.9" data-i18n="d3_journal">1. Toujours ces mains gercées par l'hiver et le froid mordant.
 2. Il travaille en silence, ignorant les cris qui montent des ruelles.
 3. Une odeur de laine mouillée envahit son atelier, glacial.
 4. Rien ne sert de courir, disait-il, le temps efface tout.</div>
-      <div class="cipher-box">1.1 — 3.8 — 2.1 — 3.4 — 1.8 — 1.7 — 3.1 — 4.1</div>
+      <div class="cipher-box" data-i18n="d3_cipher">1.1 — 3.8 — 2.1 — 3.4 — 1.8 — 1.7 — 3.1 — 4.1</div>
       <div class="check-row">
         <div class="lbl-az" data-i18n="lbl_az">Entrez le mot découvert grâce à l'énigme :</div>
-        <input class="mono" id="ans3" maxlength="14" placeholder="_ _ _ _ _ _ _ _" onkeydown="if(event.key==='Enter'){event.preventDefault();if(isSolved(3))go(1);else checkAnswer(3);}">
+        <input class="mono" id="ans3" maxlength="14" placeholder="_ _ _ _ _ _ _ _" data-i18n-ph="d3_ph" onkeydown="if(event.key==='Enter'){event.preventDefault();if(isSolved(3))go(1);else checkAnswer(3);}">
         <button class="btn btn-nav" onclick="checkAnswer(3)" data-i18n="lbl_validate">Valider →</button>
         <div class="feedback" id="fb3"></div>
       </div>
@@ -386,11 +386,11 @@ input.mono{font-family:'Courier Prime',monospace;font-size:16px;letter-spacing:.
         <tr><th>E</th><td>aabaa</td><th>M</th><td>ababb</td><th>S</th><td>baaab</td><th>Z</th><td>babbb</td></tr>
         <tr><th>F</th><td>aabab</td><th>N</th><td>abbaa</td><th>T</th><td>baaba</td><td colspan="2"></td></tr>
       </table>
-      <div class="cipher-box" style="font-family:'Crimson Text',serif;font-size:16px;letter-spacing:0">un vIeuX CoRBeau noir vOle Tres bas cE soIR</div>
+      <div class="cipher-box" style="font-family:'Crimson Text',serif;font-size:16px;letter-spacing:0" data-i18n="d4_cipher">un vIeuX CoRBeau noir vOle Tres bas cE soIR</div>
       <div class="note" data-i18n="d4_note">Note du Gardien : chaque lettre minuscule vaut "a", chaque lettre en MAJUSCULE vaut "b". Regroupez les lettres du message par paquets de 5 pour former des codes bacon, puis retrouvez le mot (7 lettres). Attention : dans le tableau classique, I/J partagent le même code, tout comme U/V — un seul des deux donnera un vrai mot français.</div>
       <div class="check-row">
         <div class="lbl-az" data-i18n="lbl_az">Entrez le mot découvert grâce à l'énigme :</div>
-        <input class="mono" id="ans4" maxlength="14" placeholder="_ _ _ _ _ _ _" onkeydown="if(event.key==='Enter'){event.preventDefault();if(isSolved(4))go(1);else checkAnswer(4);}">
+        <input class="mono" id="ans4" maxlength="14" placeholder="_ _ _ _ _ _ _" data-i18n-ph="d4_ph" onkeydown="if(event.key==='Enter'){event.preventDefault();if(isSolved(4))go(1);else checkAnswer(4);}">
         <button class="btn btn-nav" onclick="checkAnswer(4)" data-i18n="lbl_validate">Valider →</button>
         <div class="feedback" id="fb4"></div>
       </div>
@@ -404,7 +404,7 @@ input.mono{font-family:'Courier Prime',monospace;font-size:16px;letter-spacing:.
       <div class="dl" data-i18n="d5_dl">Acte 5 · La Taverne du Marin Noyé</div>
       <div class="dt" data-i18n="d5_dt">Le Carnet<br>du <em>Barman</em></div>
       <div class="dc" data-i18n="d5_dc">Chiffrement : Playfair</div>
-      <div class="ambiance" data-i18n="d5_amb">Le barman jure avoir servi la dernière victime son ultime verre. Sur une page de son carnet de commandes, un mot codé par paires de lettres, avec en en-tête un seul indice : le nom du port lui-même comme clé.</div>
+      <div class="ambiance" data-i18n="d5_amb">Le barman jure avoir servi la dernière victime son ultime verre. Sur une page de son carnet de commandes, un mot codé par paires de lettres, avec en en-tête un seul indice : le nom du port lui-même comme clé. Il se souvient aussi d'un client silencieux, en blouse claire sous son manteau, resté seul au fond de la salle toute la soirée.</div>
       <div class="note" data-i18n="d5_note1">Grille Playfair construite avec la clé RAVENSCOURT (sans lettres répétées, I et J confondus, complétée par le reste de l'alphabet) :</div>
       <table class="cipher-table">
         <tr><td>R</td><td>A</td><td>V</td><td>E</td><td>N</td></tr>
@@ -413,11 +413,11 @@ input.mono{font-family:'Courier Prime',monospace;font-size:16px;letter-spacing:.
         <tr><td>I</td><td>K</td><td>L</td><td>M</td><td>P</td></tr>
         <tr><td>Q</td><td>W</td><td>X</td><td>Y</td><td>Z</td></tr>
       </table>
-      <div class="cipher-box">RD BQ TH GN</div>
+      <div class="cipher-box" data-i18n="d5_cipher">RD BQ TH GN</div>
       <div class="note" data-i18n="d5_note2">Note du Gardien : déchiffrez par paires selon les règles du Playfair — même ligne → décalez à gauche ; même colonne → décalez vers le haut ; sinon (rectangle) → chaque lettre garde sa ligne mais prend la colonne de l'autre. Exemples avec cette grille (lettres différentes du message) : OG → UF (rectangle) ; CD → AC (même colonne). Appliquez la même logique aux 4 paires du message pour retrouver le mot (8 lettres).</div>
       <div class="check-row">
         <div class="lbl-az" data-i18n="lbl_az">Entrez le mot découvert grâce à l'énigme :</div>
-        <input class="mono" id="ans5" maxlength="14" placeholder="_ _ _ _ _ _ _ _" onkeydown="if(event.key==='Enter'){event.preventDefault();if(isSolved(5))go(1);else checkAnswer(5);}">
+        <input class="mono" id="ans5" maxlength="14" placeholder="_ _ _ _ _ _ _ _" data-i18n-ph="d5_ph" onkeydown="if(event.key==='Enter'){event.preventDefault();if(isSolved(5))go(1);else checkAnswer(5);}">
         <button class="btn btn-nav" onclick="checkAnswer(5)" data-i18n="lbl_validate">Valider →</button>
         <div class="feedback" id="fb5"></div>
       </div>
@@ -432,15 +432,15 @@ input.mono{font-family:'Courier Prime',monospace;font-size:16px;letter-spacing:.
       <div class="dt" data-i18n="d6_dt">Le Signal<br>des <em>Débardeurs</em></div>
       <div class="dc" data-i18n="d6_dc">Chiffrement : Pavillons de Signalisation (légende à moitié effacée)</div>
       <div class="ambiance" data-i18n="d6_amb">Un carnet de signaleur du port est retrouvé trempé sur le ponton. Les dockers utilisent un vieux code de pavillons, chaque lettre étant représentée par deux positions d'aiguilles d'horloge — mais l'humidité a effacé la moitié de la légende.</div>
-      <table class="cipher-table">
+      <table class="cipher-table" data-i18n="d6_table">
         <tr><th>Lettre</th><td>A</td><td>C</td><td>D</td><td>E</td><td>R</td><td>V</td></tr>
         <tr><th>Positions</th><td>12h-06h</td><td>?</td><td>01h-07h</td><td>?</td><td>05h-11h</td><td>?</td></tr>
       </table>
-      <div class="cipher-box">03h-09h · 12h-06h · 01h-07h · 12h-06h · 04h-10h · 05h-11h · 02h-08h</div>
+      <div class="cipher-box" data-i18n="d6_cipher">03h-09h · 12h-06h · 01h-07h · 12h-06h · 04h-10h · 05h-11h · 02h-08h</div>
       <div class="note" data-i18n="d6_note">Note du Gardien : l'humidité a effacé trois entrées de la légende (C, E, V). Repérez où apparaissent dans le message les codes déjà connus (A, D, R), puis déduisez les trois lettres manquantes pour compléter un mot de 7 lettres que l'on redoute de trouver sur les quais après une nuit de brouillard.</div>
       <div class="check-row">
         <div class="lbl-az" data-i18n="lbl_az">Entrez le mot découvert grâce à l'énigme :</div>
-        <input class="mono" id="ans6" maxlength="14" placeholder="_ _ _ _ _ _ _" onkeydown="if(event.key==='Enter'){event.preventDefault();if(isSolved(6))go(1);else checkAnswer(6);}">
+        <input class="mono" id="ans6" maxlength="14" placeholder="_ _ _ _ _ _ _" data-i18n-ph="d6_ph" onkeydown="if(event.key==='Enter'){event.preventDefault();if(isSolved(6))go(1);else checkAnswer(6);}">
         <button class="btn btn-nav" onclick="checkAnswer(6)" data-i18n="lbl_validate">Valider →</button>
         <div class="feedback" id="fb6"></div>
       </div>
@@ -454,11 +454,11 @@ input.mono{font-family:'Courier Prime',monospace;font-size:16px;letter-spacing:.
       <div class="dt" data-i18n="d7_dt">Les Coups<br>dans le <em>Mur</em></div>
       <div class="dc" data-i18n="d7_dc">Chiffrement : Coups Comptés (A=1, Z=26)</div>
       <div class="ambiance" data-i18n="d7_amb">Le gardien de nuit du dépôt jure avoir entendu des coups frappés contre la tôle, toute une nuit durant. Il en a noté le rythme, groupe par groupe, sous forme de nombres griffonnés à la hâte.</div>
-      <div class="cipher-box">18 · 21 · 5 · 12 · 12 · 5</div>
+      <div class="cipher-box" data-i18n="d7_cipher">18 · 21 · 5 · 12 · 12 · 5</div>
       <div class="note" data-i18n="d7_note">Note du Gardien : pas de grille ici — chaque nombre correspond directement à la position de la lettre dans l'alphabet. Retrouvez le mot (6 lettres).</div>
       <div class="check-row">
         <div class="lbl-az" data-i18n="lbl_az">Entrez le mot découvert grâce à l'énigme :</div>
-        <input class="mono" id="ans7" maxlength="14" placeholder="_ _ _ _ _ _" onkeydown="if(event.key==='Enter'){event.preventDefault();if(isSolved(7))go(1);else checkAnswer(7);}">
+        <input class="mono" id="ans7" maxlength="14" placeholder="_ _ _ _ _ _" data-i18n-ph="d7_ph" onkeydown="if(event.key==='Enter'){event.preventDefault();if(isSolved(7))go(1);else checkAnswer(7);}">
         <button class="btn btn-nav" onclick="checkAnswer(7)" data-i18n="lbl_validate">Valider →</button>
         <div class="feedback" id="fb7"></div>
       </div>
@@ -473,15 +473,15 @@ input.mono{font-family:'Courier Prime',monospace;font-size:16px;letter-spacing:.
       <div class="dt" data-i18n="d8_dt">Le Carnet<br><em>Alchimique</em></div>
       <div class="dc" data-i18n="d8_dc">Chiffrement : Symboles Alchimiques (légende incomplète)</div>
       <div class="ambiance" data-i18n="d8_amb">Le cabinet d'un médecin du quartier a été fouillé de fond en comble. Seul un vieux carnet de notes, couvert de symboles planétaires hérités de l'alchimie, semble avoir un sens — mais une tache d'encre a rendu deux symboles illisibles dans la légende.</div>
-      <table class="cipher-table">
+      <table class="cipher-table" data-i18n="d8_table">
         <tr><th>☉ Soleil</th><td>A</td><th>☽ Lune</th><td>L</td></tr>
         <tr><th>♀ Vénus</th><td>P</td><th>♄ Saturne</th><td>S</td></tr>
       </table>
-      <div class="cipher-box" style="font-size:26px">♄ ☿ ☉ ☽ ♀ ♂ ☽</div>
+      <div class="cipher-box" style="font-size:26px" data-i18n="d8_cipher">♄ ☿ ☉ ☽ ♀ ♂ ☽</div>
       <div class="note" data-i18n="d8_note">Note du Gardien : la tache a effacé ☿ et ♂ de la légende. Une autre page du carnet, consacrée aux anesthésiques du cabinet, précise : « ☿, comme le premier remède que j'ai testé : le CHLOROFORME » et « ♂, comme celui qui l'a remplacé : l'ÉTHER ». Formez le mot (7 lettres) — un instrument que l'on retrouverait plutôt sur une table d'anatomie.</div>
       <div class="check-row">
         <div class="lbl-az" data-i18n="lbl_az">Entrez le mot découvert grâce à l'énigme :</div>
-        <input class="mono" id="ans8" maxlength="14" placeholder="_ _ _ _ _ _ _" onkeydown="if(event.key==='Enter'){event.preventDefault();if(isSolved(8))go(1);else checkAnswer(8);}">
+        <input class="mono" id="ans8" maxlength="14" placeholder="_ _ _ _ _ _ _" data-i18n-ph="d8_ph" onkeydown="if(event.key==='Enter'){event.preventDefault();if(isSolved(8))go(1);else checkAnswer(8);}">
         <button class="btn btn-nav" onclick="checkAnswer(8)" data-i18n="lbl_validate">Valider →</button>
         <div class="feedback" id="fb8"></div>
       </div>
@@ -495,13 +495,13 @@ input.mono{font-family:'Courier Prime',monospace;font-size:16px;letter-spacing:.
       <div class="dl" data-i18n="d9_dl">Acte 9 · La Salle Commune</div>
       <div class="dt" data-i18n="d9_dt">La Liste<br>des <em>Habitués</em></div>
       <div class="dc" data-i18n="d9_dc">Chiffrement : Lettre Cachée dans les Mots</div>
-      <div class="ambiance" data-i18n="d9_amb">Une liste de sept mots griffonnés à la hâte sur un sous-bock est retrouvée sous une table. À première vue, une liste sans queue ni tête — sauf si l'on regarde toujours au même endroit.</div>
-      <div class="cipher-box mono">ARTISAN &nbsp;·&nbsp; BRASSERIE &nbsp;·&nbsp; SEVERE<br>CIERGE &nbsp;·&nbsp; PARDON &nbsp;·&nbsp; MANOIR &nbsp;·&nbsp; PIERRE</div>
+      <div class="ambiance" data-i18n="d9_amb">Une liste de sept mots griffonnés à la hâte sur un sous-bock est retrouvée sous une table. À première vue, une liste sans queue ni tête — sauf si l'on regarde toujours au même endroit. Un habitué se rappelle vaguement d'un homme en blouse pâle, assis là un instant, reparti sans un mot.</div>
+      <div class="cipher-box mono" data-i18n="d9_cipher">ARTISAN &nbsp;·&nbsp; BRASSERIE &nbsp;·&nbsp; SEVERE<br>CIERGE &nbsp;·&nbsp; PARDON &nbsp;·&nbsp; MANOIR &nbsp;·&nbsp; PIERRE</div>
       <div class="coaster-mark">3</div>
       <div class="note" data-i18n="d9_note">Note du Gardien : le mot final compte 7 lettres.</div>
       <div class="check-row">
         <div class="lbl-az" data-i18n="lbl_az">Entrez le mot découvert grâce à l'énigme :</div>
-        <input class="mono" id="ans9" maxlength="14" placeholder="_ _ _ _ _ _ _" onkeydown="if(event.key==='Enter'){event.preventDefault();if(isSolved(9))go(1);else checkAnswer(9);}">
+        <input class="mono" id="ans9" maxlength="14" placeholder="_ _ _ _ _ _ _" data-i18n-ph="d9_ph" onkeydown="if(event.key==='Enter'){event.preventDefault();if(isSolved(9))go(1);else checkAnswer(9);}">
         <button class="btn btn-nav" onclick="checkAnswer(9)" data-i18n="lbl_validate">Valider →</button>
         <div class="feedback" id="fb9"></div>
       </div>
@@ -515,11 +515,11 @@ input.mono{font-family:'Courier Prime',monospace;font-size:16px;letter-spacing:.
       <div class="dt" data-i18n="d10_dt">L'Écriture<br>du <em>Miroir</em></div>
       <div class="dc" data-i18n="d10_dc">Chiffrement : Écriture Spéculaire</div>
       <div class="ambiance" data-i18n="d10_amb">Dans une loge d'artiste poussiéreuse, une phrase est tracée au rouge à lèvres sur le miroir de la coiffeuse — mais elle ne se lit pas normalement. Il faut la lire à l'envers, comme le ferait le miroir lui-même.</div>
-      <div class="cipher-box" style="font-size:20px">TIR LI EUQSAM EL SUOS</div>
+      <div class="cipher-box" style="font-size:20px" data-i18n="d10_cipher">TIR LI EUQSAM EL SUOS</div>
       <div class="note" data-i18n="d10_note">Note du Gardien : lisez le message lettre par lettre en partant de la fin (comme dans un miroir) pour reconstituer la phrase complète, et isolez-en le mot central (6 lettres).</div>
       <div class="check-row">
         <div class="lbl-az" data-i18n="lbl_az">Entrez le mot découvert grâce à l'énigme :</div>
-        <input class="mono" id="ans10" maxlength="14" placeholder="_ _ _ _ _ _" onkeydown="if(event.key==='Enter'){event.preventDefault();if(isSolved(10))go(1);else checkAnswer(10);}">
+        <input class="mono" id="ans10" maxlength="14" placeholder="_ _ _ _ _ _" data-i18n-ph="d10_ph" onkeydown="if(event.key==='Enter'){event.preventDefault();if(isSolved(10))go(1);else checkAnswer(10);}">
         <button class="btn btn-nav" onclick="checkAnswer(10)" data-i18n="lbl_validate">Valider →</button>
         <div class="feedback" id="fb10"></div>
       </div>
@@ -534,7 +534,7 @@ input.mono{font-family:'Courier Prime',monospace;font-size:16px;letter-spacing:.
       <div class="dt" data-i18n="d11_dt">Le Témoignage<br>en <em>Vers</em></div>
       <div class="dc" data-i18n="d11_dc">Chiffrement : Acrostiche</div>
       <div class="ambiance" data-i18n="d11_amb">Une unique témoin accepte de parler — mais uniquement en vers, par superstition. Son témoignage, couché par écrit, semble cacher quelque chose entre les lignes.</div>
-      <div class="cipher-box mono" style="text-align:left;line-height:2">Toute la nuit, j'ai guetté son ombre.
+      <div class="cipher-box mono" style="text-align:left;line-height:2" data-i18n="d11_poem">Toute la nuit, j'ai guetté son ombre.
 Elle passait sans un bruit, le pas léger.
 Ma lanterne vacillait dans le vent glacé.
 Où allait-elle, nul ne le sut jamais.
@@ -543,7 +543,7 @@ Nul ne me croira, pourtant j'ai tout vu.</div>
       <div class="note" data-i18n="d11_note">Note du Gardien : le mot compte 6 lettres.</div>
       <div class="check-row">
         <div class="lbl-az" data-i18n="lbl_az">Entrez le mot découvert grâce à l'énigme :</div>
-        <input class="mono" id="ans11" maxlength="14" placeholder="_ _ _ _ _ _" onkeydown="if(event.key==='Enter'){event.preventDefault();if(isSolved(11))go(1);else checkAnswer(11);}">
+        <input class="mono" id="ans11" maxlength="14" placeholder="_ _ _ _ _ _" data-i18n-ph="d11_ph" onkeydown="if(event.key==='Enter'){event.preventDefault();if(isSolved(11))go(1);else checkAnswer(11);}">
         <button class="btn btn-nav" onclick="checkAnswer(11)" data-i18n="lbl_validate">Valider →</button>
         <div class="feedback" id="fb11"></div>
       </div>
@@ -557,12 +557,12 @@ Nul ne me croira, pourtant j'ai tout vu.</div>
       <div class="dl" data-i18n="d12_dl">Acte 12 · Le Manoir Ashcombe</div>
       <div class="dt" data-i18n="d12_dt">Les Horloges<br><em>Arrêtées</em></div>
       <div class="dc" data-i18n="d12_dc">Chiffrement : Cadran d'Horloge (suite à construire)</div>
-      <div class="ambiance" data-i18n="d12_amb">Dans le manoir du défunt notable Ashcombe, sept horloges se sont arrêtées à des heures différentes, toutes le même soir. Un ancien domestique y voit un code, mais aucun tableau n'a été retrouvé — seulement une règle, griffonnée de mémoire : en partant de 1h00, qui vaudrait « A », chaque demi-heure suivante avancerait d'une lettre dans l'alphabet.</div>
-      <div class="cipher-box">4h30 · 8h00 · 9h30 · 6h30 · 8h00 · 4h00 · 3h00</div>
+      <div class="ambiance" data-i18n="d12_amb">Dans le manoir du défunt notable Ashcombe, sept horloges se sont arrêtées à des heures différentes, toutes le même soir. Un ancien domestique y voit un code, mais aucun tableau n'a été retrouvé — seulement une règle, griffonnée de mémoire : en partant de 1h00, qui vaudrait « A », chaque demi-heure suivante avancerait d'une lettre dans l'alphabet. Le domestique se souvient d'un dernier visiteur, cette nuit-là — un homme en blouse pâle, venu constater le décès, reparti avant l'aube.</div>
+      <div class="cipher-box" data-i18n="d12_cipher">4h30 · 8h00 · 9h30 · 6h30 · 8h00 · 4h00 · 3h00</div>
       <div class="note" data-i18n="d12_note">Note du Gardien : poursuivez ce comptage, demi-heure par demi-heure depuis 1h00 = A, jusqu'à chacune des sept horloges, pour former le mot (7 lettres).</div>
       <div class="check-row">
         <div class="lbl-az" data-i18n="lbl_az">Entrez le mot découvert grâce à l'énigme :</div>
-        <input class="mono" id="ans12" maxlength="14" placeholder="_ _ _ _ _ _ _" onkeydown="if(event.key==='Enter'){event.preventDefault();if(isSolved(12))go(1);else checkAnswer(12);}">
+        <input class="mono" id="ans12" maxlength="14" placeholder="_ _ _ _ _ _ _" data-i18n-ph="d12_ph" onkeydown="if(event.key==='Enter'){event.preventDefault();if(isSolved(12))go(1);else checkAnswer(12);}">
         <button class="btn btn-nav" onclick="checkAnswer(12)" data-i18n="lbl_validate">Valider →</button>
         <div class="feedback" id="fb12"></div>
       </div>
@@ -602,7 +602,7 @@ Nul ne me croira, pourtant j'ai tout vu.</div>
       <div class="dt" data-i18n="d14_dt">L'Anneau<br><em>Signé</em></div>
       <div class="dc" data-i18n="d14_dc">Chiffrement final : Anagramme + César</div>
       <div class="ambiance" data-i18n="d14_amb">Treize nuits de brouillard vous ont mené jusqu'à une chevalière retrouvée près du dernier corps. Une inscription y est gravée, décalée lettre par lettre, ET mélangée — le double verrou d'un homme qui se croyait intouchable.</div>
-      <div class="cipher-box" style="font-size:22px;letter-spacing:.3em">A P N L S Z L</div>
+      <div class="cipher-box" style="font-size:22px;letter-spacing:.3em" data-i18n="d14_cipher">A P N L S Z L</div>
       <div class="note" data-i18n="d14_note">Note du Gardien : cette chevalière porte la devise d'un homme méthodique, qui ne frappait jamais avant que sept coups de cloche n'aient sonné au clocher voisin. Décalez chaque lettre vers l'arrière dans l'alphabet — vous obtiendrez alors un anagramme : remettez ses lettres dans l'ordre pour lire le titre de celui qui arpente Ravenscourt depuis quatorze nuits sans jamais être soupçonné (7 lettres).</div>
       <div class="check-row">
         <div class="lbl-az" data-i18n="lbl_final">Prononcez le nom que cache l'Ombre du Brouillard :</div>
@@ -658,8 +658,12 @@ Nul ne me croira, pourtant j'ai tout vu.</div>
 // L'Ombre du Brouillard (Ravenscourt, 1901) — création originale © 2026
 // Auteurs : VEAU Yann · GRASON Sabrina — reproduction interdite sans autorisation écrite.
 const __ravenscourtAuthors = Object.freeze(['VEAU Yann','GRASON Sabrina']);
-const answers = {1:'BROUILLARD',2:'LANTERNE',3:'TAILLEUR',4:'CORBEAU',5:'ABSINTHE',6:'CADAVRE',7:'RUELLE',8:'SCALPEL',9:'TAVERNE',10:'MASQUE',11:'TEMOIN',12:'HORLOGE',13:'REQUIEM'};
-const finalPass = 'LEGISTE';
+const answers = {
+  fr:{1:'BROUILLARD',2:'LANTERNE',3:'TAILLEUR',4:'CORBEAU',5:'ABSINTHE',6:'CADAVRE',7:'RUELLE',8:'SCALPEL',9:'TAVERNE',10:'MASQUE',11:'TEMOIN',12:'HORLOGE',13:'REQUIEM'},
+  en:{1:'MISSING',2:'LANTERN',3:'TAILOR',4:'RAVEN',5:'ABSINTHE',6:'CORPSE',7:'ALLEY',8:'SCALPEL',9:'TAVERN',10:'MASK',11:'WITNESS',12:'CLOCK',13:'REQUIEM'},
+  es:{1:'PERDIDO',2:'LINTERNA',3:'SASTRE',4:'CUERVO',5:'ABSENTA',6:'CADAVER',7:'CALLEJON',8:'BISTURI',9:'TABERNA',10:'MASCARA',11:'TESTIGO',12:'RELOJ',13:'REQUIEM'}
+};
+const finalPass = {fr:'LEGISTE', en:'CORONER', es:'FORENSE'};
 
 /* ── Notifications Telegram (Maître du Jeu) ──
    1) Créez un bot via @BotFather sur Telegram (commande /newbot), copiez le token reçu.
@@ -711,34 +715,34 @@ const hints = {
     14:["Décalez d'abord chaque lettre de 7 rangs vers l'arrière dans l'alphabet (un César inversé).","Une fois décalé, le résultat est un anagramme, pas encore le mot final.","Réarrangez ces 7 lettres : c'est le titre de celui qui examine les corps... et qui les a peut-être créés."]
   },
   es:{
-    1:["Dos filas: una letra arriba, una abajo, alternando a lo largo de toda la palabra original.","Las primeras 5 letras del mensaje forman la fila de arriba, las 5 siguientes la fila de abajo.","Recombine en zigzag: arriba, abajo, arriba, abajo... para leer la palabra (10 letras, un fenómeno meteorológico bien conocido en el puerto)."],
+    1:["Dos filas: una letra arriba, una abajo, alternando a lo largo de toda la palabra original.","Las primeras 4 letras del mensaje forman la fila de arriba, las 3 siguientes la fila de abajo.","Recombine en zigzag: arriba, abajo, arriba, abajo... para leer la palabra (7 letras) — lo que es este estibador desde el amanecer."],
     2:["La cuadrícula es un cuadrado de Polibio clásico: las 26 letras (I y J unidas) están ordenadas alfabéticamente, fila por fila, de A (casilla 1,1) a Z (casilla 5,5).","Ya conoce 3 referencias: A en (1,1), I/J en (2,4), Z en (5,5). Cuente las letras del alfabeto entre esas referencias para completar las casillas que faltan.","Con la cuadrícula completa, cada par de cifras se lee como siempre (fila, columna) para formar un objeto que alumbra (8 letras)."],
-    3:["Cada pareja línea.palabra señala una palabra concreta del pequeño diario de arriba.","Quédese solo con la primera letra de cada palabra señalada.","Un oficio que trabaja con aguja e hilo (8 letras)."],
-    4:["El mensaje alterna minúsculas y mayúsculas: anote 'a' para minúscula, 'b' para mayúscula.","Agrupe estas letras en bloques de 5 para obtener códigos Bacon.","Un ave negra a menudo asociada con el mal presagio (7 letras) — cuidado con la ambigüedad U/V de la tabla clásica."],
-    5:["Construya primero la cuadrícula con RAVENSCOURT, y complétela con el resto del alfabeto (I=J).","Divida el mensaje en pares de letras: RD, BQ, TH, GN.","Para cada par, aplique la regla inversa de Playfair (una bebida turbia y prohibida, 8 letras)."],
-    6:["La tabla solo da 3 letras de 6: A, D y R. Localice ya sus posiciones en el mensaje.","Con A, D y R colocadas, el patrón obtenido es « _ A D A _ R _ » — una palabra de 7 letras.","La palabra así completada es la que nadie desea hallar en los muelles tras una noche de niebla."],
-    7:["Aquí no hace falta cuadrícula: cada número es simplemente la posición de la letra en el alfabeto.","18 es la 18ª letra del alfabeto: R.","Un lugar estrecho y oscuro donde no conviene demorarse de noche (6 letras)."],
-    8:["Cuatro letras ya las da la leyenda: A, L, P, S.","Para los dos símbolos que faltan, busque las iniciales ocultas en las palabras CLOROFORMO y ÉTER, citadas en otra nota del cuaderno.","Un instrumento cortante que asociaríamos con un médico... o con un asesino (7 letras)."],
-    9:["Concéntrese siempre en la misma posición de cada palabra de la lista.","La tercera letra de 'ARTISAN' es una 'T'.","La palabra final nombra el propio lugar donde se halló la lista (7 letras)."],
-    10:["El mensaje debe leerse desde la última letra hasta la primera.","Una vez invertido, obtendrá una frase completa y gramatical en francés.","La palabra central de la frase tiene 6 letras y se lleva en el rostro."],
-    11:["Cada línea del testimonio empieza con una letra distinta.","Anote esas letras de arriba abajo, sin saltarse ninguna.","La palabra obtenida (6 letras) designa a quien lo vio todo sin ser visto/a."],
-    12:["No hay tabla ya hecha: construya usted mismo la secuencia a partir de la 1:00 = A.","Cuente una letra más por cada media hora: 1:00=A, 1:30=B, 2:00=C… hasta llegar a cada hora pedida.","El objeto hallado detenido en toda la mansión (7 letras)."],
+    3:["Cada pareja línea.palabra señala una palabra concreta del pequeño diario de arriba.","Quédese solo con la primera letra de cada palabra señalada.","Un oficio que trabaja con aguja e hilo (6 letras)."],
+    4:["El mensaje alterna minúsculas y mayúsculas: anote 'a' para minúscula, 'b' para mayúscula.","Agrupe estas letras en bloques de 5 para obtener códigos Bacon.","Un ave negra a menudo asociada con el mal presagio (6 letras) — cuidado con la ambigüedad U/V de la tabla clásica."],
+    5:["Construya primero la cuadrícula con RAVENSCOURT, y complétela con el resto del alfabeto (I=J).","Divida el mensaje en pares de letras: RD, UR, TH, VW.","Para cada par, aplique la regla inversa de Playfair (una bebida turbia y prohibida, 7 letras) — la última letra obtenida es solo un relleno."],
+    6:["La tabla solo da 3 letras de 6: A, D y R. Localice ya sus posiciones en el mensaje.","Con A, D y R colocadas, el patrón obtenido es « _ A D A _ _ R » — una palabra de 7 letras.","La palabra así completada es la que nadie desea hallar en los muelles tras una noche de niebla."],
+    7:["Aquí no hace falta cuadrícula: cada número es simplemente la posición de la letra en el alfabeto.","3 es la 3ª letra del alfabeto: C.","Un lugar estrecho y oscuro donde no conviene demorarse de noche (8 letras)."],
+    8:["Cuatro letras ya las da la leyenda: B, I, S, T.","Para los dos símbolos que faltan, busque las iniciales ocultas en las palabras UNGÜENTO y RECETA, citadas en otra nota del cuaderno.","Un instrumento cortante que asociaríamos con un médico... o con un asesino (7 letras)."],
+    9:["Concéntrese siempre en la misma posición de cada palabra de la lista.","La tercera letra de 'MOTIVO' es una 'T'.","La palabra final nombra el propio lugar donde se halló la lista (7 letras)."],
+    10:["El mensaje debe leerse desde la última letra hasta la primera.","Una vez invertido, obtendrá una frase completa y gramatical en español.","La palabra central de la frase tiene 7 letras y se lleva en el rostro."],
+    11:["Cada línea del testimonio empieza con una letra distinta.","Anote esas letras de arriba abajo, sin saltarse ninguna.","La palabra obtenida (7 letras) designa a quien lo vio todo sin ser visto/a."],
+    12:["No hay tabla ya hecha: construya usted mismo la secuencia a partir de la 1:00 = A.","Cuente una letra más por cada media hora: 1:00=A, 1:30=B, 2:00=C… hasta llegar a cada hora pedida.","El objeto hallado detenido en toda la mansión (5 letras)."],
     13:["Cada nota (Do a Si) es una columna de la tabla, cada número en subíndice una fila (octava).","Fa₃ corresponde a la 4ª columna, 3ª fila.","Un canto fúnebre que se toca precisamente en la iglesia (7 letras)."],
     14:["Desplace primero cada letra 7 posiciones hacia atrás en el alfabeto (un César invertido).","Una vez desplazado, el resultado es un anagrama, todavía no la palabra final.","Reordene esas 7 letras: es el título de quien examina los cuerpos... y quizá los creó."]
   },
   en:{
-    1:["Two rows: one letter on top, one on the bottom, alternating along the whole original word.","The first 5 letters of the message form the top row, the next 5 the bottom row.","Recombine in a zigzag: top, bottom, top, bottom… to read the word (10 letters, a weather phenomenon well known to the port)."],
-    2:["The grid is a classic Polybius square: the 26 letters (I and J merged) are laid out in alphabetical order, row by row, from A (cell 1,1) to Z (cell 5,5).","You already know 3 anchors: A at (1,1), I/J at (2,4), Z at (5,5). Count the letters of the alphabet between those anchors to fill in the missing cells.","Once the grid is complete, each pair of digits reads as usual (row, column) to form an object that gives light (8 letters)."],
-    3:["Each line.word pair points to a specific word in the little diary above.","Keep only the first letter of each pointed-to word.","A trade that works with needle and thread (8 letters)."],
-    4:["The message alternates lowercase and uppercase: note 'a' for lowercase, 'b' for uppercase.","Group these letters into blocks of 5 to get Bacon codes.","A black bird often associated with bad omens (7 letters) — beware the U/V ambiguity in the classic table."],
+    1:["Two rows: one letter on top, one on the bottom, alternating along the whole original word.","The first 4 letters of the message form the top row, the next 3 the bottom row.","Recombine in a zigzag: top, bottom, top, bottom… to read the word (7 letters) — what this dockworker has been since dawn."],
+    2:["The grid is a classic Polybius square: the 26 letters (I and J merged) are laid out in alphabetical order, row by row, from A (cell 1,1) to Z (cell 5,5).","You already know 3 anchors: A at (1,1), I/J at (2,4), Z at (5,5). Count the letters of the alphabet between those anchors to fill in the missing cells.","Once the grid is complete, each pair of digits reads as usual (row, column) to form an object that gives light (7 letters)."],
+    3:["Each line.word pair points to a specific word in the little diary above.","Keep only the first letter of each pointed-to word.","A trade that works with needle and thread (6 letters)."],
+    4:["The message alternates lowercase and uppercase: note 'a' for lowercase, 'b' for uppercase.","Group these letters into blocks of 5 to get Bacon codes.","A black bird — also the namesake of this whole port (5 letters) — beware the U/V ambiguity in the classic table."],
     5:["Build the grid first with RAVENSCOURT, then complete it with the rest of the alphabet (I=J).","Split the message into letter pairs: RD, BQ, TH, GN.","For each pair, apply the reverse Playfair rule (a cloudy, forbidden drink, 8 letters)."],
-    6:["The table only gives 3 letters out of 6: A, D and R. Spot their positions in the message first.","With A, D and R placed, the pattern you get is « _ A D A _ R _ » — a 7-letter word.","The completed word is the one no one wants to find on the docks after a foggy night."],
-    7:["No grid needed here: each number is simply the letter's position in the alphabet.","18 is the 18th letter of the alphabet: R.","A narrow, dark place no one likes to linger in at night (6 letters)."],
+    6:["The table only gives 3 letters out of 6: C, R and S. Spot their positions in the message first.","With C, R and S placed, the pattern you get is « C _ R _ S _ » — a 6-letter word.","The completed word is the one no one wants to find on the docks after a foggy night."],
+    7:["No grid needed here: each number is simply the letter's position in the alphabet.","1 is the 1st letter of the alphabet: A.","A narrow, dark place no one likes to linger in at night (5 letters)."],
     8:["Four letters are already given by the key: A, L, P, S.","For the two missing symbols, look for the initials hidden in the words CHLOROFORM and ETHER, quoted in another note in the notebook.","A cutting instrument you'd associate with a doctor... or a killer (7 letters)."],
-    9:["Always focus on the same position in each word of the list.","The third letter of 'ARTISAN' is a 'T'.","The final word names the very place where the list was found (7 letters)."],
-    10:["The message must be read from the last letter to the first.","Once reversed, you get a complete, grammatical French sentence.","The sentence's central word has 6 letters, and is worn on the face."],
-    11:["Each line of the testimony begins with a different letter.","Note these letters from top to bottom, without skipping any.","The resulting word (6 letters) names the one who saw everything without being seen."],
-    12:["There's no ready-made table: build the sequence yourself starting from 1:00 = A.","Count one letter further for each half hour: 1:00=A, 1:30=B, 2:00=C… until you reach each requested time.","The object found stopped throughout the manor (7 letters)."],
+    9:["Always focus on the same position in each word of the list.","The third letter of 'ARTIST' is a 'T'.","The final word names the very place where the list was found (6 letters)."],
+    10:["The message must be read from the last letter to the first.","Once reversed, you get a complete, grammatical English sentence.","The sentence's central word has 4 letters, and is worn on the face."],
+    11:["Each line of the testimony begins with a different letter.","Note these letters from top to bottom, without skipping any.","The resulting word (7 letters) names the one who saw everything without being seen."],
+    12:["There's no ready-made table: build the sequence yourself starting from 1:00 = A.","Count one letter further for each half hour: 1:00=A, 1:30=B, 2:00=C… until you reach each requested time.","The object found stopped throughout the manor (5 letters)."],
     13:["Each note (Do to Si) is a column of the table, each subscript number a row (octave).","Fa₃ corresponds to the 4th column, 3rd row.","A funeral chant played precisely in church (7 letters)."],
     14:["First shift each letter 7 places backward in the alphabet (a reversed Caesar).","Once shifted, the result is an anagram, not yet the final word.","Rearrange those 7 letters: it's the title of the one who examines bodies... and may have created them."]
   }
@@ -771,61 +775,80 @@ fr:{
 
   d1_stamp:"Dossier d'Enquête — Page 1 · Nuit 1", d1_dl:"Acte 1 · Le Quai",
   d1_dt:"La Première<br><em>Disparition</em>", d1_dc:"Chiffrement : Rail Fence (2 rangs)",
-  d1_amb:"Un docker manque à l'appel depuis l'aube. On ne retrouve que sa lanterne, posée bien droite sur une caisse, comme une offrande. Un message griffonné à la craie sur le bois, en zigzag, semble avoir été tracé à la hâte.",
+  d1_amb:"Un docker manque à l'appel depuis l'aube. On ne retrouve que sa lanterne, posée bien droite sur une caisse, comme une offrande. Un message griffonné à la craie sur le bois, en zigzag, semble avoir été tracé à la hâte. Un pêcheur matinal jure avoir croisé, dans la brume, une silhouette en blouse pâle qui s'éloignait sans un bruit.",
+  d1_cipher:"B O I L R R U L A D",
+  d1_ph:"_ _ _ _ _ _ _ _ _ _",
   d1_note:"Note du Gardien : le message a été écrit en suivant deux rangées en zigzag (une lettre en haut, une en bas, en alternance), puis les deux rangées ont été recopiées l'une après l'autre. Séparez donc les 10 lettres en deux groupes de 5 : les 5 premières forment la rangée du haut, les 5 suivantes la rangée du bas. Recombinez-les ensuite en zigzag (haut, bas, haut, bas…) pour lire le mot d'origine (10 lettres).",
 
   d2_stamp:"Dossier d'Enquête — Page 2 · Nuit 2", d2_dl:"Acte 2 · La Ruelle des Teinturiers",
-  d2_dt:"L'Objet<br><em>Oublié</em>", d2_dc:"Chiffrement : Carré de Polybe (grille à reconstituer)",
+  d2_dt:"L'Objet<br><em>Oublié</em>", d2_dc:"Chiffrement : Carré de Polybe (grille à reconstituer)", d2_cipher:"31 · 11 · 33 · 44 · 15 · 42 · 33 · 15", d2_ph:"_ _ _ _ _ _ _ _",
   d2_amb:"Sous un porche, un vieil objet de verre a roulé jusqu'au caniveau. Gravés dans le métal de son socle, une série de nombres à deux chiffres — et, tout autour, les contours d'une grille alphabétique dont seules trois lettres restent lisibles : A, I/J et Z.",
 
   d3_stamp:"Dossier d'Enquête — Page 3 · Nuit 3", d3_dl:"Acte 3 · L'Atelier",
   d3_dt:"Le Journal<br>du <em>Disparu</em>", d3_dc:"Chiffrement : Code du Livre",
+  d3_journal:"1. Toujours ces mains gercées par l'hiver et le froid mordant.\n2. Il travaille en silence, ignorant les cris qui montent des ruelles.\n3. Une odeur de laine mouillée envahit son atelier, glacial.\n4. Rien ne sert de courir, disait-il, le temps efface tout.",
+  d3_cipher:"1.1 — 3.8 — 2.1 — 3.4 — 1.8 — 1.7 — 3.1 — 4.1",
+  d3_ph:"_ _ _ _ _ _ _ _",
   d3_amb:"Le journal intime d'un homme disparu traîne encore sur son établi. Une page semble avoir servi de clé secrète.",
 
   d4_stamp:"Dossier d'Enquête — Page 4 · Nuit 4", d4_dl:"Acte 4 · Le Cimetière des Oiseaux",
   d4_dt:"Le Télégramme<br><em>Camouflé</em>", d4_dc:"Chiffrement : Bacon (bimodal)",
+  d4_cipher:"un vIeuX CoRBeau noir vOle Tres bas cE soIR",
+  d4_ph:"_ _ _ _ _ _ _",
   d4_amb:"Un télégramme anonyme est parvenu au bureau du journal local. Rien d'étrange à première vue — sauf l'alternance bizarre entre minuscules et majuscules, comme un code caché dans la typographie même du message.",
   d4_note:"Note du Gardien : chaque lettre minuscule vaut « a », chaque lettre en MAJUSCULE vaut « b ». Regroupez les lettres du message par paquets de 5 pour former des codes bacon, puis retrouvez le mot (7 lettres). Attention : dans le tableau classique, I/J partagent le même code, tout comme U/V — un seul des deux donnera un vrai mot français.",
 
   d5_stamp:"Dossier d'Enquête — Page 5 · Nuit 5", d5_dl:"Acte 5 · La Taverne du Marin Noyé",
   d5_dt:"Le Carnet<br>du <em>Barman</em>", d5_dc:"Chiffrement : Playfair",
-  d5_amb:"Le barman jure avoir servi la dernière victime son ultime verre. Sur une page de son carnet de commandes, un mot codé par paires de lettres, avec en en-tête un seul indice : le nom du port lui-même comme clé.",
+  d5_amb:"Le barman jure avoir servi la dernière victime son ultime verre. Sur une page de son carnet de commandes, un mot codé par paires de lettres, avec en en-tête un seul indice : le nom du port lui-même comme clé. Il se souvient aussi d'un client silencieux, en blouse claire sous son manteau, resté seul au fond de la salle toute la soirée.",
   d5_note1:"Grille Playfair construite avec la clé RAVENSCOURT (sans lettres répétées, I et J confondus, complétée par le reste de l'alphabet) :",
+  d5_cipher:"RD BQ TH GN", d5_ph:"_ _ _ _ _ _ _ _",
   d5_note2:"Note du Gardien : déchiffrez par paires selon les règles du Playfair — même ligne → décalez à gauche ; même colonne → décalez vers le haut ; sinon (rectangle) → chaque lettre garde sa ligne mais prend la colonne de l'autre. Exemples avec cette grille (lettres différentes du message) : OG → UF (rectangle) ; CD → AC (même colonne). Appliquez la même logique aux 4 paires du message pour retrouver le mot (8 lettres).",
 
   d6_stamp:"Dossier d'Enquête — Page 6 · Nuit 6", d6_dl:"Acte 6 · Le Ponton Sud",
   d6_dt:"Le Signal<br>des <em>Débardeurs</em>", d6_dc:"Chiffrement : Pavillons de Signalisation (légende à moitié effacée)",
+  d6_table:"<tr><th>Lettre</th><td>A</td><td>C</td><td>D</td><td>E</td><td>R</td><td>V</td></tr><tr><th>Positions</th><td>12h-06h</td><td>?</td><td>01h-07h</td><td>?</td><td>05h-11h</td><td>?</td></tr>",
+  d6_cipher:"03h-09h · 12h-06h · 01h-07h · 12h-06h · 04h-10h · 05h-11h · 02h-08h",
+  d6_ph:"_ _ _ _ _ _ _",
   d6_amb:"Un carnet de signaleur du port est retrouvé trempé sur le ponton. Les dockers utilisent un vieux code de pavillons, chaque lettre étant représentée par deux positions d'aiguilles d'horloge — mais l'humidité a effacé la moitié de la légende.",
   d6_note:"Note du Gardien : l'humidité a effacé trois entrées de la légende (C, E, V). Repérez où apparaissent dans le message les codes déjà connus (A, D, R), puis déduisez les trois lettres manquantes pour compléter un mot de 7 lettres que l'on redoute de trouver sur les quais après une nuit de brouillard.",
 
   d7_stamp:"Dossier d'Enquête — Page 7 · Nuit 7", d7_dl:"Acte 7 · La Cellule Vide",
   d7_dt:"Les Coups<br>dans le <em>Mur</em>", d7_dc:"Chiffrement : Coups Comptés (A=1, Z=26)",
   d7_amb:"Le gardien de nuit du dépôt jure avoir entendu des coups frappés contre la tôle, toute une nuit durant. Il en a noté le rythme, groupe par groupe, sous forme de nombres griffonnés à la hâte.",
+  d7_cipher:"18 · 21 · 5 · 12 · 12 · 5", d7_ph:"_ _ _ _ _ _",
   d7_note:"Note du Gardien : pas de grille ici — chaque nombre correspond directement à la position de la lettre dans l'alphabet. Retrouvez le mot (6 lettres).",
 
   d8_stamp:"Dossier d'Enquête — Page 8 · Nuit 8", d8_dl:"Acte 8 · Le Cabinet du Médecin",
   d8_dt:"Le Carnet<br><em>Alchimique</em>", d8_dc:"Chiffrement : Symboles Alchimiques (légende incomplète)",
+  d8_table:"<tr><th>☉ Soleil</th><td>A</td><th>☽ Lune</th><td>L</td></tr><tr><th>♀ Vénus</th><td>P</td><th>♄ Saturne</th><td>S</td></tr>",
+  d8_cipher:"♄ ☿ ☉ ☽ ♀ ♂ ☽", d8_ph:"_ _ _ _ _ _ _",
   d8_amb:"Le cabinet d'un médecin du quartier a été fouillé de fond en comble. Seul un vieux carnet de notes, couvert de symboles planétaires hérités de l'alchimie, semble avoir un sens — mais une tache d'encre a rendu deux symboles illisibles dans la légende.",
   d8_note:"Note du Gardien : la tache a effacé ☿ et ♂ de la légende. Une autre page du carnet, consacrée aux anesthésiques du cabinet, précise : « ☿, comme le premier remède que j'ai testé : le CHLOROFORME » et « ♂, comme celui qui l'a remplacé : l'ÉTHER ». Formez le mot (7 lettres) — un instrument que l'on retrouverait plutôt sur une table d'anatomie.",
 
   d9_stamp:"Dossier d'Enquête — Page 9 · Nuit 9", d9_dl:"Acte 9 · La Salle Commune",
   d9_dt:"La Liste<br>des <em>Habitués</em>", d9_dc:"Chiffrement : Lettre Cachée dans les Mots",
-  d9_amb:"Une liste de sept mots griffonnés à la hâte sur un sous-bock est retrouvée sous une table. À première vue, une liste sans queue ni tête — sauf si l'on regarde toujours au même endroit.",
+  d9_amb:"Une liste de sept mots griffonnés à la hâte sur un sous-bock est retrouvée sous une table. À première vue, une liste sans queue ni tête — sauf si l'on regarde toujours au même endroit. Un habitué se rappelle vaguement d'un homme en blouse pâle, assis là un instant, reparti sans un mot.",
+  d9_cipher:"ARTISAN &nbsp;·&nbsp; BRASSERIE &nbsp;·&nbsp; SEVERE<br>CIERGE &nbsp;·&nbsp; PARDON &nbsp;·&nbsp; MANOIR &nbsp;·&nbsp; PIERRE", d9_ph:"_ _ _ _ _ _ _",
   d9_note:"Note du Gardien : le mot final compte 7 lettres.",
 
   d10_stamp:"Dossier d'Enquête — Page 10 · Nuit 10", d10_dl:"Acte 10 · Le Théâtre Abandonné",
   d10_dt:"L'Écriture<br>du <em>Miroir</em>", d10_dc:"Chiffrement : Écriture Spéculaire",
   d10_amb:"Dans une loge d'artiste poussiéreuse, une phrase est tracée au rouge à lèvres sur le miroir de la coiffeuse — mais elle ne se lit pas normalement. Il faut la lire à l'envers, comme le ferait le miroir lui-même.",
+  d10_cipher:"TIR LI EUQSAM EL SUOS", d10_ph:"_ _ _ _ _ _",
   d10_note:"Note du Gardien : lisez le message lettre par lettre en partant de la fin (comme dans un miroir) pour reconstituer la phrase complète, et isolez-en le mot central (6 lettres).",
 
   d11_stamp:"Dossier d'Enquête — Page 11 · Nuit 11", d11_dl:"Acte 11 · Le Commissariat",
   d11_dt:"Le Témoignage<br>en <em>Vers</em>", d11_dc:"Chiffrement : Acrostiche",
   d11_amb:"Une unique témoin accepte de parler — mais uniquement en vers, par superstition. Son témoignage, couché par écrit, semble cacher quelque chose entre les lignes.",
+  d11_poem:"Toute la nuit, j'ai guetté son ombre.\nElle passait sans un bruit, le pas léger.\nMa lanterne vacillait dans le vent glacé.\nOù allait-elle, nul ne le sut jamais.\nIl faisait si froid que mon souffle se figeait.\nNul ne me croira, pourtant j'ai tout vu.",
+  d11_ph:"_ _ _ _ _ _",
   d11_note:"Note du Gardien : le mot compte 6 lettres.",
 
   d12_stamp:"Dossier d'Enquête — Page 12 · Nuit 12", d12_dl:"Acte 12 · Le Manoir Ashcombe",
   d12_dt:"Les Horloges<br><em>Arrêtées</em>", d12_dc:"Chiffrement : Cadran d'Horloge (suite à construire)",
-  d12_amb:"Dans le manoir du défunt notable Ashcombe, sept horloges se sont arrêtées à des heures différentes, toutes le même soir. Un ancien domestique y voit un code, mais aucun tableau n'a été retrouvé — seulement une règle, griffonnée de mémoire : en partant de 1h00, qui vaudrait « A », chaque demi-heure suivante avancerait d'une lettre dans l'alphabet.",
+  d12_amb:"Dans le manoir du défunt notable Ashcombe, sept horloges se sont arrêtées à des heures différentes, toutes le même soir. Un ancien domestique y voit un code, mais aucun tableau n'a été retrouvé — seulement une règle, griffonnée de mémoire : en partant de 1h00, qui vaudrait « A », chaque demi-heure suivante avancerait d'une lettre dans l'alphabet. Le domestique se souvient d'un dernier visiteur, cette nuit-là — un homme en blouse pâle, venu constater le décès, reparti avant l'aube.",
+  d12_cipher:"4h30 · 8h00 · 9h30 · 6h30 · 8h00 · 4h00 · 3h00", d12_ph:"_ _ _ _ _ _ _",
   d12_note:"Note du Gardien : poursuivez ce comptage, demi-heure par demi-heure depuis 1h00 = A, jusqu'à chacune des sept horloges, pour former le mot (7 lettres).",
 
   d13_stamp:"Dossier d'Enquête — Page 13 · Nuit 13", d13_dl:"Acte 13 · L'Église Saint-Anselme",
@@ -835,6 +858,7 @@ fr:{
 
   d14_stamp:"Dossier d'Enquête — Page 14 · Nuit 14", d14_dl:"Acte 14 · La Révélation",
   d14_dt:"L'Anneau<br><em>Signé</em>", d14_dc:"Chiffrement final : Anagramme + César",
+  d14_cipher:"A P N L S Z L",
   d14_amb:"Treize nuits de brouillard vous ont mené jusqu'à une chevalière retrouvée près du dernier corps. Une inscription y est gravée, décalée lettre par lettre, ET mélangée — le double verrou d'un homme qui se croyait intouchable.",
   d14_note:"Note du Gardien : cette chevalière porte la devise d'un homme méthodique, qui ne frappait jamais avant que sept coups de cloche n'aient sonné au clocher voisin. Décalez chaque lettre vers l'arrière dans l'alphabet — vous obtiendrez alors un anagramme : remettez ses lettres dans l'ordre pour lire le titre de celui qui arpente Ravenscourt depuis quatorze nuits sans jamais être soupçonné (7 lettres).",
 
@@ -891,62 +915,81 @@ es:{
 
   d1_stamp:"Expediente — Página 1 · Noche 1", d1_dl:"Acto 1 · El Muelle",
   d1_dt:"La Primera<br><em>Desaparición</em>", d1_dc:"Cifrado: Cerca (Rail Fence, 2 filas)",
-  d1_amb:"Un estibador falta desde el amanecer. Solo se encuentra su linterna, colocada muy recta sobre una caja, como una ofrenda. Un mensaje garabateado con tiza sobre la madera, en zigzag, parece trazado con prisa.",
-  d1_note:"Nota del Guardián: el mensaje se escribió siguiendo dos filas en zigzag (una letra arriba, una abajo, alternando), luego ambas filas se copiaron una tras otra. Separe entonces las 10 letras en dos grupos de 5: las primeras 5 forman la fila de arriba, las 5 siguientes la fila de abajo. Luego recombínelas en zigzag (arriba, abajo, arriba, abajo…) para leer la palabra original (10 letras).",
+  d1_amb:"Un estibador falta desde el amanecer. Solo se encuentra su linterna, colocada muy recta sobre una caja, como una ofrenda. Un mensaje garabateado con tiza sobre la madera, en zigzag, parece trazado con prisa. Un pescador madrugador jura haber cruzado, entre la niebla, una silueta con bata pálida que se alejaba sin hacer ruido.",
+  d1_cipher:"P R I O E D D",
+  d1_ph:"_ _ _ _ _ _ _",
+  d1_note:"Nota del Guardián: el mensaje se escribió siguiendo dos filas en zigzag (una letra arriba, una abajo, alternando), luego ambas filas se copiaron una tras otra. Separe entonces las 7 letras en dos grupos (4 y 3): las primeras 4 forman la fila de arriba, las 3 siguientes la fila de abajo. Luego recombínelas en zigzag (arriba, abajo, arriba, abajo…) para leer la palabra original (7 letras).",
 
   d2_stamp:"Expediente — Página 2 · Noche 2", d2_dl:"Acto 2 · El Callejón de los Tintoreros",
-  d2_dt:"El Objeto<br><em>Olvidado</em>", d2_dc:"Cifrado: Cuadrado de Polibio (cuadrícula por reconstruir)",
+  d2_dt:"El Objeto<br><em>Olvidado</em>", d2_dc:"Cifrado: Cuadrado de Polibio (cuadrícula por reconstruir)", d2_cipher:"31 · 24 · 33 · 44 · 15 · 42 · 33 · 11", d2_ph:"_ _ _ _ _ _ _ _",
   d2_amb:"Bajo un porche, un viejo objeto de cristal ha rodado hasta la alcantarilla. Grabada en el metal de su base, una serie de números de dos cifras — y, alrededor, los contornos de una cuadrícula alfabética de la que solo quedan legibles tres letras: A, I/J y Z.",
 
   d3_stamp:"Expediente — Página 3 · Noche 3", d3_dl:"Acto 3 · El Taller",
   d3_dt:"El Diario<br>del <em>Desaparecido</em>", d3_dc:"Cifrado: Código del Libro",
+  d3_journal:"1. Siempre quedan estas manos manchadas de tinta vieja.\n2. Al amanecer ya no se escuchan sus pasos en el taller.\n3. Solo queda un frasco roto sobre la mesa fría.\n4. Todos dicen que se marchó sin avisar a nadie.",
+  d3_cipher:"1.1 — 2.1 — 3.1 — 4.1 — 3.4 — 2.9",
+  d3_ph:"_ _ _ _ _ _",
   d3_amb:"El diario íntimo de un hombre desaparecido sigue sobre su mesa de trabajo. Una página parece haber servido de clave secreta.",
 
   d4_stamp:"Expediente — Página 4 · Noche 4", d4_dl:"Acto 4 · El Cementerio de los Pájaros",
   d4_dt:"El Telegrama<br><em>Camuflado</em>", d4_dc:"Cifrado: Bacon (bimodal)",
+  d4_cipher:"un cUeRvo VUelA baJo estA noCHe FRiA",
+  d4_ph:"_ _ _ _ _ _",
   d4_amb:"Un telegrama anónimo llegó a la redacción del periódico local. Nada extraño a primera vista — salvo la extraña alternancia entre minúsculas y mayúsculas, como un código oculto en la propia tipografía del mensaje.",
-  d4_note:"Nota del Guardián: cada letra minúscula vale «a», cada MAYÚSCULA vale «b». Agrupe las letras del mensaje en bloques de 5 para formar códigos Bacon, y halle la palabra (7 letras). Cuidado: en la tabla clásica, I/J comparten código, igual que U/V — solo una de las dos dará una palabra real en francés.",
+  d4_note:"Nota del Guardián: cada letra minúscula vale «a», cada MAYÚSCULA vale «b». Agrupe las letras del mensaje en bloques de 5 para formar códigos Bacon, y halle la palabra (6 letras). Cuidado: en la tabla clásica, I/J comparten código, igual que U/V — solo una de las dos dará una palabra real.",
 
   d5_stamp:"Expediente — Página 5 · Noche 5", d5_dl:"Acto 5 · La Taberna del Marinero Ahogado",
   d5_dt:"El Cuaderno<br>del <em>Camarero</em>", d5_dc:"Cifrado: Playfair",
-  d5_amb:"El camarero jura haber servido a la última víctima su copa final. En una página de su cuaderno de pedidos, una palabra codificada por parejas de letras, con una sola pista como encabezado: el nombre del propio puerto como clave.",
+  d5_amb:"El camarero jura haber servido a la última víctima su copa final. En una página de su cuaderno de pedidos, una palabra codificada por parejas de letras, con una sola pista como encabezado: el nombre del propio puerto como clave. También recuerda a un cliente silencioso, con bata clara bajo el abrigo, que permaneció solo al fondo de la sala toda la noche.",
   d5_note1:"Cuadrícula Playfair construida con la clave RAVENSCOURT (sin letras repetidas, I y J fusionadas, completada con el resto del alfabeto):",
-  d5_note2:"Nota del Guardián: descifre por parejas según las reglas de Playfair — misma fila → desplace a la izquierda; misma columna → desplace hacia arriba; si no (rectángulo) → cada letra conserva su fila pero toma la columna de la otra. Ejemplos con esta cuadrícula (letras distintas del mensaje): OG → UF (rectángulo); CD → AC (misma columna). Aplique la misma lógica a las 4 parejas del mensaje para hallar la palabra (8 letras).",
+  d5_cipher:"RD UR TH VW", d5_ph:"_ _ _ _ _ _ _",
+  d5_note2:"Nota del Guardián: descifre por parejas según las reglas de Playfair — misma fila → desplace a la izquierda; misma columna → desplace hacia arriba; si no (rectángulo) → cada letra conserva su fila pero toma la columna de la otra. Ejemplos con esta cuadrícula (letras distintas del mensaje): OG → UF (rectángulo); CD → AC (misma columna). Aplique la misma lógica a las 4 parejas del mensaje: obtendrá 8 letras, mas la última es una letra de relleno sin importancia — la palabra real tiene 7.",
 
   d6_stamp:"Expediente — Página 6 · Noche 6", d6_dl:"Acto 6 · El Pantalán Sur",
   d6_dt:"La Señal<br>de los <em>Estibadores</em>", d6_dc:"Cifrado: Banderas de Señales (leyenda a medio borrar)",
+  d6_table:"<tr><th>Letra</th><td>A</td><td>C</td><td>D</td><td>E</td><td>R</td><td>V</td></tr><tr><th>Posiciones</th><td>12h-06h</td><td>?</td><td>01h-07h</td><td>?</td><td>05h-11h</td><td>?</td></tr>",
+  d6_cipher:"03h-09h · 12h-06h · 01h-07h · 12h-06h · 04h-10h · 02h-08h · 05h-11h",
+  d6_ph:"_ _ _ _ _ _ _",
   d6_amb:"Se halla empapado en el pantalán un cuaderno de señalero del puerto. Los estibadores usan un viejo código de banderas, cada letra representada por dos posiciones de las agujas de un reloj — pero la humedad ha borrado la mitad de la leyenda.",
   d6_note:"Nota del Guardián: la humedad ha borrado tres entradas de la leyenda (C, E, V). Localice dónde aparecen en el mensaje los códigos ya conocidos (A, D, R), y deduzca las tres letras que faltan para completar una palabra de 7 letras que nadie desea hallar en los muelles tras una noche de niebla.",
 
   d7_stamp:"Expediente — Página 7 · Noche 7", d7_dl:"Acto 7 · La Celda Vacía",
   d7_dt:"Los Golpes<br>en el <em>Muro</em>", d7_dc:"Cifrado: Golpes Contados (A=1, Z=26)",
   d7_amb:"El vigilante nocturno del depósito jura haber oído golpes contra la chapa, durante toda una noche. Anotó el ritmo, grupo por grupo, en forma de números garabateados a toda prisa.",
-  d7_note:"Nota del Guardián: aquí no hay cuadrícula — cada número corresponde directamente a la posición de la letra en el alfabeto. Halle la palabra (6 letras).",
+  d7_cipher:"3 · 1 · 12 · 12 · 5 · 10 · 15 · 14", d7_ph:"_ _ _ _ _ _ _ _",
+  d7_note:"Nota del Guardián: aquí no hay cuadrícula — cada número corresponde directamente a la posición de la letra en el alfabeto. Halle la palabra (8 letras).",
 
   d8_stamp:"Expediente — Página 8 · Noche 8", d8_dl:"Acto 8 · El Gabinete del Médico",
   d8_dt:"El Cuaderno<br><em>Alquímico</em>", d8_dc:"Cifrado: Símbolos Alquímicos (leyenda incompleta)",
+  d8_table:"<tr><th>☉ Sol</th><td>B</td><th>☽ Luna</th><td>I</td></tr><tr><th>♀ Venus</th><td>S</td><th>♄ Saturno</th><td>T</td></tr>",
+  d8_cipher:"☉ ☽ ♀ ♄ ☿ ♂ ☽", d8_ph:"_ _ _ _ _ _ _",
   d8_amb:"El gabinete de un médico del barrio ha sido registrado de arriba abajo. Solo un viejo cuaderno de notas, cubierto de símbolos planetarios heredados de la alquimia, parece tener sentido — pero una mancha de tinta ha vuelto ilegibles dos símbolos de la leyenda.",
-  d8_note:"Nota del Guardián: la mancha ha borrado ☿ y ♂ de la leyenda. Otra página del cuaderno, dedicada a los anestésicos del gabinete, precisa: «☿, como el primer remedio que probé: el CLOROFORMO» y «♂, como el que lo sustituyó: el ÉTER». Forme la palabra (7 letras) — un instrumento que se hallaría más bien en una mesa de anatomía.",
+  d8_note:"Nota del Guardián: la mancha ha borrado ☿ y ♂ de la leyenda. Otra página del cuaderno, dedicada a los frascos del gabinete, precisa: «☿, como el primer tarro que usé: el UNGÜENTO» y «♂, como lo que siempre lo acompaña: la RECETA». Forme la palabra (7 letras) — un instrumento que se hallaría más bien en una mesa de anatomía.",
 
   d9_stamp:"Expediente — Página 9 · Noche 9", d9_dl:"Acto 9 · La Sala Común",
   d9_dt:"La Lista<br>de <em>Habituales</em>", d9_dc:"Cifrado: Letra Oculta en las Palabras",
-  d9_amb:"Se halla bajo una mesa una lista de siete palabras garabateadas a toda prisa en un posavasos. A primera vista, una lista sin sentido — salvo si se mira siempre en el mismo lugar.",
+  d9_amb:"Se halla bajo una mesa una lista de siete palabras garabateadas a toda prisa en un posavasos. A primera vista, una lista sin sentido — salvo si se mira siempre en el mismo lugar. Un habitual recuerda vagamente a un hombre con bata pálida, sentado allí un instante, que se marchó sin decir palabra.",
+  d9_cipher:"MOTIVO &nbsp;·&nbsp; PIANO &nbsp;·&nbsp; TABACO<br>JUEGO &nbsp;·&nbsp; CERRAR &nbsp;·&nbsp; VINO &nbsp;·&nbsp; PLAZA", d9_ph:"_ _ _ _ _ _ _",
   d9_note:"Nota del Guardián: la palabra final tiene 7 letras.",
 
   d10_stamp:"Expediente — Página 10 · Noche 10", d10_dl:"Acto 10 · El Teatro Abandonado",
   d10_dt:"La Escritura<br>del <em>Espejo</em>", d10_dc:"Cifrado: Escritura Especular",
   d10_amb:"En un camerino polvoriento, una frase está escrita con pintalabios sobre el espejo del tocador — pero no se lee normalmente. Hay que leerla al revés, como lo haría el propio espejo.",
-  d10_note:"Nota del Guardián: lea el mensaje letra por letra desde el final (como en un espejo) para reconstruir la frase completa, y aísle su palabra central (6 letras).",
+  d10_cipher:"EIR LE ARACSAM AL OJAB", d10_ph:"_ _ _ _ _ _ _",
+  d10_note:"Nota del Guardián: lea el mensaje letra por letra desde el final (como en un espejo) para reconstruir la frase completa, y aísle su palabra central (7 letras).",
 
   d11_stamp:"Expediente — Página 11 · Noche 11", d11_dl:"Acto 11 · La Comisaría",
   d11_dt:"El Testimonio<br>en <em>Verso</em>", d11_dc:"Cifrado: Acróstico",
   d11_amb:"Una única testigo accede a hablar — pero solo en verso, por superstición. Su testimonio, puesto por escrito, parece ocultar algo entre líneas.",
-  d11_note:"Nota del Guardián: la palabra tiene 6 letras.",
+  d11_poem:"Toda la noche vigilé su sombra.\nElla pasaba sin hacer ruido alguno.\nSu farol vacilaba en el viento helado.\nTal vez nadie sepa jamás su destino.\nIgnoro adónde fue, nunca lo supe.\nGuardé silencio, aunque temblaba de frío.\nOtros dudarán, pero yo lo vi todo.",
+  d11_ph:"_ _ _ _ _ _ _",
+  d11_note:"Nota del Guardián: la palabra tiene 7 letras.",
 
   d12_stamp:"Expediente — Página 12 · Noche 12", d12_dl:"Acto 12 · La Mansión Ashcombe",
   d12_dt:"Los Relojes<br><em>Detenidos</em>", d12_dc:"Cifrado: Esfera de Reloj (secuencia por construir)",
-  d12_amb:"En la mansión del difunto notable Ashcombe, siete relojes se detuvieron a horas distintas, todos la misma noche. Un antiguo sirviente ve en ello un código, pero no se halló tabla alguna — solo una regla, garabateada de memoria: empezando en la 1:00, que valdría «A», cada media hora siguiente avanzaría una letra en el alfabeto.",
-  d12_note:"Nota del Guardián: continúe ese conteo, media hora tras media hora desde la 1:00 = A, hasta cada uno de los siete relojes, para formar la palabra (7 letras).",
+  d12_amb:"En la mansión del difunto notable Ashcombe, cinco relojes se detuvieron a horas distintas, todos la misma noche. Un antiguo sirviente ve en ello un código, pero no se halló tabla alguna — solo una regla, garabateada de memoria: empezando en la 1:00, que valdría «A», cada media hora siguiente avanzaría una letra en el alfabeto. El sirviente recuerda a un último visitante esa noche — un hombre con bata pálida, venido a constatar la muerte, que se marchó antes del amanecer.",
+  d12_cipher:"9:30 · 3:00 · 6:30 · 8:00 · 5:30", d12_ph:"_ _ _ _ _",
+  d12_note:"Nota del Guardián: continúe ese conteo, media hora tras media hora desde la 1:00 = A, hasta cada uno de los cinco relojes, para formar la palabra (5 letras).",
 
   d13_stamp:"Expediente — Página 13 · Noche 13", d13_dl:"Acto 13 · La Iglesia de San Anselmo",
   d13_dt:"La Partitura<br><em>Maldita</em>", d13_dc:"Cifrado: Notas Musicales (cuadrícula por reconstruir)",
@@ -955,6 +998,7 @@ es:{
 
   d14_stamp:"Expediente — Página 14 · Noche 14", d14_dl:"Acto 14 · La Revelación",
   d14_dt:"El Anillo<br><em>Firmado</em>", d14_dc:"Cifrado final: Anagrama + César",
+  d14_cipher:"L Z M V Y U L",
   d14_amb:"Trece noches de niebla le han llevado hasta un anillo de sello hallado junto al último cuerpo. Una inscripción está grabada en él, desplazada letra por letra, Y mezclada — el doble cerrojo de un hombre que se creía intocable.",
   d14_note:"Nota del Guardián: este anillo de sello lleva el lema de un hombre metódico, que nunca atacaba antes de que sonaran siete campanadas en el campanario vecino. Desplace cada letra hacia atrás en el alfabeto — obtendrá entonces un anagrama: reordene esas letras para leer el título de quien recorre Ravenscourt desde hace catorce noches sin ser jamás sospechoso (7 letras).",
 
@@ -968,20 +1012,20 @@ es:{
   felic_title:"La Sombra Desenmascarada",
   felic_txt:"El forense de Ravenscourt examinaba cada cuerpo que él mismo había depositado en la niebla. Durante catorce noches, firmó sus propios informes de autopsia. La investigación se cierra — pero el puerto ya no duerme del todo igual.",
   mj_sol:[
-    ["Acto 1 — BROUILLARD","Rail Fence 2 filas: BOILRRULAD → zigzag inverso."],
-    ["Acto 2 — LANTERNE","Cuadrado de Polibio por reconstruir desde A(1,1), I/J(2,4), Z(5,5): cuadrícula ABCDE/FGHIK/LMNOP/QRSTU/VWXYZ."],
-    ["Acto 3 — TAILLEUR","Código del libro: 1ª letra de las palabras 1.1, 3.8, 2.1, 3.4, 1.8, 1.7, 3.1, 4.1."],
-    ["Acto 4 — CORBEAU","Bacon bimodal (mayús/minús): «un vIeuX CoRBeau noir vOle Tres bas cE soIR»."],
-    ["Acto 5 — ABSINTHE","Playfair, clave RAVENSCOURT: RD BQ TH GN."],
-    ["Acto 6 — CADAVRE","Banderas/reloj con clave parcial: A=12-6, D=1-7, R=5-11 dados; C=3-9, E=2-8, V=4-10 deducidos mediante el patrón _A D A _R_ → CADAVRE."],
-    ["Acto 7 — RUELLE","Conteo posicional A=1…Z=26 (sin cuadrícula): 18,21,5,12,12,5 → R,U,E,L,L,E."],
-    ["Acto 8 — SCALPEL","Símbolos alquímicos, leyenda parcial: ☉=A,☽=L,♀=P,♄=S dados; ☿=C (CLOROFORMO) y ♂=E (ÉTER) deducidos mediante las notas del cuaderno."],
-    ["Acto 9 — TAVERNE","3ª letra de cada palabra: ARTISAN,BRASSERIE,SEVERE,CIERGE,PARDON,MANOIR,PIERRE."],
-    ["Acto 10 — MASQUE","Escritura especular: «TIR LI EUQSAM EL SUOS» → «SOUS LE MASQUE IL RIT»."],
-    ["Acto 11 — TEMOIN","Acróstico: 1ª letra de cada línea del poema (T,E,M,O,I,N)."],
-    ["Acto 12 — HORLOGE","Secuencia continua desde la 1:00=A (una letra/media hora, sin tabla): 4:30=H,8:00=O,9:30=R,6:30=L,8:00=O,4:00=G,3:00=E."],
+    ["Acto 1 — PERDIDO","Rail Fence 2 filas: PRIOEDD → zigzag inverso."],
+    ["Acto 2 — LINTERNA","Cuadrado de Polibio por reconstruir desde A(1,1), I/J(2,4), Z(5,5): 31,24,33,44,15,42,33,11 → L,I,N,T,E,R,N,A."],
+    ["Acto 3 — SASTRE","Código del libro: 1ª letra de 1.1,2.1,3.1,4.1,3.4,2.9 → S,A,S,T,R,E."],
+    ["Acto 4 — CUERVO","Bacon bimodal: «un cUeRvo VUelA baJo estA noCHe FRiA» → C,U,E,R,V,O."],
+    ["Acto 5 — ABSENTA","Playfair, clave RAVENSCOURT: RD UR TH VW → AB,SE,NT,AX (X de relleno)."],
+    ["Acto 6 — CADAVER","Banderas/reloj con clave parcial: A=12-6, D=1-7, R=5-11 dados; C=3-9, E=2-8, V=4-10 deducidos mediante el patrón _A D A __R → CADAVER."],
+    ["Acto 7 — CALLEJON","Conteo posicional A=1…Z=26 (sin cuadrícula): 3,1,12,12,5,10,15,14 → C,A,L,L,E,J,O,N."],
+    ["Acto 8 — BISTURI","Símbolos alquímicos, leyenda parcial: ☉=B,☽=I,♀=S,♄=T dados; ☿=U (UNGÜENTO) y ♂=R (RECETA) deducidos → B,I,S,T,U,R,I."],
+    ["Acto 9 — TABERNA","3ª letra de cada palabra: MOTIVO,PIANO,TABACO,JUEGO,CERRAR,VINO,PLAZA."],
+    ["Acto 10 — MASCARA","Escritura especular: «EIR LE ARACSAM AL OJAB» → «BAJO LA MASCARA EL RIE»."],
+    ["Acto 11 — TESTIGO","Acróstico: 1ª letra de cada línea del poema (T,E,S,T,I,G,O)."],
+    ["Acto 12 — RELOJ","Secuencia continua desde la 1:00=A (una letra/media hora, sin tabla): 9:30=R,3:00=E,6:30=L,8:00=O,5:30=J."],
     ["Acto 13 — REQUIEM","Notas/octavas: Fa3,Sol1,Mi3,Si3,Ré2,Sol1,La2."],
-    ["Acto 14 — LEGISTE (contraseña final)","César +7 sobre APNLSZL → TIGELSE (anagrama) → LEGISTE. Revelación: el asesino es el forense de la ciudad."]
+    ["Acto 14 — FORENSE (contraseña final)","César +7 sobre LZMVYUL → ESFORNE (anagrama) → FORENSE. Revelación: el asesino es el forense de la ciudad."]
   ]
 },
 en:{
@@ -1011,62 +1055,81 @@ en:{
 
   d1_stamp:"Investigation File — Page 1 · Night 1", d1_dl:"Act 1 · The Quay",
   d1_dt:"The First<br><em>Disappearance</em>", d1_dc:"Cipher: Rail Fence (2 rails)",
-  d1_amb:"A dockworker has been missing since dawn. Only his lantern is found, standing upright on a crate, like an offering. A message scrawled in chalk on the wood, in a zigzag, seems to have been traced in haste.",
-  d1_note:"Keeper's Note: the message was written along two zigzag rows (one letter on top, one on the bottom, alternating), then the two rows were copied out one after the other. So split the 10 letters into two groups of 5: the first 5 form the top row, the next 5 the bottom row. Then recombine them in a zigzag (top, bottom, top, bottom…) to read the original word (10 letters).",
+  d1_amb:"A dockworker has been missing since dawn. Only his lantern is found, standing upright on a crate, like an offering. A message scrawled in chalk on the wood, in a zigzag, seems to have been traced in haste. An early fisherman swears he glimpsed, in the fog, a figure in a pale coat slipping away without a sound.",
+  d1_cipher:"M S I G I S N",
+  d1_ph:"_ _ _ _ _ _ _",
+  d1_note:"Keeper's Note: the message was written along two zigzag rows (one letter on top, one on the bottom, alternating), then the two rows were copied out one after the other. So split the 7 letters into two groups (4 and 3): the first 4 form the top row, the next 3 the bottom row. Then recombine them in a zigzag (top, bottom, top, bottom…) to read the original word (7 letters).",
 
   d2_stamp:"Investigation File — Page 2 · Night 2", d2_dl:"Act 2 · Dyers' Alley",
-  d2_dt:"The Forgotten<br><em>Object</em>", d2_dc:"Cipher: Polybius Square (grid to rebuild)",
+  d2_dt:"The Forgotten<br><em>Object</em>", d2_dc:"Cipher: Polybius Square (grid to rebuild)", d2_cipher:"31 · 11 · 33 · 44 · 15 · 42 · 33", d2_ph:"_ _ _ _ _ _ _",
   d2_amb:"Under a porch, an old glass object has rolled into the gutter. Engraved into the metal of its base, a series of two-digit numbers — and, around them, the outline of an alphabet grid of which only three letters remain legible: A, I/J and Z.",
 
   d3_stamp:"Investigation File — Page 3 · Night 3", d3_dl:"Act 3 · The Workshop",
   d3_dt:"The Missing Man's<br><em>Diary</em>", d3_dc:"Cipher: Book Code",
+  d3_journal:"1. Time drags slow beneath this endless grey rain.\n2. All the windows stay shuttered since that final night.\n3. I still hear footsteps pacing above an empty room.\n4. Our old landlord refuses to open that locked door.",
+  d3_cipher:"1.1 — 2.1 — 3.1 — 4.3 — 4.2 — 1.8",
+  d3_ph:"_ _ _ _ _ _",
   d3_amb:"The diary of a missing man still lies on his workbench. One page seems to have served as a secret key.",
 
   d4_stamp:"Investigation File — Page 4 · Night 4", d4_dl:"Act 4 · The Birds' Cemetery",
   d4_dt:"The Disguised<br><em>Telegram</em>", d4_dc:"Cipher: Bacon (bimodal)",
+  d4_cipher:"A raven flew Low OVer Grey ROOf",
+  d4_ph:"_ _ _ _ _",
   d4_amb:"An anonymous telegram reached the local newspaper's office. Nothing odd at first glance — except the strange alternation between lowercase and uppercase letters, as if a code were hidden in the very typography of the message.",
-  d4_note:"Keeper's Note: each lowercase letter counts as « a », each UPPERCASE letter as « b ». Group the letters of the message into blocks of 5 to form Bacon codes, then find the word (7 letters). Careful: in the classic table, I/J share the same code, as do U/V — only one of the two gives a real French word.",
+  d4_note:"Keeper's Note: each lowercase letter counts as « a », each UPPERCASE letter as « b ». Group the letters of the message into blocks of 5 to form Bacon codes, then find the word (5 letters). Careful: in the classic table, I/J share the same code, as do U/V — only one of the two gives a real word.",
 
   d5_stamp:"Investigation File — Page 5 · Night 5", d5_dl:"Act 5 · The Drowned Sailor Tavern",
   d5_dt:"The Barman's<br><em>Notebook</em>", d5_dc:"Cipher: Playfair",
-  d5_amb:"The barman swears he served the last victim his final drink. On a page of his order notebook, a word coded in letter pairs, with a single clue as a header: the name of the port itself as the key.",
+  d5_amb:"The barman swears he served the last victim his final drink. On a page of his order notebook, a word coded in letter pairs, with a single clue as a header: the name of the port itself as the key. He also recalls a silent customer, in a pale coat beneath his overcoat, who stayed alone at the back of the room all evening.",
   d5_note1:"Playfair grid built with the keyword RAVENSCOURT (no repeated letters, I and J merged, completed with the rest of the alphabet):",
+  d5_cipher:"RD BQ TH GN", d5_ph:"_ _ _ _ _ _ _ _",
   d5_note2:"Keeper's Note: decode by pairs following the Playfair rules — same row → shift left; same column → shift up; otherwise (rectangle) → each letter keeps its row but takes the other's column. Examples with this grid (letters not from the message): OG → UF (rectangle); CD → AC (same column). Apply the same logic to the 4 pairs of the message to find the word (8 letters).",
 
   d6_stamp:"Investigation File — Page 6 · Night 6", d6_dl:"Act 6 · The South Pier",
   d6_dt:"The Dockers'<br><em>Signal</em>", d6_dc:"Cipher: Signal Flags (half-erased key)",
+  d6_table:"<tr><th>Letter</th><td>C</td><td>O</td><td>R</td><td>P</td><td>S</td><td>E</td></tr><tr><th>Positions</th><td>03h-09h</td><td>?</td><td>05h-11h</td><td>?</td><td>01h-07h</td><td>?</td></tr>",
+  d6_cipher:"03h-09h · 04h-10h · 05h-11h · 12h-06h · 01h-07h · 02h-08h",
+  d6_ph:"_ _ _ _ _ _",
   d6_amb:"A port signalman's notebook is found soaked on the pier. The dockers use an old flag code, each letter represented by two clock-hand positions — but the damp has erased half of the key.",
-  d6_note:"Keeper's Note: the damp erased three entries of the key (C, E, V). Spot where the already-known codes (A, D, R) appear in the message, then deduce the three missing letters to complete a 7-letter word no one wants to find on the docks after a foggy night.",
+  d6_note:"Keeper's Note: the damp erased three entries of the key (O, P, E). Spot where the already-known codes (C, R, S) appear in the message, then deduce the three missing letters to complete a 6-letter word no one wants to find on the docks after a foggy night.",
 
   d7_stamp:"Investigation File — Page 7 · Night 7", d7_dl:"Act 7 · The Empty Cell",
   d7_dt:"The Knocks<br>in the <em>Wall</em>", d7_dc:"Cipher: Counted Knocks (A=1, Z=26)",
   d7_amb:"The depot's night watchman swears he heard knocking against the sheet metal all night long. He noted down the rhythm, group by group, as numbers scrawled in haste.",
-  d7_note:"Keeper's Note: no grid here — each number is directly the letter's position in the alphabet. Find the word (6 letters).",
+  d7_cipher:"1 · 12 · 12 · 5 · 25", d7_ph:"_ _ _ _ _",
+  d7_note:"Keeper's Note: no grid here — each number is directly the letter's position in the alphabet. Find the word (5 letters).",
 
   d8_stamp:"Investigation File — Page 8 · Night 8", d8_dl:"Act 8 · The Doctor's Office",
   d8_dt:"The Alchemical<br><em>Notebook</em>", d8_dc:"Cipher: Alchemical Symbols (incomplete key)",
+  d8_table:"<tr><th>☉ Sun</th><td>A</td><th>☽ Moon</th><td>L</td></tr><tr><th>♀ Venus</th><td>P</td><th>♄ Saturn</th><td>S</td></tr>",
+  d8_cipher:"♄ ☿ ☉ ☽ ♀ ♂ ☽", d8_ph:"_ _ _ _ _ _ _",
   d8_amb:"A neighbourhood doctor's office has been ransacked from top to bottom. Only an old notebook, covered in planetary symbols inherited from alchemy, seems to make any sense — but an ink stain has made two symbols illegible in the key.",
   d8_note:"Keeper's Note: the stain erased ☿ and ♂ from the key. Another page of the notebook, devoted to the office's anaesthetics, states: « ☿, like the first remedy I tried: CHLOROFORM » and « ♂, like the one that replaced it: ETHER ». Form the word (7 letters) — an instrument more likely found on an anatomy table.",
 
   d9_stamp:"Investigation File — Page 9 · Night 9", d9_dl:"Act 9 · The Common Room",
   d9_dt:"The List of<br><em>Regulars</em>", d9_dc:"Cipher: Hidden Letter in Words",
-  d9_amb:"A list of seven words hastily scrawled on a beer coaster is found under a table. At first glance, a list with neither head nor tail — unless you always look at the same spot.",
-  d9_note:"Keeper's Note: the final word has 7 letters.",
+  d9_amb:"A list of seven words hastily scrawled on a beer coaster is found under a table. At first glance, a list with neither head nor tail — unless you always look at the same spot. A regular vaguely remembers a man in a pale coat, sitting there for a moment, gone without a word.",
+  d9_cipher:"ARTIST &nbsp;·&nbsp; REASON &nbsp;·&nbsp; SAVOR<br>BEER &nbsp;·&nbsp; PORTER &nbsp;·&nbsp; MANOR", d9_ph:"_ _ _ _ _ _",
+  d9_note:"Keeper's Note: the final word has 6 letters.",
 
   d10_stamp:"Investigation File — Page 10 · Night 10", d10_dl:"Act 10 · The Abandoned Theatre",
   d10_dt:"The Mirror<br><em>Writing</em>", d10_dc:"Cipher: Mirror Writing",
   d10_amb:"In a dusty dressing room, a sentence is traced in lipstick on the dressing table's mirror — but it doesn't read normally. It must be read backwards, as the mirror itself would show it.",
-  d10_note:"Keeper's Note: read the message letter by letter starting from the end (as in a mirror) to reconstruct the full sentence, and isolate its central word (6 letters).",
+  d10_cipher:"SHGUAL EH KSAM EHT REDNU", d10_ph:"_ _ _ _",
+  d10_note:"Keeper's Note: read the message letter by letter starting from the end (as in a mirror) to reconstruct the full sentence, and isolate its central word (4 letters).",
 
   d11_stamp:"Investigation File — Page 11 · Night 11", d11_dl:"Act 11 · The Police Station",
   d11_dt:"The Testimony<br>in <em>Verse</em>", d11_dc:"Cipher: Acrostic",
   d11_amb:"A single witness agrees to speak — but only in verse, out of superstition. Her testimony, written down, seems to hide something between the lines.",
-  d11_note:"Keeper's Note: the word has 6 letters.",
+  d11_poem:"Walking the wharf, I saw her shadow pass.\nI dared not follow, though my heart beat fast.\nThe lantern flickered, then the fog closed in.\nNothing but silence where her steps had been.\nEvery night since, I dream of that pale face.\nSilent she moved, without a single trace.\nStill I remember, though none will believe.",
+  d11_ph:"_ _ _ _ _ _ _",
+  d11_note:"Keeper's Note: the word has 7 letters.",
 
   d12_stamp:"Investigation File — Page 12 · Night 12", d12_dl:"Act 12 · Ashcombe Manor",
   d12_dt:"The Stopped<br><em>Clocks</em>", d12_dc:"Cipher: Clock Face (sequence to build)",
-  d12_amb:"In the manor of the late notable Ashcombe, seven clocks stopped at different hours, all on the same evening. An old servant sees a code in it, but no table was ever found — only a rule, scrawled from memory: starting at 1:00, worth « A », each following half hour would advance one letter in the alphabet.",
-  d12_note:"Keeper's Note: continue this count, half hour by half hour from 1:00 = A, up to each of the seven clocks, to form the word (7 letters).",
+  d12_amb:"In the manor of the late notable Ashcombe, five clocks stopped at different hours, all on the same evening. An old servant sees a code in it, but no table was ever found — only a rule, scrawled from memory: starting at 1:00, worth « A », each following half hour would advance one letter in the alphabet. The servant remembers one last visitor that night — a man in a pale coat, come to confirm the death, gone before dawn.",
+  d12_cipher:"2:00 · 6:30 · 8:00 · 2:00 · 6:00", d12_ph:"_ _ _ _ _",
+  d12_note:"Keeper's Note: continue this count, half hour by half hour from 1:00 = A, up to each of the five clocks, to form the word (5 letters).",
 
   d13_stamp:"Investigation File — Page 13 · Night 13", d13_dl:"Act 13 · St. Anselm's Church",
   d13_dt:"The Cursed<br><em>Score</em>", d13_dc:"Cipher: Musical Notes (grid to rebuild)",
@@ -1075,6 +1138,7 @@ en:{
 
   d14_stamp:"Investigation File — Page 14 · Night 14", d14_dl:"Act 14 · The Revelation",
   d14_dt:"The Signed<br><em>Ring</em>", d14_dc:"Final cipher: Anagram + Caesar",
+  d14_cipher:"V Y J V U L Y",
   d14_amb:"Thirteen nights of fog have led you to a signet ring found near the last body. An inscription is engraved on it, shifted letter by letter, AND scrambled — the double lock of a man who thought himself untouchable.",
   d14_note:"Keeper's Note: this signet ring bears the motto of a methodical man, who never struck before seven bells had tolled from the nearby church tower. Shift each letter backward in the alphabet — you will then get an anagram: rearrange its letters to read the title of the one who has walked Ravenscourt for fourteen nights without ever being suspected (7 letters).",
 
@@ -1088,20 +1152,20 @@ en:{
   felic_title:"The Shadow Unmasked",
   felic_txt:"Ravenscourt's coroner examined every body he himself had left in the fog. For fourteen nights, he signed his own autopsy reports. The case is closed — but the port no longer quite sleeps the way it used to.",
   mj_sol:[
-    ["Act 1 — BROUILLARD","Rail Fence, 2 rails: BOILRRULAD → reverse zigzag."],
-    ["Act 2 — LANTERNE","Polybius square to rebuild from A(1,1), I/J(2,4), Z(5,5): grid ABCDE/FGHIK/LMNOP/QRSTU/VWXYZ."],
-    ["Act 3 — TAILLEUR","Book code: 1st letter of words 1.1, 3.8, 2.1, 3.4, 1.8, 1.7, 3.1, 4.1."],
-    ["Act 4 — CORBEAU","Bimodal Bacon (letter case): «un vIeuX CoRBeau noir vOle Tres bas cE soIR»."],
+    ["Act 1 — MISSING","Rail Fence, 2 rails: MSIGISN → reverse zigzag."],
+    ["Act 2 — LANTERN","Polybius square to rebuild from A(1,1), I/J(2,4), Z(5,5): 31,11,33,44,15,42,33 → L,A,N,T,E,R,N."],
+    ["Act 3 — TAILOR","Book code: 1st letter of 1.1,2.1,3.1,4.3,4.2,1.8 → T,A,I,L,O,R."],
+    ["Act 4 — RAVEN","Bimodal Bacon: «A raven flew Low OVer Grey ROOf» → R,A,V,E,N."],
     ["Act 5 — ABSINTHE","Playfair, keyword RAVENSCOURT: RD BQ TH GN."],
-    ["Act 6 — CADAVRE","Flags/clock with partial key: A=12-6, D=1-7, R=5-11 given; C=3-9, E=2-8, V=4-10 deduced via the pattern _A D A _R_ → CADAVRE."],
-    ["Act 7 — RUELLE","Positional count A=1…Z=26 (no grid): 18,21,5,12,12,5 → R,U,E,L,L,E."],
+    ["Act 6 — CORPSE","Flags/clock with partial key: C=3-9, R=5-11, S=1-7 given; O=4-10, P=12-6, E=2-8 deduced via the pattern C_R_S_ → CORPSE."],
+    ["Act 7 — ALLEY","Positional count A=1…Z=26 (no grid): 1,12,12,5,25 → A,L,L,E,Y."],
     ["Act 8 — SCALPEL","Alchemical symbols, partial key: ☉=A,☽=L,♀=P,♄=S given; ☿=C (CHLOROFORM) and ♂=E (ETHER) deduced from notebook clues."],
-    ["Act 9 — TAVERNE","3rd letter of each word: ARTISAN,BRASSERIE,SEVERE,CIERGE,PARDON,MANOIR,PIERRE."],
-    ["Act 10 — MASQUE","Mirror writing: «TIR LI EUQSAM EL SUOS» → «SOUS LE MASQUE IL RIT» (Under the mask, he laughs)."],
-    ["Act 11 — TEMOIN","Acrostic: 1st letter of each line of the poem (T,E,M,O,I,N)."],
-    ["Act 12 — HORLOGE","Continuous sequence from 1:00=A (one letter per half hour, no table given): 4:30=H,8:00=O,9:30=R,6:30=L,8:00=O,4:00=G,3:00=E."],
+    ["Act 9 — TAVERN","3rd letter of each word: ARTIST,REASON,SAVOR,BEER,PORTER,MANOR."],
+    ["Act 10 — MASK","Mirror writing: «SHGUAL EH KSAM EHT REDNU» → «UNDER THE MASK HE LAUGHS»."],
+    ["Act 11 — WITNESS","Acrostic: 1st letter of each line of the poem (W,I,T,N,E,S,S)."],
+    ["Act 12 — CLOCK","Continuous sequence from 1:00=A (one letter per half hour, no table given): 2:00=C,6:30=L,8:00=O,2:00=C,6:00=K."],
     ["Act 13 — REQUIEM","Notes/octaves: Fa3, Sol1, Mi3, Si3, Ré2, Sol1, La2."],
-    ["Act 14 — LEGISTE (final password)","Caesar +7 on APNLSZL → TIGELSE (anagram) → LEGISTE (coroner). Revelation: the killer is the city's coroner."]
+    ["Act 14 — CORONER (final password)","Caesar +7 on VYJVULY → ORCONER (anagram) → CORONER. Revelation: the killer is the city's coroner."]
   ]
 }
 };
@@ -1130,7 +1194,7 @@ let day = 1;
 const total = 14;
 let navReady = false;
 
-function isSolved(n){ return localStorage.getItem('ravenscourt_a'+n)==='1'; }
+function isSolved(n){ return localStorage.getItem('ravenscourt_'+currentLang+'_a'+n)==='1'; }
 function canReach(n){
   if(n<=1) return true;
   for(let d=1; d<n; d++) if(!isSolved(d)) return false;
@@ -1223,10 +1287,10 @@ function checkAnswer(n){
   const val = norm(document.getElementById('ans'+n).value);
   const fb = document.getElementById('fb'+n);
   const dict = I18N[currentLang];
-  if(val===answers[n]){
+  if(val===answers[currentLang][n]){
     fb.textContent = dict.fb_ok+' '+n+' '+dict.fb_ok2;
     fb.className='feedback ok';
-    localStorage.setItem('ravenscourt_a'+n,'1');
+    localStorage.setItem('ravenscourt_'+currentLang+'_a'+n,'1');
     render();
     setTimeout(function(){ if(day===n) go(1); }, 700);
   } else {
@@ -1256,7 +1320,7 @@ function openHint(n){
 function checkFinal(){
   const val = norm(document.getElementById('ansFinal').value);
   const fb = document.getElementById('fbFinal');
-  if(val===finalPass){
+  if(val===finalPass[currentLang]){
     document.getElementById('finalPage').style.display='none';
     document.getElementById('felicPage').style.display='block';
     const alreadyFinished = gameFinalMs !== null;
@@ -1282,7 +1346,7 @@ function resetProgress(){
     : "Erase all progress (answers found, hints unlocked) and restart the investigation from the beginning?";
   if(!confirm(msg)) return;
   for(let n=1;n<=13;n++){
-    localStorage.removeItem('ravenscourt_a'+n);
+    ['fr','es','en'].forEach(function(l){ localStorage.removeItem('ravenscourt_'+l+'_a'+n); });
     localStorage.removeItem('ravenscourt_h'+n);
     localStorage.removeItem('ravenscourt_werr'+n);
     const inp=document.getElementById('ans'+n);
