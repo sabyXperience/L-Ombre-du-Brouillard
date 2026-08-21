@@ -64,6 +64,7 @@ function ravenscourtLoadGA(){
 }
 html{scroll-behavior:smooth}
 body{font-family:'Crimson Text',serif;background:#080a0e;color:var(--ink);min-height:100vh;overflow-x:hidden;
+  display:flex;flex-direction:column;align-items:center;
   background-image: url('background-desk.jpg');
   background-size: cover;
   background-position: center;
@@ -175,7 +176,8 @@ h1,h2,h3,.disp{font-family:'Playfair Display',serif}
 .ambiance{font-style:italic;color:var(--inkl);line-height:1.7;font-size:15px;padding:10px 14px;background:var(--p2);border-radius:6px;border-left:3px solid var(--gold);margin-bottom:16px}
 
 .cipher-box{background:var(--ink);color:var(--p);font-family:'Courier Prime',monospace;font-size:14px;letter-spacing:.05em;line-height:2;padding:16px 18px;border-radius:8px;margin-bottom:14px;white-space:pre-wrap;text-align:center;border:1px solid rgba(196,168,74,.3)}
-.cipher-table{width:100%;max-width:100%;border-collapse:collapse;font-family:'Courier Prime',monospace;font-size:12.5px;margin-bottom:14px;display:block;overflow-x:auto;-webkit-overflow-scrolling:touch}
+.table-scroll{width:100%;overflow-x:auto;-webkit-overflow-scrolling:touch;margin-bottom:14px}
+.cipher-table{width:100%;border-collapse:collapse;font-family:'Courier Prime',monospace;font-size:12.5px}
 .cipher-table td{border:1px solid rgba(90,90,106,.3);padding:5px 8px;text-align:center}
 .cipher-table th{border:1px solid rgba(90,90,106,.3);padding:5px 8px;background:var(--p3);font-size:11px}
 @media(max-width:480px){.cipher-table td{padding:4px 5px}.cipher-table th{padding:4px 5px}.gridcell{width:24px;padding:3px 1px}}
@@ -333,14 +335,14 @@ input.mono{font-family:'Courier Prime',monospace;font-size:16px;letter-spacing:.
       <div class="dt" data-i18n="d2_dt">L'Objet<br><em>Oublié</em></div>
       <div class="dc" data-i18n="d2_dc">Chiffrement : Carré de Polybe (grille à reconstituer)</div>
       <div class="ambiance" data-i18n="d2_amb">Sous un porche, un vieil objet de verre a roulé jusqu'au caniveau. Gravés dans le métal de son socle, une série de nombres à deux chiffres — et, tout autour, les contours d'une grille alphabétique dont seules trois lettres restent lisibles : A, I/J et Z.</div>
-      <table class="cipher-table">
+      <div class="table-scroll"><table class="cipher-table">
         <tr><th></th><th>1</th><th>2</th><th>3</th><th>4</th><th>5</th></tr>
         <tr><th>1</th><td>A</td><td><input class="gridcell" maxlength="1" oninput="gridFmt(this)"></td><td><input class="gridcell" maxlength="1" oninput="gridFmt(this)"></td><td><input class="gridcell" maxlength="1" oninput="gridFmt(this)"></td><td><input class="gridcell" maxlength="1" oninput="gridFmt(this)"></td></tr>
         <tr><th>2</th><td><input class="gridcell" maxlength="1" oninput="gridFmt(this)"></td><td><input class="gridcell" maxlength="1" oninput="gridFmt(this)"></td><td><input class="gridcell" maxlength="1" oninput="gridFmt(this)"></td><td>I/J</td><td><input class="gridcell" maxlength="1" oninput="gridFmt(this)"></td></tr>
         <tr><th>3</th><td><input class="gridcell" maxlength="1" oninput="gridFmt(this)"></td><td><input class="gridcell" maxlength="1" oninput="gridFmt(this)"></td><td><input class="gridcell" maxlength="1" oninput="gridFmt(this)"></td><td><input class="gridcell" maxlength="1" oninput="gridFmt(this)"></td><td><input class="gridcell" maxlength="1" oninput="gridFmt(this)"></td></tr>
         <tr><th>4</th><td><input class="gridcell" maxlength="1" oninput="gridFmt(this)"></td><td><input class="gridcell" maxlength="1" oninput="gridFmt(this)"></td><td><input class="gridcell" maxlength="1" oninput="gridFmt(this)"></td><td><input class="gridcell" maxlength="1" oninput="gridFmt(this)"></td><td><input class="gridcell" maxlength="1" oninput="gridFmt(this)"></td></tr>
         <tr><th>5</th><td><input class="gridcell" maxlength="1" oninput="gridFmt(this)"></td><td><input class="gridcell" maxlength="1" oninput="gridFmt(this)"></td><td><input class="gridcell" maxlength="1" oninput="gridFmt(this)"></td><td><input class="gridcell" maxlength="1" oninput="gridFmt(this)"></td><td>Z</td></tr>
-      </table>
+      </table></div>
       <div class="cipher-box" data-i18n="d2_cipher">31 · 11 · 33 · 44 · 15 · 42 · 33 · 15</div>
       <div class="check-row">
         <div class="lbl-az" data-i18n="lbl_az">Entrez le mot découvert grâce à l'énigme :</div>
@@ -380,14 +382,14 @@ input.mono{font-family:'Courier Prime',monospace;font-size:16px;letter-spacing:.
       <div class="dt" data-i18n="d4_dt">Le Télégramme<br><em>Camouflé</em></div>
       <div class="dc" data-i18n="d4_dc">Chiffrement : Bacon (bimodal)</div>
       <div class="ambiance" data-i18n="d4_amb">Un télégramme anonyme est parvenu au bureau du journal local. Rien d'étrange à première vue — sauf l'alternance bizarre entre minuscules et majuscules, comme un code caché dans la typographie même du message.</div>
-      <table class="cipher-table">
+      <div class="table-scroll"><table class="cipher-table">
         <tr><th>A</th><td>aaaaa</td><th>H</th><td>aabbb</td><th>O</th><td>abbab</td><th>V/U</th><td>baabb</td></tr>
         <tr><th>B</th><td>aaaab</td><th>I/J</th><td>abaaa</td><th>P</th><td>abbba</td><th>W</th><td>babaa</td></tr>
         <tr><th>C</th><td>aaaba</td><th>K</th><td>abaab</td><th>Q</th><td>abbbb</td><th>X</th><td>babab</td></tr>
         <tr><th>D</th><td>aaabb</td><th>L</th><td>ababa</td><th>R</th><td>baaaa</td><th>Y</th><td>babba</td></tr>
         <tr><th>E</th><td>aabaa</td><th>M</th><td>ababb</td><th>S</th><td>baaab</td><th>Z</th><td>babbb</td></tr>
         <tr><th>F</th><td>aabab</td><th>N</th><td>abbaa</td><th>T</th><td>baaba</td><td colspan="2"></td></tr>
-      </table>
+      </table></div>
       <div class="cipher-box" style="font-family:'Crimson Text',serif;font-size:16px;letter-spacing:0" data-i18n="d4_cipher">un vIeuX CoRBeau noir vOle Tres bas cE soIR</div>
       <div class="note" data-i18n="d4_note">Note du Gardien : chaque lettre minuscule vaut "a", chaque lettre en MAJUSCULE vaut "b". Regroupez les lettres du message par paquets de 5 pour former des codes bacon, puis retrouvez le mot (7 lettres). Attention : dans le tableau classique, I/J partagent le même code, tout comme U/V — un seul des deux donnera un vrai mot français.</div>
       <div class="check-row">
@@ -406,15 +408,15 @@ input.mono{font-family:'Courier Prime',monospace;font-size:16px;letter-spacing:.
       <div class="dl" data-i18n="d5_dl">Acte 5 · La Taverne du Marin Noyé</div>
       <div class="dt" data-i18n="d5_dt">Le Carnet<br>du <em>Barman</em></div>
       <div class="dc" data-i18n="d5_dc">Chiffrement : Playfair</div>
-      <div class="ambiance" data-i18n="d5_amb">Le barman jure avoir servi la dernière victime son ultime verre. Sur une page de son carnet de commandes, un mot codé par paires de lettres, avec en en-tête un seul indice : le nom du port lui-même comme clé. Il se souvient aussi d'un client silencieux, en blouse claire sous son manteau, resté seul au fond de la salle toute la soirée.</div>
+      <div class="ambiance" data-i18n="d5_amb">Le barman jure avoir servi son ultime verre à la dernière victime. Sur une page de son carnet de commandes, un mot codé par paires de lettres, avec en en-tête un seul indice : le nom du port lui-même comme clé. Il se souvient aussi d'un client silencieux, en blouse claire sous son manteau, resté seul au fond de la salle toute la soirée.</div>
       <div class="note" data-i18n="d5_note1">Grille Playfair construite avec la clé RAVENSCOURT (sans lettres répétées, I et J confondus, complétée par le reste de l'alphabet) :</div>
-      <table class="cipher-table">
+      <div class="table-scroll"><table class="cipher-table">
         <tr><td>R</td><td>A</td><td>V</td><td>E</td><td>N</td></tr>
         <tr><td>S</td><td>C</td><td>O</td><td>U</td><td>T</td></tr>
         <tr><td>B</td><td>D</td><td>F</td><td>G</td><td>H</td></tr>
         <tr><td>I</td><td>K</td><td>L</td><td>M</td><td>P</td></tr>
         <tr><td>Q</td><td>W</td><td>X</td><td>Y</td><td>Z</td></tr>
-      </table>
+      </table></div>
       <div class="cipher-box" data-i18n="d5_cipher">RD BQ TH GN</div>
       <div class="note" data-i18n="d5_note2">Note du Gardien : déchiffrez par paires selon les règles du Playfair — même ligne → décalez à gauche ; même colonne → décalez vers le haut ; sinon (rectangle) → chaque lettre garde sa ligne mais prend la colonne de l'autre. Exemples avec cette grille (lettres différentes du message) : OG → UF (rectangle) ; CD → AC (même colonne). Appliquez la même logique aux 4 paires du message pour retrouver le mot (8 lettres).</div>
       <div class="check-row">
@@ -434,10 +436,10 @@ input.mono{font-family:'Courier Prime',monospace;font-size:16px;letter-spacing:.
       <div class="dt" data-i18n="d6_dt">Le Signal<br>des <em>Débardeurs</em></div>
       <div class="dc" data-i18n="d6_dc">Chiffrement : Pavillons de Signalisation (légende à moitié effacée)</div>
       <div class="ambiance" data-i18n="d6_amb">Un carnet de signaleur du port est retrouvé trempé sur le ponton. Les dockers utilisent un vieux code de pavillons, chaque lettre étant représentée par deux positions d'aiguilles d'horloge — mais l'humidité a effacé la moitié de la légende.</div>
-      <table class="cipher-table" data-i18n="d6_table">
+      <div class="table-scroll"><table class="cipher-table" data-i18n="d6_table">
         <tr><th>Lettre</th><td>A</td><td>C</td><td>D</td><td>E</td><td>R</td><td>V</td></tr>
         <tr><th>Positions</th><td>12h-06h</td><td>?</td><td>01h-07h</td><td>?</td><td>05h-11h</td><td>?</td></tr>
-      </table>
+      </table></div>
       <div class="cipher-box" data-i18n="d6_cipher">03h-09h · 12h-06h · 01h-07h · 12h-06h · 04h-10h · 05h-11h · 02h-08h</div>
       <div class="note" data-i18n="d6_note">Note du Gardien : l'humidité a effacé trois entrées de la légende (C, E, V). Repérez où apparaissent dans le message les codes déjà connus (A, D, R), puis déduisez les trois lettres manquantes pour compléter un mot de 7 lettres que l'on redoute de trouver sur les quais après une nuit de brouillard.</div>
       <div class="check-row">
@@ -475,10 +477,10 @@ input.mono{font-family:'Courier Prime',monospace;font-size:16px;letter-spacing:.
       <div class="dt" data-i18n="d8_dt">Le Carnet<br><em>Alchimique</em></div>
       <div class="dc" data-i18n="d8_dc">Chiffrement : Symboles Alchimiques (légende incomplète)</div>
       <div class="ambiance" data-i18n="d8_amb">Le cabinet d'un médecin du quartier a été fouillé de fond en comble. Seul un vieux carnet de notes, couvert de symboles planétaires hérités de l'alchimie, semble avoir un sens — mais une tache d'encre a rendu deux symboles illisibles dans la légende.</div>
-      <table class="cipher-table" data-i18n="d8_table">
+      <div class="table-scroll"><table class="cipher-table" data-i18n="d8_table">
         <tr><th>☉ Soleil</th><td>A</td><th>☽ Lune</th><td>L</td></tr>
         <tr><th>♀ Vénus</th><td>P</td><th>♄ Saturne</th><td>S</td></tr>
-      </table>
+      </table></div>
       <div class="cipher-box" style="font-size:26px" data-i18n="d8_cipher">♄ ☿ ☉ ☽ ♀ ♂ ☽</div>
       <div class="note" data-i18n="d8_note">Note du Gardien : la tache a effacé ☿ et ♂ de la légende. Une autre page du carnet, consacrée aux anesthésiques du cabinet, précise : « ☿, comme le premier remède que j'ai testé : le CHLOROFORME » et « ♂, comme celui qui l'a remplacé : l'ÉTHER ». Formez le mot (7 lettres) — un instrument que l'on retrouverait plutôt sur une table d'anatomie.</div>
       <div class="check-row">
@@ -578,13 +580,13 @@ Nul ne me croira, pourtant j'ai tout vu.</div>
       <div class="dt" data-i18n="d13_dt">La Partition<br><em>Maudite</em></div>
       <div class="dc" data-i18n="d13_dc">Chiffrement : Notes de Musique (grille à reconstituer)</div>
       <div class="ambiance" data-i18n="d13_amb">L'organiste de la paroisse a griffonné une courte suite de notes en marge d'une partition, avec des chiffres d'octave. Il jure ne pas se souvenir l'avoir écrite lui-même. Seule la première case de sa table de correspondance reste lisible.</div>
-      <table class="cipher-table">
+      <div class="table-scroll"><table class="cipher-table">
         <tr><th>Octave</th><td>Do</td><td>Ré</td><td>Mi</td><td>Fa</td><td>Sol</td><td>La</td><td>Si</td></tr>
         <tr><th>1</th><td>A</td><td><input class="gridcell" maxlength="1" oninput="gridFmt(this)"></td><td><input class="gridcell" maxlength="1" oninput="gridFmt(this)"></td><td><input class="gridcell" maxlength="1" oninput="gridFmt(this)"></td><td><input class="gridcell" maxlength="1" oninput="gridFmt(this)"></td><td><input class="gridcell" maxlength="1" oninput="gridFmt(this)"></td><td><input class="gridcell" maxlength="1" oninput="gridFmt(this)"></td></tr>
         <tr><th>2</th><td><input class="gridcell" maxlength="1" oninput="gridFmt(this)"></td><td><input class="gridcell" maxlength="1" oninput="gridFmt(this)"></td><td><input class="gridcell" maxlength="1" oninput="gridFmt(this)"></td><td><input class="gridcell" maxlength="1" oninput="gridFmt(this)"></td><td><input class="gridcell" maxlength="1" oninput="gridFmt(this)"></td><td><input class="gridcell" maxlength="1" oninput="gridFmt(this)"></td><td><input class="gridcell" maxlength="1" oninput="gridFmt(this)"></td></tr>
         <tr><th>3</th><td><input class="gridcell" maxlength="1" oninput="gridFmt(this)"></td><td><input class="gridcell" maxlength="1" oninput="gridFmt(this)"></td><td><input class="gridcell" maxlength="1" oninput="gridFmt(this)"></td><td><input class="gridcell" maxlength="1" oninput="gridFmt(this)"></td><td><input class="gridcell" maxlength="1" oninput="gridFmt(this)"></td><td><input class="gridcell" maxlength="1" oninput="gridFmt(this)"></td><td><input class="gridcell" maxlength="1" oninput="gridFmt(this)"></td></tr>
         <tr><th>4</th><td><input class="gridcell" maxlength="1" oninput="gridFmt(this)"></td><td><input class="gridcell" maxlength="1" oninput="gridFmt(this)"></td><td><input class="gridcell" maxlength="1" oninput="gridFmt(this)"></td><td><input class="gridcell" maxlength="1" oninput="gridFmt(this)"></td><td><input class="gridcell" maxlength="1" oninput="gridFmt(this)"></td><td></td><td></td></tr>
-      </table>
+      </table></div>
       <div class="cipher-box">Fa₃ · Sol₁ · Mi₃ · Si₃ · Ré₂ · Sol₁ · La₂</div>
       <div class="note" data-i18n="d13_note">Note du Gardien : chaque note (Do à Si) est une colonne, chaque chiffre en indice est une octave (une ligne). Retrouvez la lettre de chaque case pour former le mot (7 lettres).</div>
       <div class="check-row">
@@ -802,7 +804,7 @@ fr:{
 
   d5_stamp:"Dossier d'Enquête — Page 5 · Nuit 5", d5_dl:"Acte 5 · La Taverne du Marin Noyé",
   d5_dt:"Le Carnet<br>du <em>Barman</em>", d5_dc:"Chiffrement : Playfair",
-  d5_amb:"Le barman jure avoir servi la dernière victime son ultime verre. Sur une page de son carnet de commandes, un mot codé par paires de lettres, avec en en-tête un seul indice : le nom du port lui-même comme clé. Il se souvient aussi d'un client silencieux, en blouse claire sous son manteau, resté seul au fond de la salle toute la soirée.",
+  d5_amb:"Le barman jure avoir servi son ultime verre à la dernière victime. Sur une page de son carnet de commandes, un mot codé par paires de lettres, avec en en-tête un seul indice : le nom du port lui-même comme clé. Il se souvient aussi d'un client silencieux, en blouse claire sous son manteau, resté seul au fond de la salle toute la soirée.",
   d5_note1:"Grille Playfair construite avec la clé RAVENSCOURT (sans lettres répétées, I et J confondus, complétée par le reste de l'alphabet) :",
   d5_cipher:"RD BQ TH GN", d5_ph:"_ _ _ _ _ _ _ _",
   d5_note2:"Note du Gardien : déchiffrez par paires selon les règles du Playfair — même ligne → décalez à gauche ; même colonne → décalez vers le haut ; sinon (rectangle) → chaque lettre garde sa ligne mais prend la colonne de l'autre. Exemples avec cette grille (lettres différentes du message) : OG → UF (rectangle) ; CD → AC (même colonne). Appliquez la même logique aux 4 paires du message pour retrouver le mot (8 lettres).",
